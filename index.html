@@ -3,43 +3,587 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Burgerm.fr</title>
+
+<title>BURGER M | Burgers gourmands</title>
+<meta name="description" content="BURGER M — Des burgers généreux, savoureux et préparés avec passion.">
+
 <style>
-body{
-font-family:Arial,sans-serif;
-background:#f5f5f5;
-margin:0;
-text-align:center;
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
-header{
-background:#d62828;
-color:white;
-padding:40px;
+
+html {
+scroll-behavior: smooth;
 }
-section{
-padding:40px;
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #080808;
+color: #ffffff;
+line-height: 1.6;
 }
-a{
-background:#d62828;
-color:white;
-padding:12px 25px;
-text-decoration:none;
-border-radius:8px;
+
+:root {
+--noir: #080808;
+--noir-clair: #111111;
+--blanc: #ffffff;
+--dore: #c8a900;
+--dore-clair: #e0c52b;
+}
+
+/* NAVIGATION */
+
+header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+background: rgba(0, 0, 0, 0.92);
+border-bottom: 1px solid rgba(200, 169, 0, 0.35);
+backdrop-filter: blur(8px);
+}
+
+nav {
+max-width: 1100px;
+margin: auto;
+padding: 15px 25px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.logo-text {
+font-size: 25px;
+font-weight: 900;
+letter-spacing: 2px;
+}
+
+.logo-text span {
+color: var(--dore);
+}
+
+nav ul {
+display: flex;
+list-style: none;
+gap: 30px;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+font-weight: bold;
+transition: 0.3s;
+}
+
+nav a:hover {
+color: var(--dore-clair);
+}
+
+/* ACCUEIL */
+
+.hero {
+min-height: 100vh;
+padding: 130px 25px 70px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+background:
+radial-gradient(circle at center, #242000 0%, #0a0a0a 38%, #000000 75%);
+}
+
+.hero-content {
+max-width: 800px;
+}
+
+.logo-circle {
+width: 210px;
+height: 210px;
+margin: 0 auto 30px;
+border-radius: 50%;
+border: 3px solid var(--dore);
+background: #000;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 0 35px rgba(200, 169, 0, 0.25);
+overflow: hidden;
+}
+
+.logo-circle span {
+font-size: 58px;
+font-weight: 900;
+color: var(--dore);
+font-style: italic;
+}
+
+.hero h1 {
+font-size: clamp(48px, 9vw, 92px);
+line-height: 0.95;
+font-weight: 900;
+letter-spacing: 4px;
+}
+
+.hero h1 span {
+color: var(--dore);
+}
+
+.hero p {
+margin: 25px auto 35px;
+max-width: 600px;
+font-size: 20px;
+color: #dddddd;
+}
+
+.btn {
+display: inline-block;
+padding: 15px 28px;
+border-radius: 5px;
+background: var(--dore);
+color: #000;
+text-decoration: none;
+font-weight: 900;
+transition: 0.3s;
+border: 2px solid var(--dore);
+}
+
+.btn:hover {
+background: transparent;
+color: var(--dore-clair);
+transform: translateY(-2px);
+}
+
+.btn-outline {
+margin-left: 10px;
+background: transparent;
+color: white;
+border-color: white;
+}
+
+.btn-outline:hover {
+border-color: var(--dore);
+}
+
+/* SECTIONS */
+
+section {
+padding: 90px 25px;
+}
+
+.container {
+max-width: 1100px;
+margin: auto;
+}
+
+.section-title {
+text-align: center;
+margin-bottom: 55px;
+}
+
+.section-title h2 {
+font-size: 42px;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+.section-title h2 span {
+color: var(--dore);
+}
+
+.section-title p {
+color: #aaa;
+margin-top: 10px;
+}
+
+/* BURGERS */
+
+#burgers {
+background: #0d0d0d;
+}
+
+.cards {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+}
+
+.card {
+background: #151515;
+border: 1px solid #292929;
+border-radius: 12px;
+overflow: hidden;
+transition: 0.3s;
+}
+
+.card:hover {
+transform: translateY(-7px);
+border-color: var(--dore);
+box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.card-image {
+height: 210px;
+background: linear-gradient(135deg, #252525, #090909);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 75px;
+}
+
+.card-content {
+padding: 22px;
+}
+
+.card h3 {
+font-size: 23px;
+margin-bottom: 8px;
+}
+
+.card p {
+color: #aaa;
+font-size: 15px;
+}
+
+.price {
+display: block;
+color: var(--dore-clair);
+font-size: 21px;
+font-weight: 900;
+margin-top: 15px;
+}
+
+/* MENU */
+
+#menu {
+background: #050505;
+}
+
+.menu-box {
+max-width: 750px;
+margin: auto;
+border: 1px solid #292929;
+border-radius: 12px;
+overflow: hidden;
+}
+
+.menu-item {
+display: flex;
+justify-content: space-between;
+gap: 20px;
+padding: 22px 25px;
+border-bottom: 1px solid #242424;
+}
+
+.menu-item:last-child {
+border-bottom: none;
+}
+
+.menu-item h3 {
+font-size: 19px;
+}
+
+.menu-item p {
+color: #888;
+font-size: 14px;
+}
+
+.menu-price {
+color: var(--dore-clair);
+font-weight: 900;
+white-space: nowrap;
+}
+
+/* CONTACT */
+
+#contact {
+background: #111111;
+text-align: center;
+}
+
+.contact-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+}
+
+.contact-box {
+padding: 30px 20px;
+background: #080808;
+border: 1px solid #292929;
+border-radius: 10px;
+}
+
+.contact-box .icon {
+font-size: 35px;
+margin-bottom: 10px;
+}
+
+.contact-box h3 {
+color: var(--dore-clair);
+margin-bottom: 8px;
+}
+
+.contact-box p {
+color: #ccc;
+}
+
+/* FOOTER */
+
+footer {
+padding: 30px 20px;
+text-align: center;
+background: #000;
+color: #777;
+border-top: 1px solid #222;
+}
+
+footer strong {
+color: var(--dore-clair);
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+nav {
+padding: 13px 18px;
+}
+
+.logo-text {
+font-size: 20px;
+}
+
+nav ul {
+gap: 13px;
+}
+
+nav a {
+font-size: 13px;
+}
+
+.hero {
+padding-top: 120px;
+}
+
+.logo-circle {
+width: 170px;
+height: 170px;
+}
+
+.logo-circle span {
+font-size: 48px;
+}
+
+.hero p {
+font-size: 17px;
+}
+
+.btn {
+display: block;
+margin: 10px auto;
+max-width: 260px;
+}
+
+.btn-outline {
+margin: 10px auto;
+}
+
+.cards {
+grid-template-columns: 1fr;
+}
+
+.contact-grid {
+grid-template-columns: 1fr;
+}
+
+.section-title h2 {
+font-size: 32px;
+}
+
+section {
+padding: 70px 18px;
+}
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>Bienvenue sur Burgerm.fr</h1>
-<p>Le meilleur burger près de chez vous.</p>
+<nav>
+<div class="logo-text">BURGER <span>M</span></div>
+
+<ul>
+<li><a href="#accueil">Accueil</a></li>
+<li><a href="#burgers">Burgers</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 </header>
 
-<section>
-<h2>Ouverture prochaine</h2>
-<p>Notre site est actuellement en cours de création.</p>
-<a href="mailto:contact@burgerm.fr">Nous contacter</a>
+
+<main>
+
+<!-- ACCUEIL -->
+
+<section class="hero" id="accueil">
+<div class="hero-content">
+
+<div class="logo-circle">
+<span>M</span>
+</div>
+
+<h1>BURGER <span>M</span></h1>
+
+<p>
+Des burgers généreux, savoureux et préparés avec passion.
+Bienvenue chez BURGER M.
+</p>
+
+<a class="btn" href="#burgers">DÉCOUVRIR NOS BURGERS</a>
+<a class="btn btn-outline" href="#contact">NOUS TROUVER</a>
+
+</div>
 </section>
+
+
+<!-- BURGERS -->
+
+<section id="burgers">
+<div class="container">
+
+<div class="section-title">
+<h2>Nos <span>Burgers</span></h2>
+<p>Des recettes généreuses pour les vrais amateurs de burgers.</p>
+</div>
+
+<div class="cards">
+
+<article class="card">
+<div class="card-image">🍔</div>
+<div class="card-content">
+<h3>BURGER M</h3>
+<p>
+Notre burger signature, généreux et plein de saveurs.
+</p>
+<span class="price">À venir</span>
+</div>
+</article>
+
+<article class="card">
+<div class="card-image">🍔</div>
+<div class="card-content">
+<h3>LE CHEESE</h3>
+<p>
+Un grand classique avec une touche BURGER M.
+</p>
+<span class="price">À venir</span>
+</div>
+</article>
+
+<article class="card">
+<div class="card-image">🍔</div>
+<div class="card-content">
+<h3>LE GOURMAND</h3>
+<p>
+Une recette généreuse pour les grosses faims.
+</p>
+<span class="price">À venir</span>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+
+<!-- MENU -->
+
+<section id="menu">
+<div class="container">
+
+<div class="section-title">
+<h2>Notre <span>Menu</span></h2>
+<p>Le menu BURGER M arrive bientôt.</p>
+</div>
+
+<div class="menu-box">
+
+<div class="menu-item">
+<div>
+<h3>Burger</h3>
+<p>Viande, fromage et sauce maison</p>
+</div>
+<div class="menu-price">À venir</div>
+</div>
+
+<div class="menu-item">
+<div>
+<h3>Menu Burger</h3>
+<p>Burger + accompagnement + boisson</p>
+</div>
+<div class="menu-price">À venir</div>
+</div>
+
+<div class="menu-item">
+<div>
+<h3>Accompagnements</h3>
+<p>Frites et autres accompagnements</p>
+</div>
+<div class="menu-price">À venir</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+<div class="container">
+
+<div class="section-title">
+<h2>Nous <span>Trouver</span></h2>
+<p>Retrouvez BURGER M et venez découvrir nos burgers.</p>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-box">
+<div class="icon">📍</div>
+<h3>Adresse</h3>
+<p>Adresse à renseigner</p>
+</div>
+
+<div class="contact-box">
+<div class="icon">🕐</div>
+<h3>Horaires</h3>
+<p>Horaires à renseigner</p>
+</div>
+
+<div class="contact-box">
+<div class="icon">📞</div>
+<h3>Téléphone</h3>
+<p>Numéro à renseigner</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+
+<footer>
+© 2026 <strong>BURGER M</strong> — Tous droits réservés.
+</footer>
 
 </body>
 </html>
