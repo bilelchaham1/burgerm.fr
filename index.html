@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BURGER M | Burgers à Bourges</title>
+<title>BURGER M | Bourges</title>
 
 
 <style>
@@ -16,18 +16,11 @@
 :root{
 
 --black:#030303;
-
---dark:#090909;
-
+--dark:#080808;
 --yellow:#ffd000;
-
---gold:#d99b00;
-
---white:#ffffff;
-
---gray:#aaaaaa;
-
---border:#4a3a00;
+--gold:#ffb300;
+--white:#fff;
+--gray:#aaa;
 
 }
 
@@ -36,9 +29,7 @@
 *{
 
 box-sizing:border-box;
-
 margin:0;
-
 padding:0;
 
 }
@@ -57,11 +48,9 @@ body{
 
 font-family:Arial,Helvetica,sans-serif;
 
-background:var(--black);
+background:#030303;
 
 color:white;
-
-line-height:1.5;
 
 }
 
@@ -89,8 +78,9 @@ margin:auto;
 
 
 
-/* ================= HEADER ================= */
 
+
+/* ================= HEADER ================= */
 
 
 header{
@@ -103,16 +93,17 @@ top:0;
 z-index:1000;
 
 
-background:rgba(3,3,3,.92);
+background:rgba(3,3,3,.90);
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 
 
-border-bottom:1px solid rgba(255,208,0,.25);
+border-bottom:
+
+1px solid rgba(255,208,0,.25);
 
 
 }
-
 
 
 
@@ -133,6 +124,7 @@ justify-content:space-between;
 
 
 
+
 .logo{
 
 
@@ -140,10 +132,12 @@ width:75px;
 
 height:75px;
 
+
 object-fit:contain;
 
 
 }
+
 
 
 
@@ -158,9 +152,6 @@ gap:35px;
 
 font-weight:900;
 
-font-size:17px;
-
-
 }
 
 
@@ -168,17 +159,14 @@ font-size:17px;
 nav a{
 
 
-transition:.25s;
+transition:.3s;
 
 
 }
 
 
 
-nav a:hover,
-
-
-nav a.active{
+nav a:hover{
 
 
 color:var(--yellow);
@@ -195,18 +183,17 @@ color:var(--yellow);
 
 display:none;
 
-
 background:none;
-
-border:1px solid var(--yellow);
 
 color:white;
 
+border:1px solid var(--yellow);
+
+padding:8px 12px;
+
 border-radius:10px;
 
-font-size:24px;
-
-padding:8px 14px;
+font-size:22px;
 
 
 }
@@ -217,14 +204,30 @@ padding:8px 14px;
 
 
 
-/* ================= GENERAL ================= */
 
+
+
+/* ================= GENERAL ================= */
 
 
 section{
 
 
 padding:80px 0;
+
+
+}
+
+
+
+h2{
+
+
+font-size:45px;
+
+text-align:center;
+
+margin-bottom:15px;
 
 
 }
@@ -248,9 +251,9 @@ margin-bottom:45px;
 
 color:var(--yellow);
 
-font-size:13px;
-
 font-weight:900;
+
+font-size:13px;
 
 letter-spacing:2px;
 
@@ -258,29 +261,6 @@ text-transform:uppercase;
 
 
 }
-
-
-
-h2{
-
-
-font-size:45px;
-
-margin:10px 0;
-
-
-}
-
-
-
-.section-head p{
-
-
-color:#aaa;
-
-
-}
-
 
 
 
@@ -340,7 +320,10 @@ box-shadow:
 
 
 
-/* ================= LOGO CENTRAL PREMIUM ================= */
+
+
+
+/* ================= LOGO GALAXIE ================= */
 
 
 
@@ -366,6 +349,11 @@ margin-bottom:35px;
 
 
 
+
+/* Nébuleuse principale */
+
+
+
 .logo-effect::before{
 
 
@@ -375,39 +363,89 @@ content:"";
 position:absolute;
 
 
-width:520px;
+width:750px;
 
-height:520px;
+height:750px;
+
+
+
+left:50%;
+
+top:50%;
+
+
+
+transform:translate(-50%,-50%);
+
+
 
 
 background:
 
 
+
 radial-gradient(
 
-circle,
+circle at 50% 45%,
 
-rgba(255,220,100,.35),
+rgba(255,220,120,.45),
 
-rgba(255,180,0,.15) 35%,
+rgba(255,190,50,.22) 18%,
 
-transparent 70%
+rgba(255,150,0,.10) 35%,
+
+transparent 65%
+
+),
+
+
+
+radial-gradient(
+
+circle at 35% 40%,
+
+rgba(255,230,150,.25),
+
+transparent 35%
+
+),
+
+
+
+radial-gradient(
+
+circle at 70% 65%,
+
+rgba(255,180,0,.18),
+
+transparent 40%
 
 );
 
 
-filter:blur(55px);
+
+
+
+filter:blur(65px);
+
+
+opacity:.75;
+
+
+animation:galaxyGlow 10s infinite;
 
 
 z-index:0;
 
 
-animation:softGlow 8s infinite;
-
-
 }
 
 
+
+
+
+
+/* Lumière diffuse */
 
 
 
@@ -420,9 +458,21 @@ content:"";
 position:absolute;
 
 
-width:700px;
+width:900px;
 
-height:700px;
+height:500px;
+
+
+
+left:50%;
+
+top:50%;
+
+
+
+transform:translate(-50%,-50%);
+
+
 
 
 background:
@@ -432,14 +482,19 @@ radial-gradient(
 
 ellipse,
 
-rgba(255,170,0,.10),
+rgba(255,210,80,.12),
 
-transparent 65%
+transparent 60%
 
 );
 
 
+
+
 filter:blur(90px);
+
+
+opacity:.6;
 
 
 z-index:0;
@@ -453,11 +508,56 @@ z-index:0;
 
 
 
+
+@keyframes galaxyGlow{
+
+
+0%,100%{
+
+
+opacity:.55;
+
+
+transform:
+
+translate(-50%,-50%)
+
+scale(1);
+
+
+}
+
+
+
+50%{
+
+
+opacity:.85;
+
+
+transform:
+
+translate(-50%,-50%)
+
+scale(1.08);
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
 .hero-logo{
 
 
 position:relative;
-
 
 z-index:2;
 
@@ -470,134 +570,28 @@ height:260px;
 object-fit:contain;
 
 
+
 filter:
 
 
-drop-shadow(0 0 12px rgba(255,208,0,.7))
+drop-shadow(
 
-drop-shadow(0 0 35px rgba(255,170,0,.45));
+0 0 8px rgba(255,208,0,.55)
 
-
-}
-
+)
 
 
+drop-shadow(
 
+0 0 25px rgba(255,170,0,.35)
 
-@keyframes softGlow{
-
-
-0%,100%{
-
-opacity:.55;
-
-transform:scale(.95);
-
-}
-
-
-
-50%{
-
-
-opacity:.85;
-
-transform:scale(1.05);
-
-
-}
+);
 
 
 }
 
 
 
-
-
-
-
-/* ================= RESPONSIVE ================= */
-
-
-
-@media(max-width:800px){
-
-
-
-nav{
-
-
-display:none;
-
-
-position:absolute;
-
-top:85px;
-
-left:0;
-
-right:0;
-
-
-background:#080808;
-
-
-padding:25px;
-
-
-flex-direction:column;
-
-text-align:center;
-
-
-}
-
-
-
-nav.open{
-
-
-display:flex;
-
-
-}
-
-
-
-
-
-.menu-btn{
-
-
-display:block;
-
-
-}
-
-
-
-h2{
-
-
-font-size:35px;
-
-
-}
-
-
-
-.hero-logo{
-
-
-width:200px;
-
-height:200px;
-
-
-}
-
-
-}
 
 
 
@@ -607,8 +601,9 @@ height:200px;
 </head>
 
 
-
 <body>
+
+
 
 
 
@@ -622,10 +617,15 @@ height:200px;
 <a href="#accueil">
 
 
-<img src="logo.png" class="logo" alt="Logo BURGER M">
+<img src="logo.png"
+
+class="logo"
+
+alt="BURGER M">
 
 
 </a>
+
 
 
 
@@ -639,14 +639,16 @@ height:200px;
 
 
 
+
 <nav>
 
 
-<a class="active" href="#accueil">
+<a href="#accueil" class="active">
 
 Accueil
 
 </a>
+
 
 
 <a href="#burgers">
@@ -667,7 +669,7 @@ Menus Duo
 
 <a href="#carte">
 
-La carte
+Carte
 
 </a>
 
@@ -685,6 +687,7 @@ Contact
 
 
 
+
 </div>
 
 
@@ -699,31 +702,38 @@ Contact
 
 min-height:760px;
 
+
 display:flex;
+
 
 align-items:center;
 
+
 justify-content:center;
+
 
 text-align:center;
 
 
 position:relative;
 
+
 overflow:hidden;
+
 
 
 
 background:
 
 
+
 radial-gradient(
 
 ellipse at center 35%,
 
-rgba(255,190,0,.12),
+rgba(255,200,70,.10),
 
-transparent 35%
+transparent 40%
 
 ),
 
@@ -747,6 +757,8 @@ linear-gradient(
 
 
 
+/* légère poussière galaxie */
+
 
 .hero::before{
 
@@ -757,41 +769,55 @@ content:"";
 position:absolute;
 
 
-width:900px;
+inset:0;
 
-height:900px;
-
-
-left:50%;
-
-top:35%;
-
-
-transform:translate(-50%,-50%);
 
 
 background:
 
 
+
 radial-gradient(
 
-circle,
+circle at 20% 30%,
 
-rgba(255,210,80,.12),
+rgba(255,220,120,.07) 1px,
 
-transparent 65%
+transparent 2px
+
+),
+
+
+
+radial-gradient(
+
+circle at 70% 55%,
+
+rgba(255,200,80,.05) 1px,
+
+transparent 2px
+
+),
+
+
+
+radial-gradient(
+
+circle at 45% 75%,
+
+rgba(255,220,100,.04) 1px,
+
+transparent 2px
 
 );
 
 
 
-filter:blur(80px);
+opacity:.5;
+
 
 
 }
-
-
-
 
 
 
@@ -812,10 +838,14 @@ z-index:5;
 
 
 
+
+
 .hero h1{
 
 
-font-size:clamp(55px,8vw,95px);
+font-size:
+
+clamp(55px,8vw,95px);
 
 
 font-weight:1000;
@@ -827,10 +857,12 @@ letter-spacing:-4px;
 line-height:1;
 
 
+
 margin-top:20px;
 
 
 }
+
 
 
 
@@ -847,6 +879,9 @@ color:var(--yellow);
 
 
 
+
+
+
 .hero p{
 
 
@@ -856,13 +891,19 @@ font-size:20px;
 color:#ddd;
 
 
+line-height:1.7;
+
+
 margin:25px auto;
 
 
-max-width:700px;
+max-width:720px;
 
 
 }
+
+
+
 
 
 
@@ -901,12 +942,10 @@ margin-top:35px;
 background:transparent;
 
 
-border:2px solid #fff;
+border-color:white;
 
 
 }
-
-
 
 
 
@@ -925,8 +964,8 @@ color:var(--yellow);
 
 
 
-</style>
 
+</style>
 
 
 
@@ -940,7 +979,10 @@ color:var(--yellow);
 
 
 
+
+
 <div class="hero-content">
+
 
 
 
@@ -956,7 +998,7 @@ color:var(--yellow);
 
 class="hero-logo"
 
-alt="BURGER M">
+alt="Logo BURGER M">
 
 
 </div>
@@ -968,9 +1010,12 @@ alt="BURGER M">
 
 
 
+
 <h1>
 
+
 BURGER <span>M</span>
+
 
 </h1>
 
@@ -980,13 +1025,17 @@ BURGER <span>M</span>
 
 
 
+
 <p>
 
-Des burgers généreux, préparés avec passion.
+
+Des burgers généreux et savoureux préparés avec passion.
 
 <br>
 
+
 Votre restaurant BURGER M à Bourges.
+
 
 </p>
 
@@ -1008,7 +1057,9 @@ Votre restaurant BURGER M à Bourges.
 
 class="btn primary">
 
+
 DÉCOUVRIR NOS BURGERS
+
 
 </a>
 
@@ -1025,7 +1076,9 @@ target="_blank"
 
 class="btn delivery-btn">
 
+
 🍔 Commander Uber Eats
+
 
 </a>
 
@@ -1042,7 +1095,9 @@ target="_blank"
 
 class="btn delivery-btn">
 
+
 🚴 Commander Deliveroo
+
 
 </a>
 
@@ -1051,13 +1106,6 @@ class="btn delivery-btn">
 
 
 
-</div>
-
-
-
-
-
-
 
 </div>
 
@@ -1067,7 +1115,18 @@ class="btn delivery-btn">
 
 
 
-</section><!-- ================= BURGERS PREMIUM ================= -->
+
+
+</div>
+
+
+
+
+
+
+
+
+</section><!-- ================= BURGERS ================= -->
 
 
 <style>
@@ -1075,9 +1134,11 @@ class="btn delivery-btn">
 
 .grid{
 
+
 display:grid;
 
 gap:25px;
+
 
 }
 
@@ -1085,7 +1146,9 @@ gap:25px;
 
 .burgers{
 
+
 grid-template-columns:repeat(4,1fr);
+
 
 }
 
@@ -1104,13 +1167,13 @@ linear-gradient(
 
 #151515,
 
-#080808
+#070707
 
 );
 
 
 
-border:1px solid #333;
+border:1px solid #303030;
 
 
 border-radius:22px;
@@ -1136,6 +1199,9 @@ transition:.35s;
 
 
 
+
+
+
 .card::before{
 
 
@@ -1145,23 +1211,27 @@ content:"";
 position:absolute;
 
 
-width:250px;
+width:220px;
 
-height:250px;
+
+height:220px;
 
 
 top:-120px;
 
+
 left:-120px;
 
 
+
 background:
+
 
 radial-gradient(
 
 circle,
 
-rgba(255,208,0,.18),
+rgba(255,208,0,.20),
 
 transparent 65%
 
@@ -1176,6 +1246,8 @@ transition:.5s;
 
 
 
+
+
 .card:hover::before{
 
 
@@ -1183,6 +1255,7 @@ transform:scale(2);
 
 
 }
+
 
 
 
@@ -1199,10 +1272,12 @@ border-color:var(--yellow);
 box-shadow:
 
 
-0 0 35px rgba(255,208,0,.18);
+0 0 35px rgba(255,208,0,.15);
 
 
 }
+
+
 
 
 
@@ -1217,10 +1292,10 @@ height:120px;
 display:flex;
 
 
-justify-content:center;
-
-
 align-items:center;
+
+
+justify-content:center;
 
 
 font-size:65px;
@@ -1232,10 +1307,12 @@ font-size:65px;
 
 
 
+
+
 .card h3{
 
 
-font-size:23px;
+font-size:22px;
 
 
 margin:15px 0 10px;
@@ -1277,7 +1354,7 @@ font-size:24px;
 font-weight:1000;
 
 
-margin-top:20px;
+margin-top:15px;
 
 
 }
@@ -1289,6 +1366,7 @@ margin-top:20px;
 
 
 /* MENUS DUO */
+
 
 
 .duos{
@@ -1306,7 +1384,7 @@ grid-template-columns:repeat(3,1fr);
 .duo{
 
 
-min-height:330px;
+min-height:310px;
 
 
 display:flex;
@@ -1333,7 +1411,7 @@ border-color:var(--yellow);
 box-shadow:
 
 
-0 0 45px rgba(255,208,0,.15);
+0 0 40px rgba(255,208,0,.15);
 
 
 }
@@ -1360,13 +1438,18 @@ padding:6px 15px;
 border-radius:30px;
 
 
-font-weight:1000;
-
-
 font-size:12px;
 
 
+font-weight:1000;
+
+
+margin-bottom:15px;
+
+
 }
+
+
 
 
 
@@ -1400,6 +1483,7 @@ grid-template-columns:1fr;
 
 
 
+
 @media(max-width:600px){
 
 
@@ -1425,13 +1509,13 @@ grid-template-columns:1fr;
 
 
 
-
-
 <section id="burgers">
 
 
 
 <div class="container">
+
+
 
 
 
@@ -1473,7 +1557,9 @@ Des recettes généreuses préparées avec passion.
 
 
 
+
 <div class="grid burgers">
+
 
 
 
@@ -1519,7 +1605,6 @@ Le burger signature BURGER M.
 
 
 
-
 <div class="card">
 
 
@@ -1539,7 +1624,7 @@ CHEESE M
 
 <p>
 
-Fromage fondant et recette généreuse.
+Fromage fondant et gourmand.
 
 </p>
 
@@ -1552,7 +1637,6 @@ Fromage fondant et recette généreuse.
 
 
 </div>
-
 
 
 
@@ -1579,7 +1663,7 @@ CHICKEN M
 
 <p>
 
-Poulet croustillant et savoureux.
+Poulet croustillant.
 
 </p>
 
@@ -1592,7 +1676,6 @@ Poulet croustillant et savoureux.
 
 
 </div>
-
 
 
 
@@ -1619,7 +1702,7 @@ BBQ M
 
 <p>
 
-Sauce BBQ et saveurs fumées.
+Sauce BBQ maison.
 
 </p>
 
@@ -1632,7 +1715,6 @@ Sauce BBQ et saveurs fumées.
 
 
 </div>
-
 
 
 
@@ -1679,7 +1761,6 @@ Une recette originale.
 
 
 
-
 <div class="card">
 
 
@@ -1699,7 +1780,7 @@ BOURSIN M
 
 <p>
 
-Une recette crémeuse.
+Crémeux et généreux.
 
 </p>
 
@@ -1712,7 +1793,6 @@ Une recette crémeuse.
 
 
 </div>
-
 
 
 
@@ -1739,7 +1819,7 @@ CHÈVRE MIEL M
 
 <p>
 
-L'alliance sucré-salé.
+L'alliance parfaite.
 
 </p>
 
@@ -1752,7 +1832,6 @@ L'alliance sucré-salé.
 
 
 </div>
-
 
 
 
@@ -1816,6 +1895,7 @@ Une alternative gourmande.
 
 
 
+
 <!-- ================= MENUS DUO ================= -->
 
 
@@ -1825,6 +1905,7 @@ Une alternative gourmande.
 
 
 <div class="container">
+
 
 
 
@@ -1865,8 +1946,8 @@ Des menus généreux à partager.
 
 
 
-
 <div class="grid duos">
+
 
 
 
@@ -1915,13 +1996,15 @@ XXL SOLO
 
 
 
-
 <div class="card duo featured">
+
+
+<div>
 
 
 <span class="tag">
 
-⭐ LE PLUS CHOISI
+LE PLUS CHOISI
 
 </span>
 
@@ -1949,6 +2032,10 @@ MENU DUO
 </p>
 
 
+</div>
+
+
+
 <b class="price">
 
 19,90 €
@@ -1957,7 +2044,6 @@ MENU DUO
 
 
 </div>
-
 
 
 
@@ -1982,11 +2068,11 @@ DUO CHICKEN
 
 <br>
 
-1 grande frite
+Grande frite
 
 <br>
 
-1 boisson
+Boisson
 
 </p>
 
@@ -1999,7 +2085,6 @@ DUO CHICKEN
 
 
 </div>
-
 
 
 
@@ -2024,11 +2109,11 @@ DUO NAAN
 
 <br>
 
-1 grande frite
+Grande frite
 
 <br>
 
-1 boisson
+Boisson
 
 </p>
 
@@ -2041,7 +2126,6 @@ DUO NAAN
 
 
 </div>
-
 
 
 
@@ -2083,7 +2167,6 @@ Boisson
 
 
 </div>
-
 
 
 
@@ -2135,7 +2218,8 @@ Formules famille
 </div>
 
 
-</section><!-- ================= CARTE ================= -->
+</section>
+<!-- ================= CARTE ================= -->
 
 
 <style>
@@ -2157,6 +2241,7 @@ gap:25px;
 
 
 
+
 .menu-box{
 
 
@@ -2167,19 +2252,23 @@ text-align:left;
 
 
 
+
+
 .menu-box h3{
 
 
 color:var(--yellow);
 
 
-font-size:22px;
+font-size:23px;
 
 
 margin-bottom:20px;
 
 
 }
+
+
 
 
 
@@ -2193,6 +2282,8 @@ list-style:none;
 
 
 
+
+
 .menu-box li{
 
 
@@ -2202,19 +2293,23 @@ display:flex;
 justify-content:space-between;
 
 
-gap:10px;
+gap:15px;
 
 
-padding:10px 0;
+padding:11px 0;
 
 
-border-bottom:1px solid rgba(255,255,255,.08);
+border-bottom:
+
+1px solid rgba(255,255,255,.08);
 
 
 color:#ddd;
 
 
 }
+
+
 
 
 
@@ -2233,111 +2328,7 @@ font-weight:900;
 
 
 
-
-
-/* ================= AVIS ================= */
-
-
-
-.reviews{
-
-
-background:
-
-
-radial-gradient(
-
-ellipse at center,
-
-rgba(255,208,0,.08),
-
-transparent 55%
-
-),
-
-
-#050505;
-
-
-}
-
-
-
-
-
-.review-card{
-
-
-max-width:850px;
-
-
-margin:auto;
-
-
-background:#101010;
-
-
-border:1px solid #333;
-
-
-border-radius:25px;
-
-
-padding:45px;
-
-
-text-align:center;
-
-
-box-shadow:
-
-0 0 40px rgba(255,208,0,.08);
-
-
-}
-
-
-
-
-
-.stars{
-
-
-color:var(--yellow);
-
-
-font-size:38px;
-
-
-letter-spacing:8px;
-
-
-margin-bottom:20px;
-
-
-}
-
-
-
-
-
-.review-card p{
-
-
-font-size:20px;
-
-
-color:#ddd;
-
-
-}
-
-
-
-
-
 @media(max-width:900px){
-
 
 
 .menu-grid{
@@ -2349,12 +2340,11 @@ grid-template-columns:1fr;
 }
 
 
-
 }
 
 
-
 </style>
+
 
 
 
@@ -2368,6 +2358,7 @@ grid-template-columns:1fr;
 
 
 <div class="container">
+
 
 
 
@@ -2417,6 +2408,7 @@ Toutes les spécialités BURGER M.
 
 
 
+<!-- WRAPS -->
 
 
 <div class="card menu-box">
@@ -2429,17 +2421,62 @@ Toutes les spécialités BURGER M.
 </h3>
 
 
-
 <ul>
 
 
-<li>Chicken <span>6,90 €</span></li>
+<li>
 
-<li>BBQ <span>6,90 €</span></li>
+Chicken
 
-<li>César <span>6,90 €</span></li>
+<span>
 
-<li>Veggie <span>6,50 €</span></li>
+6,90 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+BBQ
+
+<span>
+
+6,90 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+César
+
+<span>
+
+6,90 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Veggie
+
+<span>
+
+6,50 €
+
+</span>
+
+</li>
 
 
 </ul>
@@ -2453,6 +2490,9 @@ Toutes les spécialités BURGER M.
 
 
 
+
+
+<!-- SALADES -->
 
 
 <div class="card menu-box">
@@ -2465,17 +2505,62 @@ Toutes les spécialités BURGER M.
 </h3>
 
 
-
 <ul>
 
 
-<li>César <span>7,50 €</span></li>
+<li>
 
-<li>Chicken Crispy <span>7,50 €</span></li>
+César
 
-<li>Chèvre chaud <span>7,50 €</span></li>
+<span>
 
-<li>Veggie <span>7,20 €</span></li>
+7,50 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Chicken Crispy
+
+<span>
+
+7,50 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Chèvre chaud
+
+<span>
+
+7,50 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Veggie
+
+<span>
+
+7,20 €
+
+</span>
+
+</li>
 
 
 </ul>
@@ -2489,6 +2574,9 @@ Toutes les spécialités BURGER M.
 
 
 
+
+
+<!-- FRITES -->
 
 
 <div class="card menu-box">
@@ -2501,23 +2589,104 @@ Toutes les spécialités BURGER M.
 </h3>
 
 
-
 <ul>
 
 
-<li>Petite <span>2,50 €</span></li>
+<li>
 
-<li>Moyenne <span>3,20 €</span></li>
+Petite
 
-<li>Grande <span>3,90 €</span></li>
+<span>
 
-<li>Cheddar <span>4,50 €</span></li>
+2,50 €
 
-<li>Cheddar Bacon <span>4,90 €</span></li>
+</span>
 
-<li>Chicken Cheddar <span>5,20 €</span></li>
+</li>
 
-<li>Sauce supp. <span>0,50 €</span></li>
+
+
+<li>
+
+Moyenne
+
+<span>
+
+3,20 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Grande
+
+<span>
+
+3,90 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Cheddar
+
+<span>
+
+4,50 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Cheddar Bacon
+
+<span>
+
+4,90 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Chicken Cheddar
+
+<span>
+
+5,20 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Sauce supplémentaire
+
+<span>
+
+0,50 €
+
+</span>
+
+</li>
 
 
 </ul>
@@ -2531,6 +2700,9 @@ Toutes les spécialités BURGER M.
 
 
 
+
+
+<!-- APPETIZERS -->
 
 
 <div class="card menu-box">
@@ -2543,21 +2715,90 @@ Toutes les spécialités BURGER M.
 </h3>
 
 
-
 <ul>
 
 
-<li>Nuggets (6) <span>4,50 €</span></li>
+<li>
 
-<li>Tenders (3) <span>4,90 €</span></li>
+Nuggets x6
 
-<li>Mozzarella sticks <span>4,90 €</span></li>
+<span>
 
-<li>Onion rings <span>3,90 €</span></li>
+4,50 €
 
-<li>Jalapeños <span>3,90 €</span></li>
+</span>
 
-<li>Chili cheese <span>4,90 €</span></li>
+</li>
+
+
+
+<li>
+
+Tenders x3
+
+<span>
+
+4,90 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Mozzarella sticks
+
+<span>
+
+4,90 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Onion rings
+
+<span>
+
+3,90 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Jalapeños
+
+<span>
+
+3,90 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Chili cheese
+
+<span>
+
+4,90 €
+
+</span>
+
+</li>
 
 
 </ul>
@@ -2571,6 +2812,9 @@ Toutes les spécialités BURGER M.
 
 
 
+
+
+<!-- DESSERTS -->
 
 
 <div class="card menu-box">
@@ -2583,19 +2827,76 @@ Toutes les spécialités BURGER M.
 </h3>
 
 
-
 <ul>
 
 
-<li>Tiramisu maison <span>3,90 €</span></li>
+<li>
 
-<li>Muffin <span>2,90 €</span></li>
+Tiramisu maison
 
-<li>Cookies <span>2,50 €</span></li>
+<span>
 
-<li>Donuts <span>2,50 €</span></li>
+3,90 €
 
-<li>Glaces <span>2,50 €</span></li>
+</span>
+
+</li>
+
+
+
+<li>
+
+Muffin
+
+<span>
+
+2,90 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Cookies
+
+<span>
+
+2,50 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Donuts
+
+<span>
+
+2,50 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Glaces
+
+<span>
+
+2,50 €
+
+</span>
+
+</li>
 
 
 </ul>
@@ -2609,6 +2910,9 @@ Toutes les spécialités BURGER M.
 
 
 
+
+
+<!-- BOISSONS -->
 
 
 <div class="card menu-box">
@@ -2621,23 +2925,104 @@ Toutes les spécialités BURGER M.
 </h3>
 
 
-
 <ul>
 
 
-<li>Coca-Cola <span>2,20 €</span></li>
+<li>
 
-<li>Coca-Cola Zero <span>2,20 €</span></li>
+Coca-Cola
 
-<li>Fanta <span>2,20 €</span></li>
+<span>
 
-<li>Sprite <span>2,20 €</span></li>
+2,20 €
 
-<li>Oasis <span>2,20 €</span></li>
+</span>
 
-<li>Ice Tea <span>2,20 €</span></li>
+</li>
 
-<li>Eau <span>2,20 €</span></li>
+
+
+<li>
+
+Coca-Cola Zero
+
+<span>
+
+2,20 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Fanta
+
+<span>
+
+2,20 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Sprite
+
+<span>
+
+2,20 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Oasis
+
+<span>
+
+2,20 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Ice Tea
+
+<span>
+
+2,20 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Eau
+
+<span>
+
+2,20 €
+
+</span>
+
+</li>
 
 
 </ul>
@@ -2651,6 +3036,9 @@ Toutes les spécialités BURGER M.
 
 
 
+
+
+<!-- SUPPLEMENTS -->
 
 
 <div class="card menu-box">
@@ -2663,21 +3051,90 @@ Toutes les spécialités BURGER M.
 </h3>
 
 
-
 <ul>
 
 
-<li>Steak <span>1,50 €</span></li>
+<li>
 
-<li>Bacon <span>1,00 €</span></li>
+Steak
 
-<li>Cheddar <span>0,70 €</span></li>
+<span>
 
-<li>Œuf <span>0,70 €</span></li>
+1,50 €
 
-<li>Oignons frits <span>0,70 €</span></li>
+</span>
 
-<li>Jalapeños <span>0,70 €</span></li>
+</li>
+
+
+
+<li>
+
+Bacon
+
+<span>
+
+1,00 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Cheddar
+
+<span>
+
+0,70 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Œuf
+
+<span>
+
+0,70 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Oignons frits
+
+<span>
+
+0,70 €
+
+</span>
+
+</li>
+
+
+
+<li>
+
+Jalapeños
+
+<span>
+
+0,70 €
+
+</span>
+
+</li>
 
 
 </ul>
@@ -2699,130 +3156,10 @@ Toutes les spécialités BURGER M.
 </div>
 
 
-</section>
-
-
-
-
-
-
-
-
-<!-- ================= AVIS CLIENTS ================= -->
-
-
-
-<section class="reviews">
-
-
-
-<div class="container">
-
-
-
-
-
-<div class="section-head">
-
-
-<div class="kicker">
-
-Avis clients
-
-</div>
-
-
-
-<h2>
-
-Ils parlent de BURGER M
-
-</h2>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="review-card">
-
-
-
-<div class="stars">
-
-★★★★★
-
-</div>
-
-
-
-<p>
-
-"Des burgers généreux, une équipe passionnée et une vraie qualité."
-
-</p>
-
-
-
-
-<br>
-
-
-
-<a href="VOTRE_LIEN_GOOGLE_AVIS"
-
-target="_blank"
-
-class="btn primary">
-
-Voir nos avis Google
-
-</a>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
 </section><!-- ================= CONTACT ================= -->
 
 
 <style>
-
-
-.contact-section{
-
-
-background:
-
-
-linear-gradient(
-
-180deg,
-
-#050505,
-
-#020202
-
-);
-
-
-}
-
 
 
 .contact-grid{
@@ -2841,13 +3178,10 @@ gap:25px;
 
 
 
-
-
 .contact-card{
 
 
 background:
-
 
 linear-gradient(
 
@@ -2881,6 +3215,7 @@ transition:.3s;
 
 
 
+
 .contact-card:hover{
 
 
@@ -2908,10 +3243,10 @@ transform:translateY(-5px);
 color:var(--yellow);
 
 
-font-size:22px;
+font-size:23px;
 
 
-margin-bottom:15px;
+margin-bottom:18px;
 
 
 }
@@ -2926,7 +3261,12 @@ margin-bottom:15px;
 color:#ddd;
 
 
+line-height:1.8;
+
+
 }
+
+
 
 
 
@@ -2956,8 +3296,6 @@ margin-top:25px;
 
 
 
-
-
 .hours{
 
 
@@ -2980,6 +3318,8 @@ padding:35px;
 
 
 
+
+
 .hours h3{
 
 
@@ -2996,6 +3336,7 @@ margin-bottom:25px;
 
 
 }
+
 
 
 
@@ -3026,16 +3367,18 @@ color:#ddd;
 
 
 
+
+
 .map{
 
 
 margin-top:40px;
 
 
-border-radius:25px;
-
-
 overflow:hidden;
+
+
+border-radius:25px;
 
 
 border:1px solid #333;
@@ -3047,40 +3390,32 @@ border:1px solid #333;
 
 
 
-/* ================= FOOTER ================= */
-
-
-
-footer{
-
-
-background:#020202;
-
-
-border-top:1px solid rgba(255,208,0,.2);
-
-
-padding:45px 0;
-
-
-}
 
 
 
 
-.footer{
+/* AVIS */
 
 
-display:flex;
+.review-box{
 
 
-justify-content:space-between;
+margin-top:60px;
 
 
-align-items:center;
+background:#101010;
 
 
-gap:25px;
+border:1px solid #333;
+
+
+border-radius:25px;
+
+
+padding:45px;
+
+
+text-align:center;
 
 
 }
@@ -3089,79 +3424,46 @@ gap:25px;
 
 
 
-.footer-brand{
-
-
-font-size:35px;
-
-
-font-weight:1000;
-
-
-}
-
-
-
-
-.footer-brand span{
+.stars{
 
 
 color:var(--yellow);
 
 
-}
+font-size:38px;
 
 
-
-
-
-.social{
-
-
-display:flex;
-
-
-gap:15px;
+letter-spacing:6px;
 
 
 }
 
 
 
-.social a{
 
 
-width:45px;
+.review-box p{
 
 
-height:45px;
+font-size:20px;
 
 
-display:grid;
+color:#ddd;
 
 
-place-items:center;
-
-
-border:1px solid var(--yellow);
-
-
-border-radius:50%;
-
-
-color:var(--yellow);
-
-
-font-weight:bold;
+margin:25px 0;
 
 
 }
+
+
+
+
 
 
 
 
 @media(max-width:900px){
-
 
 
 .contact-grid{
@@ -3173,18 +3475,6 @@ grid-template-columns:1fr;
 }
 
 
-
-
-.footer{
-
-
-flex-direction:column;
-
-
-text-align:center;
-
-
-}
 
 
 
@@ -3203,6 +3493,7 @@ gap:5px;
 }
 
 
+
 }
 
 
@@ -3216,11 +3507,12 @@ gap:5px;
 
 
 
-<section id="contact" class="contact-section">
-
+<section id="contact">
 
 
 <div class="container">
+
+
 
 
 
@@ -3282,7 +3574,6 @@ Votre restaurant BURGER M à Bourges.
 
 <p>
 
-
 BURGER M
 
 <br><br>
@@ -3305,7 +3596,6 @@ BURGER M
 
 
 
-
 <div class="contact-card">
 
 
@@ -3318,7 +3608,7 @@ BURGER M
 
 <p>
 
-Retrouvez BURGER M sur vos plateformes de livraison.
+Commandez directement en livraison.
 
 </p>
 
@@ -3368,7 +3658,6 @@ Deliveroo
 
 
 
-
 <div class="contact-card">
 
 
@@ -3385,11 +3674,11 @@ Des burgers généreux.
 
 <br><br>
 
-Une recette préparée avec passion.
+Une cuisine préparée avec passion.
 
 <br><br>
 
-Bourges depuis 2020.
+Bourges
 
 </p>
 
@@ -3421,7 +3710,6 @@ Bourges depuis 2020.
 🕒 Horaires
 
 </h3>
-
 
 
 
@@ -3511,8 +3799,6 @@ Bourges depuis 2020.
 
 
 
-
-
 </div>
 
 
@@ -3531,18 +3817,13 @@ Bourges depuis 2020.
 
 src="https://www.google.com/maps?q=1%20T%20Avenue%20Marx%20Dormoy%2018000%20Bourges&output=embed"
 
-
 width="100%"
-
 
 height="400"
 
-
 style="border:0;display:block"
 
-
 loading="lazy">
-
 
 </iframe>
 
@@ -3555,10 +3836,320 @@ loading="lazy">
 
 
 
+
+
+<div class="review-box">
+
+
+
+<div class="stars">
+
+★★★★★
+
 </div>
 
 
-</section>
+
+<p>
+
+Merci à nos clients pour leur confiance.
+
+</p>
+
+
+
+<a href="VOTRE_LIEN_GOOGLE_AVIS"
+
+target="_blank"
+
+class="btn primary">
+
+Voir nos avis Google
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+</section><!-- ================= FOOTER ================= -->
+
+
+<style>
+
+
+footer{
+
+
+background:#020202;
+
+
+border-top:
+
+1px solid rgba(255,208,0,.25);
+
+
+padding:45px 0;
+
+
+}
+
+
+
+
+
+.footer-content{
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:space-between;
+
+
+gap:25px;
+
+
+}
+
+
+
+
+
+.footer-logo{
+
+
+font-size:35px;
+
+
+font-weight:1000;
+
+
+}
+
+
+
+.footer-logo span{
+
+
+color:var(--yellow);
+
+
+}
+
+
+
+
+
+.social{
+
+
+display:flex;
+
+
+gap:15px;
+
+
+}
+
+
+
+
+
+.social a{
+
+
+width:45px;
+
+
+height:45px;
+
+
+border-radius:50%;
+
+
+display:grid;
+
+
+place-items:center;
+
+
+border:1px solid var(--yellow);
+
+
+color:var(--yellow);
+
+
+font-weight:900;
+
+
+}
+
+
+
+
+
+.mobile-order{
+
+
+display:none;
+
+
+position:fixed;
+
+
+bottom:20px;
+
+
+left:50%;
+
+
+transform:translateX(-50%);
+
+
+z-index:9999;
+
+
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#ffd000,
+
+#ffae00
+
+);
+
+
+
+color:#111;
+
+
+padding:16px 45px;
+
+
+border-radius:50px;
+
+
+font-weight:1000;
+
+
+box-shadow:
+
+
+0 0 35px rgba(255,208,0,.45);
+
+
+}
+
+
+
+
+
+@media(max-width:800px){
+
+
+
+nav{
+
+
+display:none;
+
+
+position:absolute;
+
+
+top:85px;
+
+
+left:0;
+
+
+right:0;
+
+
+background:#050505;
+
+
+padding:30px;
+
+
+flex-direction:column;
+
+
+text-align:center;
+
+
+}
+
+
+
+
+
+nav.open{
+
+
+display:flex;
+
+
+}
+
+
+
+
+
+.menu-btn{
+
+
+display:block;
+
+
+}
+
+
+
+
+
+.footer-content{
+
+
+flex-direction:column;
+
+
+text-align:center;
+
+
+}
+
+
+
+
+.mobile-order{
+
+
+display:block;
+
+
+}
+
+
+
+}
 
 
 
@@ -3567,24 +4158,98 @@ loading="lazy">
 
 
 
+/* Animation apparition */
 
-<!-- ================= FOOTER ================= -->
+
+.card{
+
+
+animation:fadeUp .7s ease both;
+
+
+}
+
+
+
+@keyframes fadeUp{
+
+
+from{
+
+
+opacity:0;
+
+
+transform:translateY(30px);
+
+
+}
+
+
+
+to{
+
+
+opacity:1;
+
+
+transform:translateY(0);
+
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+<!-- ================= BOUTON MOBILE ================= -->
+
+
+<a href="VOTRE_LIEN_UBER_EATS"
+
+target="_blank"
+
+class="mobile-order">
+
+
+🍔 Commander
+
+
+</a>
+
+
+
+
+
+
 
 
 
 <footer>
 
 
-
-<div class="container footer">
-
+<div class="container footer-content">
 
 
 
 
-<div class="footer-brand">
+
+<div class="footer-logo">
+
 
 BURGER <span>M</span>
+
 
 </div>
 
@@ -3617,11 +4282,16 @@ F
 
 
 
-<small>
+<div>
 
-© 2026 BURGER M - Tous droits réservés
 
-</small>
+© 2026 BURGER M
+
+<br>
+
+Tous droits réservés
+
+</div>
 
 
 
@@ -3631,156 +4301,7 @@ F
 </div>
 
 
-</footer><!-- ================= FINALISATION ================= -->
-
-
-<style>
-
-
-.mobile-order{
-
-
-display:none;
-
-
-position:fixed;
-
-
-bottom:20px;
-
-
-left:50%;
-
-
-transform:translateX(-50%);
-
-
-z-index:9999;
-
-
-
-background:
-
-
-linear-gradient(
-
-135deg,
-
-var(--yellow),
-
-var(--gold)
-
-);
-
-
-
-color:#111;
-
-
-padding:16px 45px;
-
-
-border-radius:50px;
-
-
-font-weight:1000;
-
-
-font-size:17px;
-
-
-box-shadow:
-
-
-0 0 35px rgba(255,208,0,.45);
-
-
-}
-
-
-
-
-/* Animation apparition cartes */
-
-
-.card{
-
-
-opacity:0;
-
-
-transform:translateY(25px);
-
-
-}
-
-
-
-.card.visible{
-
-
-opacity:1;
-
-
-transform:translateY(0);
-
-
-transition:.7s ease;
-
-
-}
-
-
-
-
-
-
-
-@media(max-width:600px){
-
-
-
-.mobile-order{
-
-
-display:block;
-
-
-}
-
-
-
-}
-
-
-
-
-</style>
-
-
-
-
-
-
-
-
-
-<!-- BOUTON MOBILE COMMANDER -->
-
-
-<a
-
-href="VOTRE_LIEN_UBER_EATS"
-
-target="_blank"
-
-class="mobile-order">
-
-
-🍔 Commander
-
-
-</a>
+</footer>
 
 
 
@@ -3793,26 +4314,23 @@ class="mobile-order">
 <script>
 
 
-
-
-
 // ================= MENU MOBILE =================
 
 
 
-const menuButton = document.querySelector(".menu-btn");
+const menuBtn = document.querySelector(".menu-btn");
 
-const navigation = document.querySelector("nav");
-
-
-
-if(menuButton){
+const nav = document.querySelector("nav");
 
 
-menuButton.addEventListener("click",()=>{
+
+if(menuBtn){
 
 
-navigation.classList.toggle("open");
+menuBtn.addEventListener("click",()=>{
+
+
+nav.classList.toggle("open");
 
 
 });
@@ -3823,11 +4341,6 @@ navigation.classList.toggle("open");
 
 
 
-
-
-
-
-// Fermer le menu après clic
 
 
 
@@ -3837,78 +4350,13 @@ document.querySelectorAll("nav a").forEach(link=>{
 link.addEventListener("click",()=>{
 
 
-navigation.classList.remove("open");
+nav.classList.remove("open");
 
 
 });
 
 
 });
-
-
-
-
-
-
-
-
-
-// ================= ANIMATION CARTES =================
-
-
-
-const cards = document.querySelectorAll(".card");
-
-
-
-const observer = new IntersectionObserver(
-
-
-(entries)=>{
-
-
-entries.forEach(entry=>{
-
-
-if(entry.isIntersecting){
-
-
-entry.target.classList.add("visible");
-
-
-}
-
-
-});
-
-
-},
-
-
-{
-
-
-threshold:.15
-
-
-}
-
-
-);
-
-
-
-
-
-cards.forEach(card=>{
-
-
-observer.observe(card);
-
-
-});
-
-
 
 
 
@@ -3921,8 +4369,6 @@ observer.observe(card);
 
 
 
-
 </body>
-
 
 </html>
