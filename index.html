@@ -426,10 +426,10 @@ transparent 40%
 
 
 
-filter:blur(65px);
+filter:blur(42px);
 
 
-opacity:.75;
+opacity:.42;
 
 
 animation:galaxyGlow 10s infinite;
@@ -491,10 +491,10 @@ transparent 60%
 
 
 
-filter:blur(90px);
+filter:blur(55px);
 
 
-opacity:.6;
+opacity:.28;
 
 
 z-index:0;
@@ -4461,13 +4461,13 @@ nav.classList.remove("open");
     const R = Math.min(w, h) / 2;
 
     // Halo très dense près du logo, plus léger en s'éloignant.
-    const count = window.innerWidth < 600 ? 900 : 1450;
+    const count = window.innerWidth < 600 ? 420 : 700;
 
     for(let i = 0; i < count; i++){
       const t = random();
 
       // Concentration forte autour du logo.
-      const r = R * (0.24 + Math.pow(t, 1.65) * 0.68);
+      const r = R * (0.56 + Math.pow(t, 1.9) * 0.36);
       const a = random() * Math.PI * 2;
 
       // Légère irrégularité naturelle du nuage.
@@ -4477,10 +4477,10 @@ nav.classList.remove("open");
 
       // Les particules proches sont plus petites/denses.
       const near = 1 - Math.min(r / R, 1);
-      const size = 0.35 + random() * (0.8 + near * 1.35);
+      const size = 0.22 + random() * (0.42 + near * 0.55);
 
       // Plus lumineux vers le centre.
-      const alpha = 0.18 + near * 0.68 + random() * 0.20;
+      const alpha = 0.12 + near * 0.42 + random() * 0.14;
       const [rr, gg, bb] = GOLD[Math.floor(random() * GOLD.length)];
 
       ctx.beginPath();
@@ -4489,7 +4489,7 @@ nav.classList.remove("open");
       ctx.fill();
 
       // Petits éclats lumineux, toujours statiques.
-      if(random() < 0.055 && near > 0.20){
+      if(random() < 0.028 && near > 0.30){
         ctx.beginPath();
         ctx.fillStyle = `rgba(255,245,190,${0.30 + near * 0.45})`;
         ctx.arc(x, y, size * 2.3, 0, Math.PI * 2);
