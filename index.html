@@ -1,616 +1,1489 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BURGER M | Burgers & Menus</title>
+
+<title>BURGER M | Burgers faits maison à Bourges</title>
+
+<meta name="description" content="BURGER M à Bourges : burgers généreux, menus duo, livraison Uber Eats et Deliveroo. Retrouvez-nous au 1 T Avenue Marx Dormoy.">
 
 <style>
+
 :root{
 --black:#050505;
---dark:#0d0d0d;
+--dark:#0b0b0b;
+--card:#111111;
 --yellow:#ffd000;
 --yellow2:#ffb800;
 --white:#ffffff;
---gray:#bdbdbd;
---border:#594800;
+--gray:#aaa;
+--border:#403500;
 }
 
+
 *{
-box-sizing:border-box;
 margin:0;
 padding:0;
+box-sizing:border-box;
 }
+
 
 html{
 scroll-behavior:smooth;
 }
 
+
 body{
-font-family:Arial,Helvetica,sans-serif;
+
+font-family:
+Arial,
+Helvetica,
+sans-serif;
+
 background:var(--black);
 color:white;
+
 line-height:1.5;
+
 }
+
 
 a{
-color:inherit;
+
 text-decoration:none;
+color:inherit;
+
 }
+
 
 .container{
-width:min(1180px,92%);
+
+width:min(1200px,92%);
 margin:auto;
+
 }
 
-/* ================= HEADER ================= */
+
+/* ================= HEADER PREMIUM ================= */
+
 
 header{
+
 position:sticky;
 top:0;
 z-index:1000;
-background:rgba(5,5,5,.97);
-border-bottom:1px solid var(--border);
+
+background:
+rgba(5,5,5,.95);
+
+backdrop-filter:blur(10px);
+
+border-bottom:
+1px solid var(--border);
+
 }
+
 
 .nav{
-height:82px;
-display:flex;
+
+height:85px;
+
+display:grid;
+
+grid-template-columns:160px 1fr 200px;
+
 align-items:center;
-justify-content:space-between;
+
 }
+
+
+/* LOGO */
 
 .logo{
+
 width:75px;
 height:75px;
+
 object-fit:contain;
+
 border-radius:50%;
+
 }
+
+
+/* MENU */
+
 
 nav{
+
 display:flex;
-gap:30px;
-font-weight:800;
+
+justify-content:center;
+
+gap:45px;
+
+font-size:18px;
+
+font-weight:900;
+
 }
 
+
 nav a{
-transition:.2s;
+
+position:relative;
+
+transition:.3s;
+
 }
+
 
 nav a:hover,
 nav a.active{
+
 color:var(--yellow);
+
 }
 
-.menu-btn{
-display:none;
-background:none;
-border:1px solid var(--yellow);
-color:white;
-border-radius:8px;
-padding:8px 12px;
-font-size:20px;
+
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-8px;
+
+height:3px;
+
+width:0;
+
+background:var(--yellow);
+
+transition:.3s;
+
+border-radius:10px;
+
 }
+
+
+nav a:hover::after,
+nav a.active::after{
+
+width:100%;
+
+}
+
+
+
+/* BOUTON COMMANDER */
+
+
+.order-menu{
+
+justify-self:end;
+
+position:relative;
+
+}
+
+
+.order-btn{
+
+
+background:
+linear-gradient(
+135deg,
+var(--yellow),
+var(--yellow2)
+);
+
+
+border:none;
+
+padding:
+
+14px 25px;
+
+
+border-radius:40px;
+
+
+font-weight:1000;
+
+font-size:16px;
+
+
+cursor:pointer;
+
+
+color:#111;
+
+
+box-shadow:
+
+0 0 25px
+rgba(255,208,0,.35);
+
+
+transition:.3s;
+
+
+}
+
+
+.order-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 0 40px
+rgba(255,208,0,.65);
+
+}
+
+
+
+.dropdown{
+
+
+display:none;
+
+position:absolute;
+
+right:0;
+
+top:65px;
+
+
+background:#111;
+
+border:
+
+1px solid #333;
+
+
+border-radius:12px;
+
+
+overflow:hidden;
+
+
+min-width:200px;
+
+
+}
+
+
+.dropdown a{
+
+
+display:block;
+
+padding:15px;
+
+
+font-weight:bold;
+
+
+}
+
+
+
+.dropdown a:hover{
+
+background:#222;
+
+color:var(--yellow);
+
+}
+
+
+.order-menu:hover .dropdown{
+
+display:block;
+
+}
+
+
+
+/* MOBILE BUTTON */
+
+
+.menu-btn{
+
+display:none;
+
+background:none;
+
+border:
+
+1px solid var(--yellow);
+
+color:white;
+
+border-radius:8px;
+
+font-size:22px;
+
+padding:8px 12px;
+
+}
+
+
 
 /* ================= HERO ================= */
 
+
 .hero{
-min-height:680px;
+
+
+min-height:720px;
+
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
+
 text-align:center;
-padding:70px 20px;
+
+
+padding:80px 20px;
+
 
 background:
+
+
 radial-gradient(
-circle at 50% 35%,
+
+circle at center,
+
 rgba(255,208,0,.18),
-transparent 30%
+
+transparent 35%
+
 ),
+
+
 radial-gradient(
-circle at 50% 70%,
-rgba(255,180,0,.08),
+
+circle at bottom,
+
+rgba(255,180,0,.12),
+
 transparent 40%
+
 );
+
+
 }
+
 
 .badge{
+
+
 display:inline-block;
-border:2px solid var(--yellow);
+
+
+padding:
+
+8px 25px;
+
+
+border:
+
+2px solid var(--yellow);
+
+
+border-radius:40px;
+
+
 color:var(--yellow);
-padding:8px 20px;
-border-radius:30px;
+
+
 font-weight:900;
-margin-bottom:20px;
-box-shadow:0 0 20px rgba(255,208,0,.25);
+
+
+margin-bottom:25px;
+
+
 }
+
+
 
 .hero-logo{
-width:220px;
-height:220px;
+
+
+width:230px;
+
+height:230px;
+
+
 object-fit:contain;
+
+
 border-radius:50%;
-margin:0 auto 25px;
-filter:drop-shadow(0 0 25px rgba(255,208,0,.4));
+
+
+filter:
+
+drop-shadow(
+0 0 30px
+rgba(255,208,0,.45)
+);
+
+
 }
+
+
 
 h1{
-font-size:clamp(55px,8vw,95px);
-line-height:.95;
+
+
+font-size:
+
+clamp(55px,8vw,95px);
+
+
 font-weight:1000;
-letter-spacing:-4px;
+
+
+letter-spacing:-5px;
+
+
+line-height:.95;
+
+
 }
+
+
 
 h1 span{
+
 color:var(--yellow);
+
 }
+
+
 
 .hero p{
+
+
+font-size:20px;
+
 color:#ddd;
-font-size:18px;
-margin:25px auto;
-max-width:720px;
+
+
+margin:
+
+25px auto;
+
+
+max-width:700px;
+
+
 }
+
+
 
 .buttons{
+
+
 display:flex;
+
 justify-content:center;
+
 gap:15px;
+
 flex-wrap:wrap;
+
+
 }
+
+
 
 .btn{
-padding:15px 25px;
+
+
+padding:
+
+15px 30px;
+
+
 border-radius:8px;
-border:2px solid var(--yellow);
+
+
+border:
+
+2px solid var(--yellow);
+
+
 font-weight:900;
-transition:.2s;
+
+
+transition:.3s;
+
+
 }
+
+
 
 .btn.primary{
+
+
 background:var(--yellow);
+
 color:#111;
+
+
 }
 
+
+
 .btn:hover{
-transform:translateY(-3px);
-box-shadow:0 0 20px rgba(255,208,0,.3);
+
+
+transform:translateY(-4px);
+
+
+box-shadow:
+
+0 0 25px
+rgba(255,208,0,.4);
+
+
 }
 
 /* ================= SECTIONS ================= */
 
+
 section{
-padding:75px 0;
+
+padding:80px 0;
+
 }
+
 
 .section-head{
+
 text-align:center;
-margin-bottom:35px;
+
+margin-bottom:40px;
+
 }
+
 
 .kicker{
+
 color:var(--yellow);
+
+font-weight:1000;
+
 text-transform:uppercase;
-font-size:13px;
-font-weight:900;
-letter-spacing:1px;
+
+letter-spacing:2px;
+
+font-size:14px;
+
 }
+
 
 h2{
-font-size:42px;
-margin:5px 0;
+
+font-size:45px;
+
+margin:8px 0;
+
 }
+
 
 .section-head p{
+
 color:#aaa;
+
 }
 
-/* ================= CARDS ================= */
+
+
+/* ================= BANDEAU CONFIANCE ================= */
+
+
+.trust{
+
+padding:25px 0;
+
+background:#090909;
+
+border-top:1px solid var(--border);
+
+border-bottom:1px solid var(--border);
+
+}
+
+
+.trust-grid{
+
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+text-align:center;
+
+
+}
+
+
+.trust-item{
+
+font-weight:900;
+
+font-size:17px;
+
+}
+
+
+.trust-item span{
+
+display:block;
+
+font-size:30px;
+
+margin-bottom:8px;
+
+}
+
+
+
+/* ================= CARTES ================= */
+
 
 .grid{
+
 display:grid;
-gap:15px;
+
+gap:20px;
+
 }
+
+
 
 .burgers{
+
 grid-template-columns:repeat(4,1fr);
+
 }
+
+
 
 .card{
-background:linear-gradient(145deg,#121212,#070707);
-border:1px solid #393939;
-border-radius:10px;
-padding:18px;
+
+
+background:
+
+linear-gradient(
+145deg,
+#151515,
+#070707
+);
+
+
+border:
+
+1px solid #333;
+
+
+border-radius:15px;
+
+
+padding:22px;
+
+
 text-align:center;
-transition:.2s;
+
+
+transition:.35s;
+
+
 }
+
+
 
 .card:hover{
+
+
+transform:
+
+translateY(-8px);
+
+
 border-color:var(--yellow);
-transform:translateY(-3px);
+
+
+box-shadow:
+
+0 15px 35px
+rgba(255,208,0,.15);
+
+
 }
+
+
 
 .product-img{
-height:140px;
+
+
+height:150px;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+font-size:70px;
+
+
 }
+
+
 
 .card h3{
-font-size:18px;
-margin:10px 0 5px;
+
+
+font-size:20px;
+
+margin:
+
+15px 0 8px;
+
+
 }
+
+
 
 .card p{
+
+
 color:#aaa;
+
 font-size:14px;
-min-height:42px;
+
+
 }
 
+
+
 .price{
+
+
 display:block;
+
+
 color:var(--yellow);
-font-size:20px;
+
+
+font-size:22px;
+
+
 font-weight:1000;
-margin-top:12px;
+
+
+margin-top:15px;
+
+
 }
+
+
 
 /* ================= MENUS DUO ================= */
 
+
 .duos{
-grid-template-columns:repeat(6,1fr);
+
+grid-template-columns:repeat(3,1fr);
+
 }
+
+
 
 .duo{
-min-height:270px;
+
+
+min-height:300px;
+
+
 display:flex;
+
 flex-direction:column;
+
+
 justify-content:space-between;
+
+
 }
 
-.duo h3{
-font-size:17px;
-}
+
 
 .duo ul{
+
+
 list-style:none;
-text-align:left;
-margin:15px 0;
+
+
+margin-top:20px;
+
+
 color:#ddd;
-font-size:14px;
+
+
+text-align:left;
+
+
 }
+
 
 .duo li{
-margin:6px 0;
+
+
+margin:10px 0;
+
+
 }
+
+
 
 .duo li::before{
-content:"•";
+
+
+content:"✓";
+
+
 color:var(--yellow);
+
+
 font-weight:bold;
-margin-right:8px;
+
+
+margin-right:10px;
+
+
 }
+
+
 
 .featured{
-border-color:var(--yellow);
-box-shadow:0 0 25px rgba(255,208,0,.1);
+
+
+border-color:
+
+var(--yellow);
+
+
+box-shadow:
+
+0 0 30px
+rgba(255,208,0,.18);
+
+
 }
 
+
+
 .tag{
+
+
 display:inline-block;
+
+
 background:var(--yellow);
+
+
 color:#111;
+
+
+padding:
+
+5px 10px;
+
+
+border-radius:5px;
+
+
 font-weight:1000;
-border-radius:4px;
-padding:4px 7px;
-font-size:11px;
-margin-bottom:8px;
+
+
+font-size:12px;
+
+
 }
+
+
 
 /* ================= CARTE ================= */
 
+
 .menu-grid{
-grid-template-columns:repeat(7,1fr);
+
+
+grid-template-columns:repeat(4,1fr);
+
+
 }
+
+
 
 .menu-box{
-min-height:280px;
+
+
 text-align:left;
+
+
+min-height:250px;
+
+
 }
+
 
 .menu-box h3{
+
+
 color:var(--yellow);
-font-size:15px;
-margin-bottom:15px;
+
+
+margin-bottom:20px;
+
+
 }
+
 
 .menu-box ul{
+
+
 list-style:none;
-font-size:13px;
+
+
 color:#ddd;
+
+
+font-size:14px;
+
+
 }
+
+
 
 .menu-box li{
+
+
 display:flex;
+
+
 justify-content:space-between;
-gap:8px;
-padding:4px 0;
-border-bottom:1px solid rgba(255,255,255,.04);
+
+
+padding:6px 0;
+
+
+border-bottom:
+
+1px solid rgba(255,255,255,.05);
+
+
 }
 
-.menu-box li span{
-white-space:nowrap;
-}
 
-/* ================= INFOS ================= */
+
+/* ================= CONTACT ================= */
+
 
 .info{
+
+
 background:#090909;
-border-top:1px solid #332900;
-border-bottom:1px solid #332900;
+
+
+border-top:
+
+1px solid var(--border);
+
+
+border-bottom:
+
+1px solid var(--border);
+
+
 }
+
 
 .info-grid{
+
+
 display:grid;
+
+
 grid-template-columns:repeat(3,1fr);
-gap:25px;
+
+
+gap:30px;
+
+
 text-align:center;
+
+
 }
+
+
 
 .info-item strong{
+
+
 display:block;
+
+
 color:var(--yellow);
-font-size:18px;
-margin-bottom:6px;
+
+
+font-size:20px;
+
+
+margin-bottom:10px;
+
+
 }
 
+
 .info-item p{
+
+
 color:#aaa;
+
+
 }
+
+
+
+/* ================= HORAIRES ================= */
+
+
+.hours{
+
+
+margin-top:40px;
+
+
+background:#111;
+
+
+border:
+
+1px solid #333;
+
+
+border-radius:15px;
+
+
+padding:30px;
+
+
+}
+
+
+
+.hours h3{
+
+
+color:var(--yellow);
+
+
+text-align:center;
+
+
+margin-bottom:25px;
+
+
+}
+
+
+.hours div{
+
+
+display:flex;
+
+
+justify-content:space-between;
+
+
+padding:8px 0;
+
+
+border-bottom:
+
+1px solid #222;
+
+
+color:#ddd;
+
+
+}
+
+
 
 /* ================= FOOTER ================= */
 
+
 footer{
-padding:35px 0;
+
+
 background:#030303;
+
+
+padding:40px 0;
+
+
 }
+
+
 
 .footer{
+
+
 display:flex;
-align-items:center;
+
+
 justify-content:space-between;
-gap:25px;
+
+
+align-items:center;
+
+
+gap:20px;
+
+
 }
 
+
+
 .footer-brand{
+
+
 display:flex;
+
+
 align-items:center;
-gap:14px;
+
+
+gap:15px;
+
+
 }
+
+
 
 .footer-brand img{
-width:65px;
-height:65px;
-object-fit:contain;
+
+
+width:70px;
+
+height:70px;
+
+
 border-radius:50%;
+
+
 }
+
+
 
 .footer-brand b{
-display:block;
-font-size:25px;
+
+
+font-size:28px;
+
+
 }
 
-.footer-brand b span{
+
+
+.footer-brand span{
+
+
 color:var(--yellow);
+
+
 }
 
-.footer-brand small{
-display:block;
-color:#aaa;
-}
+
 
 .social{
+
+
 display:flex;
-gap:10px;
+
+
+gap:15px;
+
+
 }
+
 
 .social a{
-width:40px;
-height:40px;
+
+
+width:45px;
+
+
+height:45px;
+
+
 display:grid;
+
+
 place-items:center;
-border:1px solid var(--yellow);
+
+
+border:
+
+1px solid var(--yellow);
+
+
 border-radius:50%;
+
+
 color:var(--yellow);
+
+
 font-weight:bold;
-}
 
-/* ================= MOBILE ================= */
-
-@media(max-width:1000px){
-
-.burgers{
-grid-template-columns:repeat(2,1fr);
-}
-
-.duos{
-grid-template-columns:repeat(3,1fr);
-}
-
-.menu-grid{
-grid-template-columns:repeat(2,1fr);
-}
 
 }
 
-@media(max-width:700px){
 
-.nav{
-height:68px;
+
+/* ANIMATION APPARITION */
+
+
+.fade{
+
+
+opacity:0;
+
+
+transform:translateY(30px);
+
+
+animation:
+
+show .8s forwards;
+
+
 }
 
-.logo{
-width:58px;
-height:58px;
+
+
+@keyframes show{
+
+
+to{
+
+
+opacity:1;
+
+
+transform:none;
+
+
 }
 
-.menu-btn{
-display:block;
-}
 
-nav{
-display:none;
-position:absolute;
-top:68px;
-left:0;
-right:0;
-background:#080808;
-padding:20px;
-flex-direction:column;
-gap:18px;
-text-align:center;
-border-bottom:1px solid var(--border);
-}
+}<body>
 
-nav.open{
-display:flex;
-}
-
-.hero{
-min-height:600px;
-padding:50px 15px;
-}
-
-.hero-logo{
-width:170px;
-height:170px;
-}
-
-h1{
-font-size:55px;
-}
-
-h2{
-font-size:34px;
-}
-
-.burgers,
-.duos,
-.menu-grid,
-.info-grid{
-grid-template-columns:1fr;
-}
-
-.footer{
-flex-direction:column;
-text-align:center;
-}
-
-.footer-brand{
-flex-direction:column;
-}
-}
-</style>
-</head>
-
-<body>
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
 <div class="container nav">
 
+
 <a href="#accueil">
+
 <img class="logo" src="logo.PNG" alt="Logo BURGER M">
+
 </a>
 
-<button class="menu-btn"
-onclick="document.querySelector('nav').classList.toggle('open')">
+
+<button class="menu-btn">
 ☰
 </button>
 
+
+
 <nav>
 
-<a class="active" href="#accueil">
-Accueil
-</a>
-
-<a href="#burgers">
-Burgers
-</a>
-
-<a href="#menus">
-Menus Duo
-</a>
-
-<a href="#carte">
-La carte
-</a>
-
-<a href="#contact">
-Contact
-</a>
+<a class="active" href="#accueil">Accueil</a>
+<a href="#burgers">Burgers</a>
+<a href="#menus">Menus Duo</a>
+<a href="#carte">La carte</a>
+<a href="#contact">Contact</a>
 
 </nav>
+
+
+
+<div class="order-menu">
+
+
+<button class="order-btn">
+🍔 Commander
+</button>
+
+
+<div class="dropdown">
+
+<a href="VOTRE_LIEN_UBER_EATS" target="_blank">
+Uber Eats
+</a>
+
+
+<a href="VOTRE_LIEN_DELIVEROO" target="_blank">
+Deliveroo
+</a>
+
+
+</div>
+
+
+</div>
+
 
 </div>
 
 </header>
 
 
-<!-- ================= CONTENU ================= -->
+
 
 <main>
 
 
-<!-- HERO -->
 
 <section id="accueil" class="hero">
 
+
 <div>
+
 
 <div class="badge">
 Depuis 2020
 </div>
 
-<img
-class="hero-logo"
+
+
+<img class="hero-logo"
 src="logo.PNG"
-alt="Logo rond BURGER M"
->
+alt="BURGER M">
+
+
 
 <h1>
 BURGER <span>M</span>
 </h1>
 
+
+
 <p>
+
 Des burgers généreux, savoureux et préparés avec passion.
+
 <br>
-Bienvenue chez <b>BURGER M.</b>
+
+Bienvenue chez <b>BURGER M</b> à Bourges.
+
 </p>
+
+
 
 <div class="buttons">
 
+
 <a class="btn primary" href="#burgers">
-DÉCOUVRIR NOS BURGERS
+Découvrir nos burgers
 </a>
+
 
 <a class="btn" href="#contact">
-NOUS TROUVER
+Nous trouver
 </a>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </section>
 
 
-<!-- BURGERS -->
+
+
+<section class="trust">
+
+
+<div class="container trust-grid">
+
+
+<div class="trust-item">
+<span>⭐</span>
+4,8/5 clients
+</div>
+
+
+<div class="trust-item">
+<span>🍔</span>
+Burgers généreux
+</div>
+
+
+<div class="trust-item">
+<span>🚗</span>
+Uber Eats & Deliveroo
+</div>
+
+
+<div class="trust-item">
+<span>🔥</span>
+Depuis 2020
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
 
 <section id="burgers">
 
+
 <div class="container">
+
 
 <div class="section-head">
 
@@ -623,179 +1496,150 @@ Nos Burgers
 </h2>
 
 <p>
-Des recettes généreuses préparées avec passion.
+Des recettes préparées avec passion.
 </p>
 
 </div>
+
+
 
 
 <div class="grid burgers">
 
 
+
 <article class="card">
 
-<div class="product-img"></div>
+<div class="product-img">🍔</div>
 
-<h3>
-BIG M
-</h3>
+<h3>BIG M</h3>
 
-<p>
-Le burger signature.
-</p>
+<p>Le burger signature BURGER M.</p>
 
-<b class="price">
-6,90 €
-</b>
+<b class="price">6,90 €</b>
 
 </article>
 
 
+
 <article class="card">
 
-<div class="product-img"></div>
+<div class="product-img">🍔</div>
 
-<h3>
-CHEESE M
-</h3>
+<h3>CHEESE M</h3>
 
-<p>
-Un burger au fromage fondant.
-</p>
+<p>Fromage fondant et gourmand.</p>
 
-<b class="price">
-6,50 €
-</b>
+<b class="price">6,50 €</b>
 
 </article>
 
 
+
 <article class="card">
 
-<div class="product-img"></div>
+<div class="product-img">🍗</div>
 
-<h3>
-CHICKEN M
-</h3>
+<h3>CHICKEN M</h3>
 
-<p>
-Poulet croustillant et ingrédients frais.
-</p>
+<p>Poulet croustillant.</p>
 
-<b class="price">
-6,50 €
-</b>
+<b class="price">6,50 €</b>
 
 </article>
 
 
+
+
 <article class="card">
 
-<div class="product-img"></div>
+<div class="product-img">🔥</div>
 
-<h3>
-BBQ M
-</h3>
+<h3>BBQ M</h3>
 
-<p>
-Sauce BBQ maison.
-</p>
+<p>Sauce BBQ maison.</p>
 
-<b class="price">
-6,90 €
-</b>
+<b class="price">6,90 €</b>
 
 </article>
 
 
+
 <article class="card">
 
-<div class="product-img"></div>
+<div class="product-img">🐟</div>
 
-<h3>
-FISH M
-</h3>
+<h3>FISH M</h3>
 
-<p>
-Une recette autour du poisson.
-</p>
+<p>Une recette poisson.</p>
 
-<b class="price">
-6,50 €
-</b>
+<b class="price">6,50 €</b>
 
 </article>
 
 
+
+
 <article class="card">
 
-<div class="product-img"></div>
+<div class="product-img">🧀</div>
 
-<h3>
-BOURSIN M
-</h3>
+<h3>BOURSIN M</h3>
 
-<p>
-Une recette crémeuse et généreuse.
-</p>
+<p>Crémeux et généreux.</p>
 
-<b class="price">
-6,90 €
-</b>
+<b class="price">6,90 €</b>
 
 </article>
 
 
+
 <article class="card">
 
-<div class="product-img"></div>
+<div class="product-img">🍯</div>
 
-<h3>
-CHÈVRE MIEL M
-</h3>
+<h3>CHÈVRE MIEL M</h3>
 
-<p>
-L'alliance du chèvre et du miel.
-</p>
+<p>Alliance chèvre et miel.</p>
 
-<b class="price">
-6,90 €
-</b>
+<b class="price">6,90 €</b>
 
 </article>
 
 
+
+
 <article class="card">
 
-<div class="product-img"></div>
+<div class="product-img">🥬</div>
 
-<h3>
-VEGGIE M
-</h3>
+<h3>VEGGIE M</h3>
 
-<p>
-Une alternative végétarienne gourmande.
-</p>
+<p>Alternative végétarienne.</p>
 
-<b class="price">
-6,50 €
-</b>
+<b class="price">6,50 €</b>
 
 </article>
 
 
 </div>
 
+
 </div>
+
 
 </section>
 
 
-<!-- MENUS DUO -->
+
+
+
 
 <section id="menus">
 
+
 <div class="container">
+
 
 <div class="section-head">
 
@@ -804,45 +1648,29 @@ Menus Duo
 </div>
 
 <h2>
-Nos Menus Duo
+Nos formules
 </h2>
 
-<p>
-Des formules généreuses pour 2 personnes —
-<b>1 seule boisson</b> dans chaque Menu Duo.
-</p>
-
 </div>
+
+
 
 
 <div class="grid duos">
 
 
+
 <article class="card duo">
 
-<div>
-
-<h3>
-XXL SOLO
-</h3>
+<h3>XXL SOLO</h3>
 
 <ul>
 
-<li>
-2 burgers
-</li>
-
-<li>
-1 grande frite
-</li>
-
-<li>
-1 boisson
-</li>
+<li>2 burgers</li>
+<li>1 grande frite</li>
+<li>1 boisson</li>
 
 </ul>
-
-</div>
 
 <b class="price">
 15,90 €
@@ -851,195 +1679,74 @@ XXL SOLO
 </article>
 
 
+
+
 <article class="card duo featured">
 
-<div>
-
 <span class="tag">
-LE PLUS CHOISI !
+LE PLUS CHOISI
 </span>
+
 
 <h3>
 MENU DUO
 </h3>
 
+
 <ul>
 
-<li>
-2 burgers
-</li>
-
-<li>
-1 grande frite
-</li>
-
-<li>
-1 boisson
-</li>
+<li>2 burgers</li>
+<li>1 grande frite</li>
+<li>1 boisson</li>
 
 </ul>
 
-</div>
 
 <b class="price">
 19,90 €
 </b>
 
+
 </article>
 
 
-<article class="card duo">
 
-<div>
+
+<article class="card duo">
 
 <h3>
 MENU DUO CHICKEN
 </h3>
 
+
 <ul>
 
-<li>
-2 chicken burgers
-</li>
-
-<li>
-1 grande frite
-</li>
-
-<li>
-1 boisson
-</li>
+<li>2 chicken burgers</li>
+<li>1 grande frite</li>
+<li>1 boisson</li>
 
 </ul>
 
-</div>
 
 <b class="price">
 19,90 €
 </b>
 
-</article>
-
-
-<article class="card duo">
-
-<div>
-
-<h3>
-MENU DUO NAAN
-</h3>
-
-<ul>
-
-<li>
-2 naan burgers
-</li>
-
-<li>
-1 grande frite
-</li>
-
-<li>
-1 boisson
-</li>
-
-</ul>
-
-</div>
-
-<b class="price">
-20,90 €
-</b>
-
-</article>
-
-
-<article class="card duo">
-
-<div>
-
-<h3>
-MENU DUO MIX
-</h3>
-
-<ul>
-
-<li>
-1 burger
-</li>
-
-<li>
-1 wrap
-</li>
-
-<li>
-1 grande frite
-</li>
-
-<li>
-1 boisson
-</li>
-
-</ul>
-
-</div>
-
-<b class="price">
-19,90 €
-</b>
-
-</article>
-
-
-<article class="card duo">
-
-<div>
-
-<h3>
-MENUS FAMILY
-</h3>
-
-<ul>
-
-<li>
-Family 2
-</li>
-
-<li>
-Family 4
-</li>
-
-<li>
-Family XL
-</li>
-
-<li>
-Frites & boissons
-</li>
-
-</ul>
-
-</div>
-
-<b class="price">
-À partir de 29,90 €
-</b>
 
 </article>
 
 
 </div>
 
+
 </div>
+
 
 </section>
-
-
-<!-- LA CARTE -->
-
 <section id="carte">
 
 <div class="container">
+
 
 <div class="section-head">
 
@@ -1051,59 +1758,53 @@ Découvrez
 La carte
 </h2>
 
+<p>
+Retrouvez toutes nos spécialités.
+</p>
+
 </div>
+
 
 
 <div class="grid menu-grid">
 
 
-<!-- WRAPS -->
 
 <div class="card menu-box">
 
-<h3>
-🌯 WRAPS
-</h3>
+<h3>🌯 WRAPS</h3>
 
 <ul>
-
 <li>Chicken <span>6,90 €</span></li>
 <li>BBQ <span>6,90 €</span></li>
 <li>César <span>6,90 €</span></li>
 <li>Veggie <span>6,50 €</span></li>
-
 </ul>
 
 </div>
 
 
-<!-- SALADES -->
+
 
 <div class="card menu-box">
 
-<h3>
-🥗 SALADES
-</h3>
+<h3>🥗 SALADES</h3>
 
 <ul>
-
 <li>César <span>7,50 €</span></li>
 <li>Chicken Crispy <span>7,50 €</span></li>
 <li>Chèvre chaud <span>7,50 €</span></li>
 <li>Veggie <span>7,20 €</span></li>
-
 </ul>
 
 </div>
 
 
-<!-- FRITES -->
+
 
 <div class="card menu-box">
 
-<h3>
-🍟 FRITES
-</h3>
+<h3>🍟 FRITES</h3>
 
 <ul>
 
@@ -1112,181 +1813,242 @@ La carte
 <li>Grande <span>3,90 €</span></li>
 <li>Cheddar <span>4,50 €</span></li>
 <li>Cheddar Bacon <span>4,90 €</span></li>
-<li>Chicken Cheddar <span>5,20 €</span></li>
-<li>Andalouse <span>4,50 €</span></li>
-<li>Biggy <span>4,90 €</span></li>
-<li>BBQ <span>4,50 €</span></li>
 
 </ul>
 
 </div>
 
 
-<!-- APPETIZERS -->
+
 
 <div class="card menu-box">
 
-<h3>
-🍗 APPETIZERS
-</h3>
+<h3>🍗 APPETIZERS</h3>
 
 <ul>
 
-<li>Nuggets (6) <span>4,50 €</span></li>
-<li>Tenders (3) <span>4,90 €</span></li>
-<li>Mozzarella sticks (6) <span>4,90 €</span></li>
-<li>Onion rings (6) <span>3,90 €</span></li>
-<li>Jalapeños (6) <span>3,90 €</span></li>
-<li>Chili cheese nuggets (6) <span>4,90 €</span></li>
-<li>Potatoes <span>3,90 €</span></li>
+<li>Nuggets <span>4,50 €</span></li>
+<li>Tenders <span>4,90 €</span></li>
+<li>Mozzarella sticks <span>4,90 €</span></li>
+<li>Onion rings <span>3,90 €</span></li>
 
 </ul>
 
 </div>
 
 
-<!-- DESSERTS -->
+
 
 <div class="card menu-box">
 
-<h3>
-🍰 DESSERTS
-</h3>
+<h3>🍰 DESSERTS</h3>
 
 <ul>
 
 <li>Tiramisu maison <span>3,90 €</span></li>
 <li>Muffin <span>2,90 €</span></li>
 <li>Cookies <span>2,50 €</span></li>
-<li>Donuts <span>2,50 €</span></li>
-<li>Glaces <span>2,50 €</span></li>
 
 </ul>
 
 </div>
 
 
-<!-- BOISSONS -->
+
 
 <div class="card menu-box">
 
-<h3>
-🥤 BOISSONS
-</h3>
+<h3>🥤 BOISSONS</h3>
 
 <ul>
 
 <li>Coca-Cola <span>2,20 €</span></li>
 <li>Coca-Cola Zero <span>2,20 €</span></li>
 <li>Fanta <span>2,20 €</span></li>
-<li>Sprite <span>2,20 €</span></li>
 <li>Oasis <span>2,20 €</span></li>
-<li>Ice Tea <span>2,20 €</span></li>
 <li>Eau <span>2,20 €</span></li>
-<li>Jus de fruits <span>2,20 €</span></li>
 
 </ul>
 
 </div>
 
 
-<!-- SUPPLEMENTS -->
 
-<div class="card menu-box">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<section id="contact" class="info">
+
+
+<div class="container">
+
+
+
+<div class="info-grid">
+
+
+
+<div class="info-item">
+
+<strong>
+📍 Adresse
+</strong>
+
+<p>
+
+BURGER M<br>
+1 T Avenue Marx Dormoy<br>
+18000 Bourges
+
+</p>
+
+</div>
+
+
+
+
+<div class="info-item">
+
+<strong>
+🍔 Sur place & livraison
+</strong>
+
+<p>
+
+Commandez directement via Uber Eats et Deliveroo.
+
+</p>
+
+</div>
+
+
+
+
+<div class="info-item">
+
+<strong>
+🔥 Depuis 2020
+</strong>
+
+<p>
+
+Des burgers généreux préparés avec passion.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="hours">
+
 
 <h3>
-➕ SUPPLÉMENTS
+🕒 Horaires d'ouverture
 </h3>
 
-<ul>
 
-<li>Steak <span>1,50 €</span></li>
-<li>Bacon <span>1,00 €</span></li>
-<li>Cheddar <span>0,70 €</span></li>
-<li>Œuf <span>0,70 €</span></li>
-<li>Galette pommes <span>1,00 €</span></li>
-<li>Oignons frits <span>0,70 €</span></li>
-<li>Jalapeños <span>0,70 €</span></li>
-<li>Sauce supp. <span>0,50 €</span></li>
+<div>
+<span>Lundi</span>
+<span>11h30-14h00 / 18h00-23h00</span>
+</div>
 
-</ul>
 
+<div>
+<span>Mardi</span>
+<span>11h30-14h00 / 18h00-23h00</span>
+</div>
+
+
+<div>
+<span>Mercredi</span>
+<span>11h30-14h00 / 18h00-23h00</span>
+</div>
+
+
+<div>
+<span>Jeudi</span>
+<span>11h30-14h00 / 19h00-00h00</span>
+</div>
+
+
+<div>
+<span>Vendredi</span>
+<span>18h00-23h00</span>
+</div>
+
+
+<div>
+<span>Samedi</span>
+<span>18h00-23h00</span>
+</div>
+
+
+<div>
+<span>Dimanche</span>
+<span>18h00-23h00</span>
 </div>
 
 
 </div>
 
+
+
+<br>
+
+
+
+<iframe
+
+src="https://www.google.com/maps?q=1%20T%20Avenue%20Marx%20Dormoy%2018000%20Bourges&output=embed"
+
+width="100%"
+
+height="350"
+
+style="border:0;border-radius:15px"
+
+loading="lazy">
+
+</iframe>
+
+
+
 </div>
+
 
 </section>
 
 
-<!-- INFORMATIONS -->
-
-<section class="info" id="contact">
-
-<div class="container info-grid">
 
 
-<div class="info-item">
 
-<strong>
-📍 NOUS TROUVER
-</strong>
-
-<p>
-Retrouvez-nous directement dans votre restaurant BURGER M.
-</p>
-
-</div>
-
-
-<div class="info-item">
-
-<strong>
-🍔 FAIT MAISON
-</strong>
-
-<p>
-Des recettes généreuses préparées avec passion.
-</p>
-
-</div>
-
-
-<div class="info-item">
-
-<strong>
-★ DEPUIS 2020
-</strong>
-
-<p>
-Une aventure commencée en 2020 autour du burger.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-</main>
-
-
-<!-- FOOTER -->
 
 <footer>
+
 
 <div class="container footer">
 
 
 <div class="footer-brand">
 
-<img
-src="logo.PNG"
-alt="Logo BURGER M"
->
+
+<img src="logo.PNG" alt="BURGER M">
+
 
 <div>
 
@@ -1295,12 +2057,16 @@ BURGER <span>M</span>
 </b>
 
 <small>
-Depuis 2020 • Fait maison, fait avec passion.
+Depuis 2020 - Fait avec passion
 </small>
 
 </div>
 
+
 </div>
+
+
+
 
 
 <div class="social">
@@ -1310,14 +2076,16 @@ IG
 </a>
 
 <a href="#">
-f
+F
 </a>
 
 <a href="#">
-S
+T
 </a>
 
 </div>
+
+
 
 
 <small>
@@ -1325,24 +2093,47 @@ S
 </small>
 
 
+
 </div>
+
 
 </footer>
 
 
+
+
+
 <script>
 
-document.querySelectorAll("nav a").forEach(function(link){
+
+document.querySelector(".menu-btn")
+.addEventListener("click",function(){
+
+document.querySelector("nav")
+.classList.toggle("open");
+
+});
+
+
+
+document.querySelectorAll("nav a")
+.forEach(function(link){
 
 link.addEventListener("click",function(){
 
-document.querySelector("nav").classList.remove("open");
+document.querySelector("nav")
+.classList.remove("open");
 
 });
 
 });
+
 
 </script>
 
+
+
+
 </body>
+
 </html>
