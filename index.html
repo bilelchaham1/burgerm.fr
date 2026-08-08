@@ -1,4519 +1,2165 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BURGER M | Bourges</title>
-
-
-<style>
-
-
-:root{
-
---black:#030303;
---dark:#080808;
---yellow:#ffd000;
---gold:#ffb300;
---white:#fff;
---gray:#aaa;
-
-}
-
-
-
-*{
-
-box-sizing:border-box;
-margin:0;
-padding:0;
-
-}
-
-
-
-html{
-
-scroll-behavior:smooth;
-
-}
-
-
-
-body{
-
-font-family:Arial,Helvetica,sans-serif;
-
-background:#030303;
-
-color:white;
-
-}
-
-
-
-a{
-
-text-decoration:none;
-
-color:inherit;
-
-}
-
-
-
-.container{
-
-width:min(1180px,92%);
-
-margin:auto;
-
-}
-
-
-
-
-
-
-
-/* ================= HEADER ================= */
-
-
-header{
-
-
-position:sticky;
-
-top:0;
-
-z-index:1000;
-
-
-background:rgba(3,3,3,.90);
-
-backdrop-filter:blur(12px);
-
-
-border-bottom:
-
-1px solid rgba(255,208,0,.25);
-
-
-}
-
-
-
-
-.nav{
-
-
-height:85px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-position:relative;   
-
-}
-
-
-
-
-.logo{
-
-
-width:75px;
-
-height:75px;
-
-
-object-fit:contain;
-
-
-}
-
-
-
-
-
-
-nav{
-
-
-display:flex;
-
-gap:35px;
-
-font-weight:900;
-
-position:absolute;
-
-left:50%;
-
-top:50%;
-
-transform:translate(-50%,-50%);
-
-}
-
-
-
-nav a{
-
-
-transition:.3s;
-
-
-}
-
-
-
-nav a:hover{
-
-
-color:var(--yellow);
-
-
-}
-
-
-
-
-
-.menu-btn{
-
-
-display:none;
-
-background:none;
-
-color:white;
-
-border:1px solid var(--yellow);
-
-padding:8px 12px;
-
-border-radius:10px;
-
-font-size:22px;
-
-
-}
-
-
-
-
-
-
-
-
-
-
-/* ================= GENERAL ================= */
-
-
-section{
-
-
-padding:80px 0;
-
-
-}
-
-
-
-h2{
-
-
-font-size:45px;
-
-text-align:center;
-
-margin-bottom:15px;
-
-
-}
-
-
-
-.section-head{
-
-
-text-align:center;
-
-margin-bottom:45px;
-
-
-}
-
-
-
-.kicker{
-
-
-color:var(--yellow);
-
-font-weight:900;
-
-font-size:13px;
-
-letter-spacing:2px;
-
-text-transform:uppercase;
-
-
-}
-
-
-
-
-.btn{
-
-
-display:inline-block;
-
-
-padding:15px 30px;
-
-
-border-radius:50px;
-
-
-border:2px solid var(--yellow);
-
-
-font-weight:1000;
-
-
-transition:.3s;
-
-
-}
-
-
-
-.btn.primary{
-
-
-background:var(--yellow);
-
-color:#111;
-
-
-}
-
-
-
-.btn:hover{
-
-
-transform:translateY(-3px);
-
-
-box-shadow:
-
-0 0 25px rgba(255,208,0,.35);
-
-
-}
-
-
-
-
-
-
-
-
-
-/* ================= LOGO GALAXIE ================= */
-
-
-
-.logo-effect{
-
-
-position:relative;
-
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-
-margin-bottom:35px;
-
-
-}
-
-
-
-
-
-
-/* Nébuleuse principale */
-
-
-
-.logo-effect::before{
-
-
-content:"";
-
-
-position:absolute;
-
-
-width:750px;
-
-height:750px;
-
-
-
-left:50%;
-
-top:50%;
-
-
-
-transform:translate(-50%,-50%);
-
-
-
-
-background:
-
-
-
-radial-gradient(
-
-circle at 50% 45%,
-
-rgba(255,220,120,.45),
-
-rgba(255,190,50,.22) 18%,
-
-rgba(255,150,0,.10) 35%,
-
-transparent 65%
-
-),
-
-
-
-radial-gradient(
-
-circle at 35% 40%,
-
-rgba(255,230,150,.25),
-
-transparent 35%
-
-),
-
-
-
-radial-gradient(
-
-circle at 70% 65%,
-
-rgba(255,180,0,.18),
-
-transparent 40%
-
-);
-
-
-
-
-
-filter:blur(42px);
-
-
-opacity:.42;
-
-
-animation:galaxyGlow 10s infinite;
-
-
-z-index:0;
-
-
-}
-
-
-
-
-
-
-/* Lumière diffuse */
-
-
-
-.logo-effect::after{
-
-
-content:"";
-
-
-position:absolute;
-
-
-width:900px;
-
-height:500px;
-
-
-
-left:50%;
-
-top:50%;
-
-
-
-transform:translate(-50%,-50%);
-
-
-
-
-background:
-
-
-radial-gradient(
-
-ellipse,
-
-rgba(255,210,80,.12),
-
-transparent 60%
-
-);
-
-
-
-
-filter:blur(55px);
-
-
-opacity:.28;
-
-
-z-index:0;
-
-
-}
-
-
-
-
-
-
-
-
-@keyframes galaxyGlow{
-
-
-0%,100%{
-
-
-opacity:.55;
-
-
-transform:
-
-translate(-50%,-50%)
-
-scale(1);
-
-
-}
-
-
-
-50%{
-
-
-opacity:.85;
-
-
-transform:
-
-translate(-50%,-50%)
-
-scale(1.08);
-
-
-}
-
-
-}
-
-
-
-
-
-
-
-
-.hero-logo{
-
-
-position:relative;
-
-z-index:2;
-
-
-width:260px;
-
-height:260px;
-
-
-object-fit:contain;
-
-
-
-filter:
-
-
-drop-shadow(
-
-0 0 8px rgba(255,208,0,.55)
-
-)
-
-
-drop-shadow(
-
-0 0 25px rgba(255,170,0,.35)
-
-);
-
-
-}
-
-
-
-
-
-
-</style>
-
-
-
-<style>
-/* =========================================================
-   PARTICULES DORÉES AUTOUR DU LOGO — rendu type "étincelles"
-   ========================================================= */
-.logo-effect{
-  width:100%;
-  min-height:430px;
-  isolation:isolate;
-}
-
-.logo-particles{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:min(760px, 105vw);
-  height:min(760px, 105vw);
-  transform:translate(-50%,-50%);
-  z-index:1;
-  pointer-events:none;
-  overflow:visible;
-}
-
-.hero-logo{
-  z-index:3;
-  position:relative;
-  width:260px;
-  height:260px;
-  filter:
-    drop-shadow(0 0 7px rgba(255,208,0,.70))
-    drop-shadow(0 0 22px rgba(255,170,0,.42));
-}
-
-@media(max-width:600px){
-  .logo-effect{
-    min-height:350px;
-  }
-
-  .hero-logo{
-    width:220px;
-    height:220px;
-  }
-
-  .logo-particles{
-    width:560px;
-    height:560px;
-  }
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BURGER M Bourges | Burgers, Menus Doubles & Livraison</title>
+
+    <meta name="description"
+          content="BURGER M à Bourges : burgers généreux, menus doubles, wraps, salades, frites, desserts et boissons. Commandez votre repas en livraison.">
+
+    <meta name="theme-color" content="#000000">
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+            --yellow: #ffbd00;
+            --yellow-dark: #d99d00;
+            --black: #050505;
+            --dark: #111111;
+            --dark-2: #181818;
+            --white: #ffffff;
+            --gray: #bdbdbd;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.96);
+            border-bottom: 1px solid rgba(255, 189, 0, 0.25);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 75px;
+            padding: 10px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 145px;
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.25s;
+        }
+
+        nav a:hover {
+            color: var(--yellow);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: var(--yellow);
+            cursor: pointer;
+            background: none;
+            border: 0;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 130px 20px 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255, 189, 0, 0.12),
+                    transparent 45%
+                ),
+                #050505;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-logo {
+            width: 240px;
+            margin: 0 auto 20px;
+        }
+
+        .hero h1 {
+            color: var(--yellow);
+            font-size: clamp(42px, 8vw, 82px);
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #eeeeee;
+            font-size: clamp(17px, 3vw, 23px);
+            margin-bottom: 35px;
+        }
+
+        .hero-subtitle {
+            color: var(--yellow) !important;
+            font-weight: 700;
+            font-size: 16px !important;
+        }
+
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 50px;
+            padding: 13px 22px;
+
+            border: 2px solid var(--yellow);
+            border-radius: 6px;
+
+            color: var(--yellow);
+            background: transparent;
+
+            font-weight: 800;
+            font-size: 14px;
+
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            background: var(--yellow);
+            color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .btn.primary {
+            background: var(--yellow);
+            color: #000000;
+        }
+
+        .btn.primary:hover {
+            background: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .delivery-btn {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .delivery-btn:hover {
+            border-color: var(--yellow);
+        }
+
+        /* =========================================================
+           GENERAL SECTIONS
+        ========================================================= */
+
+        section {
+            padding: 90px 20px;
+            scroll-margin-top: 75px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            color: var(--yellow);
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            margin-bottom: 7px;
+        }
+
+        .section-title {
+            color: #ffffff;
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .section-description {
+            max-width: 650px;
+            margin: 12px auto 0;
+            color: var(--gray);
+            font-size: 16px;
+        }
+
+        /* =========================================================
+           BURGERS
+        ========================================================= */
+
+        #burgers {
+            background: #0b0b0b;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background: linear-gradient(
+                145deg,
+                #181818,
+                #0d0d0d
+            );
+
+            border: 1px solid rgba(255, 189, 0, 0.35);
+            border-radius: 12px;
+
+            padding: 28px 20px;
+
+            text-align: center;
+
+            transition: 0.25s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--yellow);
+            box-shadow: 0 10px 30px rgba(255, 189, 0, 0.10);
+        }
+
+        .product-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .product-card h3 {
+            color: var(--yellow);
+            font-size: 21px;
+            margin-bottom: 6px;
+        }
+
+        .product-card p {
+            color: #cfcfcf;
+            min-height: 50px;
+            font-size: 14px;
+        }
+
+        .price {
+            display: block;
+            margin-top: 12px;
+            color: #ffffff;
+            font-size: 21px;
+            font-weight: 900;
+        }
+
+        /* =========================================================
+           MENUS DOUBLES
+        ========================================================= */
+
+        #menus {
+            background: #050505;
+        }
+
+        .menu-card-image {
+            max-width: 1150px;
+            margin: 0 auto 55px;
+            padding: 8px;
+
+            background: #000000;
+            border: 1px solid rgba(255, 189, 0, 0.6);
+            border-radius: 10px;
+
+            cursor: zoom-in;
+
+            box-shadow:
+                0 0 30px rgba(255, 189, 0, 0.08);
+        }
+
+        .menu-card-image img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .image-hint {
+            text-align: center;
+            color: #999999;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .double-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .double-menu {
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #181818,
+                    #090909
+                );
+
+            border: 1px solid rgba(255, 189, 0, 0.45);
+            border-radius: 12px;
+
+            padding: 25px 18px;
+
+            text-align: center;
+
+            transition: 0.25s;
+        }
+
+        .double-menu:hover {
+            transform: translateY(-5px);
+            border-color: var(--yellow);
+            box-shadow: 0 12px 30px rgba(255, 189, 0, 0.10);
+        }
+
+        .menu-number {
+            display: inline-flex;
+
+            width: 46px;
+            height: 46px;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 10px;
+
+            border-radius: 50%;
+
+            background: var(--yellow);
+            color: #000000;
+
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .double-menu h3 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .double-menu h3 span {
+            color: var(--yellow);
+        }
+
+        .menu-composition {
+            color: #c8c8c8;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .menu-composition strong {
+            color: #ffffff;
+        }
+
+        .double-price {
+            display: block;
+
+            margin-top: 15px;
+
+            color: var(--yellow);
+
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        .double-price::after {
+            content: "";
+        }
+
+        .menu-note {
+            text-align: center;
+            margin-top: 40px;
+
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .menu-note strong {
+            color: var(--yellow);
+        }
+
+        /* =========================================================
+           CARTE
+        ========================================================= */
+
+        #carte {
+            background: #0b0b0b;
+        }
+
+        .category {
+            margin-bottom: 45px;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: var(--yellow);
+            font-size: 27px;
+            font-weight: 900;
+
+            margin-bottom: 18px;
+
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 189, 0, 0.3);
+        }
+
+        .menu-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0 35px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+
+            padding: 13px 0;
+
+            border-bottom: 1px solid #222222;
+        }
+
+        .menu-item-name {
+            color: #eeeeee;
+            font-weight: 600;
+        }
+
+        .menu-item-price {
+            color: var(--yellow);
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        #contact {
+            background: #050505;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-box {
+            background: #111111;
+            border: 1px solid rgba(255, 189, 0, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .contact-box h3 {
+            color: var(--yellow);
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: #cccccc;
+            margin-bottom: 8px;
+        }
+
+        .contact-box strong {
+            color: #ffffff;
+        }
+
+        .address {
+            margin-bottom: 25px;
+        }
+
+        .opening-hours {
+            display: grid;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .opening-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            padding-bottom: 8px;
+            border-bottom: 1px solid #222222;
+
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        .opening-row span:first-child {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .map-container {
+            margin-top: 30px;
+
+            overflow: hidden;
+
+            border-radius: 12px;
+            border: 1px solid rgba(255, 189, 0, 0.3);
+        }
+
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+
+        /* =========================================================
+           AVIS
+        ========================================================= */
+
+        #avis {
+            background: #0b0b0b;
+            text-align: center;
+        }
+
+        .stars {
+            color: var(--yellow);
+            font-size: 32px;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            color: #cccccc;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #000000;
+            border-top: 1px solid rgba(255, 189, 0, 0.25);
+            padding: 45px 20px 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .footer-logo span {
+            color: var(--yellow);
+        }
+
+        footer p {
+            color: #888888;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .footer-city {
+            color: var(--yellow);
+        }
+
+        .copyright {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #1c1c1c;
+            color: #666666;
+            font-size: 12px;
+        }
+
+        /* =========================================================
+           MOBILE ORDER
+        ========================================================= */
+
+        .mobile-order {
+            display: none;
+
+            position: fixed;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+
+            z-index: 999;
+
+            padding: 15px;
+
+            border-radius: 8px;
+
+            background: var(--yellow);
+            color: #000000;
+
+            text-align: center;
+            font-weight: 900;
+
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        /* =========================================================
+           IMAGE MODAL
+        ========================================================= */
+
+        .image-modal {
+            display: none;
+
+            position: fixed;
+            z-index: 2000;
+
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.94);
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .image-modal img {
+            max-width: 95vw;
+            max-height: 92vh;
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+
+            color: #ffffff;
+            font-size: 42px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        /* =========================================================
+           RESPONSIVE TABLET
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .double-menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 15px;
+            }
+        }
+
+        /* =========================================================
+           RESPONSIVE MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+                min-height: 65px;
+                padding: 8px 15px;
+            }
+
+            .logo {
+                width: 120px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+
+                position: absolute;
+                top: 65px;
+                left: 0;
+                right: 0;
+
+                background: #050505;
+
+                flex-direction: column;
+                gap: 0;
+
+                border-bottom: 1px solid rgba(255, 189, 0, 0.3);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 15px 20px;
+
+                border-bottom: 1px solid #1e1e1e;
+
+                text-align: center;
+            }
+
+            .hero {
+                padding-top: 110px;
+                min-height: auto;
+                padding-bottom: 70px;
+            }
+
+            .hero-logo {
+                width: 180px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: stretch;
+                max-width: 350px;
+                margin: auto;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section {
+                padding: 65px 15px;
+            }
+
+            .section-header {
+                margin-bottom: 35px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .double-menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-list {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-card-image {
+                padding: 4px;
+                margin-bottom: 35px;
+            }
+
+            .category-title {
+                font-size: 23px;
+            }
+
+            .contact-box {
+                padding: 22px 18px;
+            }
+
+            .opening-row {
+                flex-direction: column;
+                gap: 0;
+                padding-bottom: 10px;
+            }
+
+            .map-container iframe {
+                height: 350px;
+            }
+
+            .mobile-order {
+                display: block;
+            }
+
+            body {
+                padding-bottom: 65px;
+            }
+
+        }
+
+    </style>
 </head>
 
 
 <body>
 
-
-
-
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header>
 
+    <div class="nav-container">
 
-<div class="container nav">
+        <a href="#accueil">
+            <img
+                src="logo.png"
+                class="logo"
+                alt="BURGER M">
+        </a>
 
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Ouvrir le menu">
+            ☰
+        </button>
 
+        <nav id="mainNav">
 
-<a href="#accueil">
+            <a href="#accueil">Accueil</a>
 
+            <a href="#burgers">Burgers</a>
 
-<img src="logo.png"
+            <a href="#menus">Menus Duo</a>
 
-class="logo"
+            <a href="#carte">Carte</a>
 
-alt="BURGER M">
+            <a href="#contact">Contact</a>
 
+        </nav>
 
-</a>
+    </div>
 
+</header>
 
 
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-<button class="menu-btn">
+<main>
 
-☰
+<section class="hero" id="accueil">
 
-</button>
+    <div class="hero-content">
 
+        <img
+            src="logo.png"
+            class="hero-logo"
+            alt="Logo BURGER M">
 
+        <h1>BURGER M</h1>
 
+        <p>
+            Des burgers généreux et savoureux préparés avec passion.
+        </p>
 
+        <p class="hero-subtitle">
+            Votre restaurant BURGER M à Bourges.
+        </p>
 
+        <div class="buttons">
 
-<nav>
+            <a
+                href="#burgers"
+                class="btn primary">
+                DÉCOUVRIR NOS BURGERS
+            </a>
 
+            <!-- REMPLACER PAR VOTRE VRAI LIEN UBER EATS -->
+            <a
+                href="VOTRE_LIEN_UBER_EATS"
+                target="_blank"
+                rel="noopener"
+                class="btn delivery-btn">
+                🍔 Commander Uber Eats
+            </a>
 
-<a href="#accueil" class="active">
+            <!-- REMPLACER PAR VOTRE VRAI LIEN DELIVEROO -->
+            <a
+                href="VOTRE_LIEN_DELIVEROO"
+                target="_blank"
+                rel="noopener"
+                class="btn delivery-btn">
+                🚴 Commander Deliveroo
+            </a>
 
-Accueil
+        </div>
 
-</a>
+    </div>
 
+</section>
 
 
-<a href="#burgers">
-
-Burgers
-
-</a>
-
-
-
-<a href="#menus">
-
-Menus Duo
-
-</a>
-
-
-
-<a href="#carte">
-
-Carte
-
-</a>
-
-
-
-<a href="#contact">
-
-Contact
-
-</a>
-
-
-
-</nav>
-
-
-
-
-</div>
-
-
-</header><!-- ================= HERO ================= -->
-
-
-<style>
-
-
-.hero{
-
-
-min-height:760px;
-
-
-display:flex;
-
-
-align-items:center;
-
-
-justify-content:center;
-
-
-text-align:center;
-
-
-position:relative;
-
-
-overflow:hidden;
-
-
-
-
-background:
-
-
-
-radial-gradient(
-
-ellipse at center 35%,
-
-rgba(255,200,70,.10),
-
-transparent 40%
-
-),
-
-
-
-linear-gradient(
-
-180deg,
-
-#030303,
-
-#050505
-
-);
-
-
-
-}
-
-
-
-
-
-/* légère poussière galaxie */
-
-
-.hero::before{
-
-
-content:"";
-
-
-position:absolute;
-
-
-inset:0;
-
-
-
-background:
-
-
-
-radial-gradient(
-
-circle at 20% 30%,
-
-rgba(255,220,120,.07) 1px,
-
-transparent 2px
-
-),
-
-
-
-radial-gradient(
-
-circle at 70% 55%,
-
-rgba(255,200,80,.05) 1px,
-
-transparent 2px
-
-),
-
-
-
-radial-gradient(
-
-circle at 45% 75%,
-
-rgba(255,220,100,.04) 1px,
-
-transparent 2px
-
-);
-
-
-
-opacity:.5;
-
-
-
-}
-
-
-
-
-
-.hero-content{
-
-
-position:relative;
-
-
-z-index:5;
-
-
-}
-
-
-
-
-
-
-
-.hero h1{
-
-
-font-size:
-
-clamp(55px,8vw,95px);
-
-
-font-weight:1000;
-
-
-letter-spacing:-4px;
-
-
-line-height:1;
-
-
-
-margin-top:20px;
-
-
-}
-
-
-
-
-
-.hero h1 span{
-
-
-color:var(--yellow);
-
-
-}
-
-
-
-
-
-
-
-
-.hero p{
-
-
-font-size:20px;
-
-
-color:#ddd;
-
-
-line-height:1.7;
-
-
-margin:25px auto;
-
-
-max-width:720px;
-
-
-}
-
-
-
-
-
-
-
-
-.hero-buttons{
-
-
-display:flex;
-
-
-justify-content:center;
-
-
-gap:15px;
-
-
-flex-wrap:wrap;
-
-
-margin-top:35px;
-
-
-}
-
-
-
-
-
-
-
-
-.delivery-btn{
-
-
-background:transparent;
-
-
-border-color:white;
-
-
-}
-
-
-
-.delivery-btn:hover{
-
-
-border-color:var(--yellow);
-
-
-color:var(--yellow);
-
-
-}
-
-
-
-
-
-
-</style>
-
-
-
-
-
-
-
-<section id="accueil" class="hero">
-
-
-
-
-
-
-
-<div class="hero-content">
-
-
-
-
-
-
-
-
-<div class="logo-effect">
-
-<canvas class="logo-particles" aria-hidden="true"></canvas>
-
-<img src="logo.png"
-
-class="hero-logo"
-
-alt="Logo BURGER M">
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<h1>
-
-
-BURGER <span>M</span>
-
-
-</h1>
-
-
-
-
-
-
-
-
-<p>
-
-
-Des burgers généreux et savoureux préparés avec passion.
-
-<br>
-
-
-Votre restaurant BURGER M à Bourges.
-
-
-</p>
-
-
-
-
-
-
-
-
-<div class="hero-buttons">
-
-
-
-
-
-
-<a href="#burgers"
-
-class="btn primary">
-
-
-DÉCOUVRIR NOS BURGERS
-
-
-</a>
-
-
-
-
-
-
-
-
-<a href="VOTRE_LIEN_UBER_EATS"
-
-target="_blank"
-
-class="btn delivery-btn">
-
-
-🍔 Commander Uber Eats
-
-
-</a>
-
-
-
-
-
-
-
-
-<a href="VOTRE_LIEN_DELIVEROO"
-
-target="_blank"
-
-class="btn delivery-btn">
-
-
-🚴 Commander Deliveroo
-
-
-</a>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-</section><!-- ================= BURGERS ================= -->
-
-
-<style>
-
-
-.grid{
-
-
-display:grid;
-
-gap:25px;
-
-
-}
-
-
-
-.burgers{
-
-
-grid-template-columns:repeat(4,1fr);
-
-
-}
-
-
-
-
-
-.card{
-
-
-background:
-
-linear-gradient(
-
-145deg,
-
-#151515,
-
-#070707
-
-);
-
-
-
-border:1px solid #303030;
-
-
-border-radius:22px;
-
-
-padding:25px;
-
-
-text-align:center;
-
-
-position:relative;
-
-
-overflow:hidden;
-
-
-transition:.35s;
-
-
-}
-
-
-
-
-
-
-
-.card::before{
-
-
-content:"";
-
-
-position:absolute;
-
-
-width:220px;
-
-
-height:220px;
-
-
-top:-120px;
-
-
-left:-120px;
-
-
-
-background:
-
-
-radial-gradient(
-
-circle,
-
-rgba(255,208,0,.20),
-
-transparent 65%
-
-);
-
-
-
-transition:.5s;
-
-
-}
-
-
-
-
-
-.card:hover::before{
-
-
-transform:scale(2);
-
-
-}
-
-
-
-
-
-.card:hover{
-
-
-transform:translateY(-8px);
-
-
-border-color:var(--yellow);
-
-
-box-shadow:
-
-
-0 0 35px rgba(255,208,0,.15);
-
-
-}
-
-
-
-
-
-
-
-.product-space{
-
-
-height:120px;
-
-
-display:flex;
-
-
-align-items:center;
-
-
-justify-content:center;
-
-
-font-size:65px;
-
-
-}
-
-
-
-
-
-
-
-.card h3{
-
-
-font-size:22px;
-
-
-margin:15px 0 10px;
-
-
-}
-
-
-
-
-
-.card p{
-
-
-color:#aaa;
-
-
-min-height:45px;
-
-
-}
-
-
-
-
-
-.price{
-
-
-display:block;
-
-
-color:var(--yellow);
-
-
-font-size:24px;
-
-
-font-weight:1000;
-
-
-margin-top:15px;
-
-
-}
-
-
-
-
-
-
-
-/* MENUS DUO */
-
-
-
-.duos{
-
-
-grid-template-columns:repeat(3,1fr);
-
-
-}
-
-
-
-
-
-.duo{
-
-
-min-height:310px;
-
-
-display:flex;
-
-
-flex-direction:column;
-
-
-justify-content:space-between;
-
-
-}
-
-
-
-
-
-.featured{
-
-
-border-color:var(--yellow);
-
-
-box-shadow:
-
-
-0 0 40px rgba(255,208,0,.15);
-
-
-}
-
-
-
-
-
-.tag{
-
-
-display:inline-block;
-
-
-background:var(--yellow);
-
-
-color:#111;
-
-
-padding:6px 15px;
-
-
-border-radius:30px;
-
-
-font-size:12px;
-
-
-font-weight:1000;
-
-
-margin-bottom:15px;
-
-
-}
-
-
-
-
-
-
-
-@media(max-width:1000px){
-
-
-
-.burgers{
-
-
-grid-template-columns:repeat(2,1fr);
-
-
-}
-
-
-
-.duos{
-
-
-grid-template-columns:1fr;
-
-
-}
-
-
-}
-
-
-
-
-
-@media(max-width:600px){
-
-
-
-.burgers{
-
-
-grid-template-columns:1fr;
-
-
-}
-
-
-}
-
-
-
-</style>
-
-
-
-
-
-
+<!-- =========================================================
+     BURGERS
+========================================================= -->
 
 <section id="burgers">
 
+    <div class="container">
 
+        <div class="section-header">
 
-<div class="container">
+            <div class="section-label">
+                Notre spécialité
+            </div>
 
+            <h2 class="section-title">
+                Nos Burgers
+            </h2>
 
+            <p class="section-description">
+                Des recettes généreuses préparées avec passion.
+            </p>
 
+        </div>
 
 
+        <div class="products-grid">
 
 
-<div class="section-head">
+            <article class="product-card">
 
+                <div class="product-icon">🍔</div>
 
-<div class="kicker">
+                <h3>BIG M</h3>
 
-Notre spécialité
+                <p>
+                    Le burger signature BURGER M.
+                </p>
 
-</div>
+                <span class="price">
+                    6,90 €
+                </span>
 
+            </article>
 
 
-<h2>
+            <article class="product-card">
 
-Nos Burgers
+                <div class="product-icon">🧀</div>
 
-</h2>
+                <h3>CHEESE M</h3>
 
+                <p>
+                    Fromage fondant et gourmand.
+                </p>
 
+                <span class="price">
+                    6,50 €
+                </span>
 
-<p>
+            </article>
 
-Des recettes généreuses préparées avec passion.
 
-</p>
+            <article class="product-card">
 
+                <div class="product-icon">🍗</div>
 
-</div>
+                <h3>CHICKEN M</h3>
 
+                <p>
+                    Poulet croustillant.
+                </p>
 
+                <span class="price">
+                    6,50 €
+                </span>
 
+            </article>
 
 
+            <article class="product-card">
 
+                <div class="product-icon">🔥</div>
 
+                <h3>BBQ M</h3>
 
+                <p>
+                    Sauce BBQ maison.
+                </p>
 
+                <span class="price">
+                    6,90 €
+                </span>
 
-<div class="grid burgers">
+            </article>
 
 
+            <article class="product-card">
 
+                <div class="product-icon">🐟</div>
 
+                <h3>FISH M</h3>
 
+                <p>
+                    Une recette originale.
+                </p>
 
+                <span class="price">
+                    6,50 €
+                </span>
 
-<div class="card">
+            </article>
 
 
-<div class="product-space">
+            <article class="product-card">
 
-🍔
+                <div class="product-icon">🥓</div>
 
-</div>
+                <h3>BOURSIN M</h3>
 
+                <p>
+                    Crémeux et généreux.
+                </p>
 
-<h3>
+                <span class="price">
+                    6,90 €
+                </span>
 
-BIG M
+            </article>
 
-</h3>
 
+            <article class="product-card">
 
-<p>
+                <div class="product-icon">🍯</div>
 
-Le burger signature BURGER M.
+                <h3>CHÈVRE MIEL M</h3>
 
-</p>
+                <p>
+                    L'alliance parfaite.
+                </p>
 
+                <span class="price">
+                    6,90 €
+                </span>
 
-<b class="price">
+            </article>
 
-6,90 €
 
-</b>
+            <article class="product-card">
 
+                <div class="product-icon">🌱</div>
 
-</div>
+                <h3>VEGGIE M</h3>
 
+                <p>
+                    Une alternative gourmande.
+                </p>
 
+                <span class="price">
+                    6,50 €
+                </span>
 
+            </article>
 
 
+        </div>
 
-
-<div class="card">
-
-
-<div class="product-space">
-
-🧀
-
-</div>
-
-
-<h3>
-
-CHEESE M
-
-</h3>
-
-
-<p>
-
-Fromage fondant et gourmand.
-
-</p>
-
-
-<b class="price">
-
-6,50 €
-
-</b>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<div class="product-space">
-
-🍗
-
-</div>
-
-
-<h3>
-
-CHICKEN M
-
-</h3>
-
-
-<p>
-
-Poulet croustillant.
-
-</p>
-
-
-<b class="price">
-
-6,50 €
-
-</b>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<div class="product-space">
-
-🔥
-
-</div>
-
-
-<h3>
-
-BBQ M
-
-</h3>
-
-
-<p>
-
-Sauce BBQ maison.
-
-</p>
-
-
-<b class="price">
-
-6,90 €
-
-</b>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<div class="product-space">
-
-🐟
-
-</div>
-
-
-<h3>
-
-FISH M
-
-</h3>
-
-
-<p>
-
-Une recette originale.
-
-</p>
-
-
-<b class="price">
-
-6,50 €
-
-</b>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<div class="product-space">
-
-🥓
-
-</div>
-
-
-<h3>
-
-BOURSIN M
-
-</h3>
-
-
-<p>
-
-Crémeux et généreux.
-
-</p>
-
-
-<b class="price">
-
-6,90 €
-
-</b>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<div class="product-space">
-
-🍯
-
-</div>
-
-
-<h3>
-
-CHÈVRE MIEL M
-
-</h3>
-
-
-<p>
-
-L'alliance parfaite.
-
-</p>
-
-
-<b class="price">
-
-6,90 €
-
-</b>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<div class="product-space">
-
-🌱
-
-</div>
-
-
-<h3>
-
-VEGGIE M
-
-</h3>
-
-
-<p>
-
-Une alternative gourmande.
-
-</p>
-
-
-<b class="price">
-
-6,50 €
-
-</b>
-
-
-</div>
-
-
-
-
-
-
-
-
-</div>
-
-
-</div>
-
+    </div>
 
 </section>
 
 
-
-
-
-
-
-
-
-
-<!-- ================= MENUS DUO ================= -->
-
-
+<!-- =========================================================
+     NOUVEAUX MENUS DOUBLES
+========================================================= -->
 
 <section id="menus">
 
+    <div class="container">
 
+        <div class="section-header">
 
-<div class="container">
+            <div class="section-label">
+                Découvrez
+            </div>
 
+            <h2 class="section-title">
+                Nos Menus Doubles
+            </h2>
 
+            <p class="section-description">
+                Deux fois plus de plaisir, pour une seule faim !
+            </p>
 
+        </div>
 
 
+        <!--
+            NOUVELLE CARTE
+            Le fichier "menus duo.jpeg" doit être dans le même
+            dossier que ce fichier HTML.
+        -->
 
-<div class="section-head">
+        <div
+            class="menu-card-image"
+            id="menuCardImage"
+            title="Cliquer pour agrandir">
 
+            <img
+                src="menus duo.jpeg"
+                alt="Carte des menus doubles BURGER M">
 
-<div class="kicker">
+            <p class="image-hint">
+                Cliquez sur la carte pour l'agrandir
+            </p>
 
-Menus Duo
+        </div>
 
-</div>
 
+        <!-- MENUS EN VERSION TEXTE -->
 
+        <div class="double-menu-grid">
 
-<h2>
 
-Nos Formules
+            <!-- M1 -->
 
-</h2>
+            <article class="double-menu">
 
+                <div class="menu-number">
+                    M1
+                </div>
 
+                <h3>
+                    <span>MENU DOUBLE</span><br>
+                    BIG M + CHEESEBURGER
+                </h3>
 
-<p>
+                <div class="menu-composition">
 
-Des menus généreux avec 2 burgers!
+                    <strong>
+                        2 burgers
+                    </strong>
+                    <br>
 
-</p>
+                    1 frite
+                    <br>
 
+                    1 boisson 33cl
 
-</div>
+                </div>
 
+                <span class="double-price">
+                    12 €
+                </span>
 
+            </article>
 
 
+            <!-- M2 -->
 
+            <article class="double-menu">
 
+                <div class="menu-number">
+                    M2
+                </div>
 
+                <h3>
+                    <span>MENU DOUBLE</span><br>
+                    BIG M + NUGGETS
+                </h3>
 
-<div class="grid duos">
+                <div class="menu-composition">
 
+                    <strong>
+                        Big M + Nuggets
+                    </strong>
+                    <br>
 
+                    1 frite
+                    <br>
 
+                    1 boisson 33cl
 
+                </div>
 
+                <span class="double-price">
+                    12 €
+                </span>
 
+            </article>
 
 
-<div class="card duo">
+            <!-- M3 -->
 
+            <article class="double-menu">
 
-<h3>
+                <div class="menu-number">
+                    M3
+                </div>
 
-XXL SOLO
+                <h3>
+                    <span>MENU DOUBLE</span><br>
+                    CHEESEBURGER + CROQ M
+                </h3>
 
-</h3>
+                <div class="menu-composition">
 
+                    <strong>
+                        Cheeseburger + Croq M
+                    </strong>
+                    <br>
 
-<p>
+                    1 frite
+                    <br>
 
-2 burgers
+                    1 boisson 33cl
 
-<br>
+                </div>
 
-1 grande frite
+                <span class="double-price">
+                    8 €
+                </span>
 
-<br>
+            </article>
 
-1 boisson
 
-</p>
+            <!-- M4 -->
 
+            <article class="double-menu">
 
-<b class="price">
+                <div class="menu-number">
+                    M4
+                </div>
 
-15,90 €
+                <h3>
+                    <span>MENU DOUBLE</span><br>
+                    SUPRÊME + CHEESEBURGER
+                </h3>
 
-</b>
+                <div class="menu-composition">
 
+                    <strong>
+                        Suprême + Cheeseburger
+                    </strong>
+                    <br>
 
-</div>
+                    1 frite
+                    <br>
 
+                    1 boisson 33cl
 
+                </div>
 
+                <span class="double-price">
+                    12 €
+                </span>
 
+            </article>
 
 
+            <!-- M5 -->
 
+            <article class="double-menu">
 
-<div class="card duo featured">
+                <div class="menu-number">
+                    M5
+                </div>
 
+                <h3>
+                    <span>MENU DOUBLE</span><br>
+                    SUPRÊME + SUPRÊME
+                </h3>
 
-<div>
+                <div class="menu-composition">
 
+                    <strong>
+                        2 Suprêmes
+                    </strong>
+                    <br>
 
-<span class="tag">
+                    1 frite
+                    <br>
 
-LE PLUS CHOISI
+                    1 boisson 33cl
 
-</span>
+                </div>
 
+                <span class="double-price">
+                    12 €
+                </span>
 
+            </article>
 
-<h3>
 
-MENU DUO
+            <!-- M6 -->
 
-</h3>
+            <article class="double-menu">
 
+                <div class="menu-number">
+                    M6
+                </div>
 
-<p>
+                <h3>
+                    <span>MENU DOUBLE</span><br>
+                    BIG M + SUPRÊME
+                </h3>
 
-2 burgers
+                <div class="menu-composition">
 
-<br>
+                    <strong>
+                        Big M + Suprême
+                    </strong>
+                    <br>
 
-1 grande frite
+                    1 frite
+                    <br>
 
-<br>
+                    1 boisson 33cl
 
-1 boisson
+                </div>
 
-</p>
+                <span class="double-price">
+                    12 €
+                </span>
 
+            </article>
 
-</div>
 
+            <!-- M7 -->
 
+            <article class="double-menu">
 
-<b class="price">
+                <div class="menu-number">
+                    M7
+                </div>
 
-19,90 €
+                <h3>
+                    <span>MENU DOUBLE</span><br>
+                    SUPRÊME + CHICKEN
+                </h3>
 
-</b>
+                <div class="menu-composition">
 
+                    <strong>
+                        Suprême + Chicken
+                    </strong>
+                    <br>
 
-</div>
+                    1 frite
+                    <br>
 
+                    1 boisson 33cl
 
+                </div>
 
+                <span class="double-price">
+                    13 €
+                </span>
 
+            </article>
 
 
+        </div>
 
 
-<div class="card duo">
+        <p class="menu-note">
+            ⭐ <strong>Fait à la commande</strong> —
+            Plus de goût, plus de plaisir, plus de générosité.
+        </p>
 
-
-<h3>
-
-DUO CHICKEN
-
-</h3>
-
-
-<p>
-
-2 chicken burgers
-
-<br>
-
-Grande frite
-
-<br>
-
-Boisson
-
-</p>
-
-
-<b class="price">
-
-19,90 €
-
-</b>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="card duo">
-
-
-<h3>
-
-DUO NAAN
-
-</h3>
-
-
-<p>
-
-2 naan burgers
-
-<br>
-
-Grande frite
-
-<br>
-
-Boisson
-
-</p>
-
-
-<b class="price">
-
-20,90 €
-
-</b>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="card duo">
-
-
-<h3>
-
-DUO MIX
-
-</h3>
-
-
-<p>
-
-Burger + Wrap
-
-<br>
-
-Grande frite
-
-<br>
-
-Boisson
-
-</p>
-
-
-<b class="price">
-
-19,90 €
-
-</b>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="card duo">
-
-
-<h3>
-
-FAMILY
-
-</h3>
-
-
-<p>
-
-Formules famille
-
-<br>
-
-2 / 4 / XL personnes
-
-</p>
-
-
-<b class="price">
-
-À partir de 29,90 €
-
-</b>
-
-
-</div>
-
-
-
-
-
-
-
-
-</div>
-
-
-</div>
-
+    </div>
 
 </section>
-<!-- ================= CARTE ================= -->
 
 
-<style>
-
-
-.menu-grid{
-
-
-display:grid;
-
-
-grid-template-columns:repeat(3,1fr);
-
-
-gap:25px;
-
-
-}
-
-
-
-
-.menu-box{
-
-
-text-align:left;
-
-
-}
-
-
-
-
-
-.menu-box h3{
-
-
-color:var(--yellow);
-
-
-font-size:23px;
-
-
-margin-bottom:20px;
-
-
-}
-
-
-
-
-
-.menu-box ul{
-
-
-list-style:none;
-
-
-}
-
-
-
-
-
-.menu-box li{
-
-
-display:flex;
-
-
-justify-content:space-between;
-
-
-gap:15px;
-
-
-padding:11px 0;
-
-
-border-bottom:
-
-1px solid rgba(255,255,255,.08);
-
-
-color:#ddd;
-
-
-}
-
-
-
-
-
-.menu-box li span{
-
-
-color:var(--yellow);
-
-
-font-weight:900;
-
-
-}
-
-
-
-
-
-@media(max-width:900px){
-
-
-.menu-grid{
-
-
-grid-template-columns:1fr;
-
-
-}
-
-
-}
-
-
-</style>
-
-
-
-
-
-
-
-
+<!-- =========================================================
+     CARTE
+========================================================= -->
 
 <section id="carte">
 
+    <div class="container">
 
+        <div class="section-header">
 
-<div class="container">
+            <div class="section-label">
+                Découvrez
+            </div>
 
+            <h2 class="section-title">
+                La Carte
+            </h2>
 
+            <p class="section-description">
+                Toutes les spécialités BURGER M.
+            </p>
 
+        </div>
 
 
+        <!-- WRAPS -->
 
-<div class="section-head">
+        <div class="category">
 
+            <h3 class="category-title">
+                🌯 WRAPS
+            </h3>
 
-<div class="kicker">
+            <div class="menu-list">
 
-Découvrez
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken</span>
+                    <span class="menu-item-price">6,90 €</span>
+                </div>
 
-</div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BBQ</span>
+                    <span class="menu-item-price">6,90 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">César</span>
+                    <span class="menu-item-price">6,90 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Veggie</span>
+                    <span class="menu-item-price">6,50 €</span>
+                </div>
 
-<h2>
+            </div>
 
-La Carte
+        </div>
 
-</h2>
 
+        <!-- SALADES -->
 
+        <div class="category">
 
-<p>
+            <h3 class="category-title">
+                🥗 SALADES
+            </h3>
 
-Toutes les spécialités BURGER M.
+            <div class="menu-list">
 
-</p>
+                <div class="menu-item">
+                    <span class="menu-item-name">César</span>
+                    <span class="menu-item-price">7,50 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Crispy</span>
+                    <span class="menu-item-price">7,50 €</span>
+                </div>
 
-</div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chèvre chaud</span>
+                    <span class="menu-item-price">7,50 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Veggie</span>
+                    <span class="menu-item-price">7,20 €</span>
+                </div>
 
+            </div>
 
+        </div>
 
 
+        <!-- FRITES -->
 
+        <div class="category">
 
+            <h3 class="category-title">
+                🍟 FRITES
+            </h3>
 
+            <div class="menu-list">
 
-<div class="menu-grid">
+                <div class="menu-item">
+                    <span class="menu-item-name">Petite</span>
+                    <span class="menu-item-price">2,50 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Moyenne</span>
+                    <span class="menu-item-price">3,20 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Grande</span>
+                    <span class="menu-item-price">3,90 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Cheddar</span>
+                    <span class="menu-item-price">4,50 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Cheddar Bacon</span>
+                    <span class="menu-item-price">4,90 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Cheddar</span>
+                    <span class="menu-item-price">5,20 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Sauce supplémentaire</span>
+                    <span class="menu-item-price">0,50 €</span>
+                </div>
 
-<!-- WRAPS -->
+            </div>
 
+        </div>
 
-<div class="card menu-box">
 
+        <!-- APPETIZERS -->
 
-<h3>
+        <div class="category">
 
-🌯 WRAPS
+            <h3 class="category-title">
+                🍗 APPETIZERS
+            </h3>
 
-</h3>
+            <div class="menu-list">
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Nuggets x6</span>
+                    <span class="menu-item-price">4,50 €</span>
+                </div>
 
-<ul>
+                <div class="menu-item">
+                    <span class="menu-item-name">Tenders x3</span>
+                    <span class="menu-item-price">4,90 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Mozzarella sticks</span>
+                    <span class="menu-item-price">4,90 €</span>
+                </div>
 
-<li>
+                <div class="menu-item">
+                    <span class="menu-item-name">Onion rings</span>
+                    <span class="menu-item-price">3,90 €</span>
+                </div>
 
-Chicken
+                <div class="menu-item">
+                    <span class="menu-item-name">Jalapeños</span>
+                    <span class="menu-item-price">3,90 €</span>
+                </div>
 
-<span>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chili cheese</span>
+                    <span class="menu-item-price">4,90 €</span>
+                </div>
 
-6,90 €
+            </div>
 
-</span>
+        </div>
 
-</li>
 
+        <!-- DESSERTS -->
 
+        <div class="category">
 
-<li>
+            <h3 class="category-title">
+                🍰 DESSERTS
+            </h3>
 
-BBQ
+            <div class="menu-list">
 
-<span>
+                <div class="menu-item">
+                    <span class="menu-item-name">Tiramisu maison</span>
+                    <span class="menu-item-price">3,90 €</span>
+                </div>
 
-6,90 €
+                <div class="menu-item">
+                    <span class="menu-item-name">Muffin</span>
+                    <span class="menu-item-price">2,90 €</span>
+                </div>
 
-</span>
+                <div class="menu-item">
+                    <span class="menu-item-name">Cookies</span>
+                    <span class="menu-item-price">2,50 €</span>
+                </div>
 
-</li>
+                <div class="menu-item">
+                    <span class="menu-item-name">Donuts</span>
+                    <span class="menu-item-price">2,50 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Glaces</span>
+                    <span class="menu-item-price">2,50 €</span>
+                </div>
 
+            </div>
 
-<li>
+        </div>
 
-César
 
-<span>
+        <!-- BOISSONS -->
 
-6,90 €
+        <div class="category">
 
-</span>
+            <h3 class="category-title">
+                🥤 BOISSONS
+            </h3>
 
-</li>
+            <div class="menu-list">
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Coca-Cola</span>
+                    <span class="menu-item-price">2,20 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Coca-Cola Zero</span>
+                    <span class="menu-item-price">2,20 €</span>
+                </div>
 
-<li>
+                <div class="menu-item">
+                    <span class="menu-item-name">Fanta</span>
+                    <span class="menu-item-price">2,20 €</span>
+                </div>
 
-Veggie
+                <div class="menu-item">
+                    <span class="menu-item-name">Sprite</span>
+                    <span class="menu-item-price">2,20 €</span>
+                </div>
 
-<span>
+                <div class="menu-item">
+                    <span class="menu-item-name">Oasis</span>
+                    <span class="menu-item-price">2,20 €</span>
+                </div>
 
-6,50 €
+                <div class="menu-item">
+                    <span class="menu-item-name">Ice Tea</span>
+                    <span class="menu-item-price">2,20 €</span>
+                </div>
 
-</span>
+                <div class="menu-item">
+                    <span class="menu-item-name">Eau</span>
+                    <span class="menu-item-price">2,20 €</span>
+                </div>
 
-</li>
+            </div>
 
+        </div>
 
-</ul>
 
+        <!-- SUPPLEMENTS -->
 
-</div>
+        <div class="category">
 
+            <h3 class="category-title">
+                ➕ SUPPLÉMENTS
+            </h3>
 
+            <div class="menu-list">
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Steak</span>
+                    <span class="menu-item-price">1,50 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Bacon</span>
+                    <span class="menu-item-price">1,00 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Cheddar</span>
+                    <span class="menu-item-price">0,70 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Œuf</span>
+                    <span class="menu-item-price">0,70 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Oignons frits</span>
+                    <span class="menu-item-price">0,70 €</span>
+                </div>
 
+                <div class="menu-item">
+                    <span class="menu-item-name">Jalapeños</span>
+                    <span class="menu-item-price">0,70 €</span>
+                </div>
 
-<!-- SALADES -->
+            </div>
 
+        </div>
 
-<div class="card menu-box">
+    </div>
 
+</section>
 
-<h3>
 
-🥗 SALADES
-
-</h3>
-
-
-<ul>
-
-
-<li>
-
-César
-
-<span>
-
-7,50 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Chicken Crispy
-
-<span>
-
-7,50 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Chèvre chaud
-
-<span>
-
-7,50 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Veggie
-
-<span>
-
-7,20 €
-
-</span>
-
-</li>
-
-
-</ul>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- FRITES -->
-
-
-<div class="card menu-box">
-
-
-<h3>
-
-🍟 FRITES
-
-</h3>
-
-
-<ul>
-
-
-<li>
-
-Petite
-
-<span>
-
-2,50 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Moyenne
-
-<span>
-
-3,20 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Grande
-
-<span>
-
-3,90 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Cheddar
-
-<span>
-
-4,50 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Cheddar Bacon
-
-<span>
-
-4,90 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Chicken Cheddar
-
-<span>
-
-5,20 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Sauce supplémentaire
-
-<span>
-
-0,50 €
-
-</span>
-
-</li>
-
-
-</ul>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- APPETIZERS -->
-
-
-<div class="card menu-box">
-
-
-<h3>
-
-🍗 APPETIZERS
-
-</h3>
-
-
-<ul>
-
-
-<li>
-
-Nuggets x6
-
-<span>
-
-4,50 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Tenders x3
-
-<span>
-
-4,90 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Mozzarella sticks
-
-<span>
-
-4,90 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Onion rings
-
-<span>
-
-3,90 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Jalapeños
-
-<span>
-
-3,90 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Chili cheese
-
-<span>
-
-4,90 €
-
-</span>
-
-</li>
-
-
-</ul>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- DESSERTS -->
-
-
-<div class="card menu-box">
-
-
-<h3>
-
-🍰 DESSERTS
-
-</h3>
-
-
-<ul>
-
-
-<li>
-
-Tiramisu maison
-
-<span>
-
-3,90 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Muffin
-
-<span>
-
-2,90 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Cookies
-
-<span>
-
-2,50 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Donuts
-
-<span>
-
-2,50 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Glaces
-
-<span>
-
-2,50 €
-
-</span>
-
-</li>
-
-
-</ul>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- BOISSONS -->
-
-
-<div class="card menu-box">
-
-
-<h3>
-
-🥤 BOISSONS
-
-</h3>
-
-
-<ul>
-
-
-<li>
-
-Coca-Cola
-
-<span>
-
-2,20 €
-
-</span>
-   
-</li>
-
-   
-
-<li>
-
-Coca-Cola Zero
-
-<span>
-
-2,20 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Fanta
-
-<span>
-
-2,20 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Sprite
-
-<span>
-
-2,20 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Oasis
-
-<span>
-
-2,20 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Ice Tea
-
-<span>
-
-2,20 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Eau
-
-<span>
-
-2,20 €
-
-</span>
-
-</li>
-
-
-</ul>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- SUPPLEMENTS -->
-
-
-<div class="card menu-box">
-
-
-<h3>
-
-➕ SUPPLÉMENTS
-
-</h3>
-
-
-<ul>
-
-
-<li>
-
-Steak
-
-<span>
-
-1,50 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Bacon
-
-<span>
-
-1,00 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Cheddar
-
-<span>
-
-0,70 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Œuf
-
-<span>
-
-0,70 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Oignons frits
-
-<span>
-
-0,70 €
-
-</span>
-
-</li>
-
-
-
-<li>
-
-Jalapeños
-
-<span>
-
-0,70 €
-
-</span>
-
-</li>
-
-
-</ul>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-</div>
-
-
-</div>
-
-
-</section><!-- ================= CONTACT ================= -->
-
-
-<style>
-
-
-.contact-grid{
-
-
-display:grid;
-
-
-grid-template-columns:repeat(3,1fr);
-
-
-gap:25px;
-
-
-}
-
-
-
-.contact-card{
-
-
-background:
-
-linear-gradient(
-
-145deg,
-
-#151515,
-
-#080808
-
-);
-
-
-
-border:1px solid #333;
-
-
-border-radius:22px;
-
-
-padding:35px;
-
-
-text-align:center;
-
-
-transition:.3s;
-
-
-}
-
-
-
-
-
-.contact-card:hover{
-
-
-border-color:var(--yellow);
-
-
-box-shadow:
-
-
-0 0 35px rgba(255,208,0,.15);
-
-
-transform:translateY(-5px);
-
-
-}
-
-
-
-
-
-.contact-card h3{
-
-
-color:var(--yellow);
-
-
-font-size:23px;
-
-
-margin-bottom:18px;
-
-
-}
-
-
-
-
-
-.contact-card p{
-
-
-color:#ddd;
-
-
-line-height:1.8;
-
-
-}
-
-
-
-
-
-
-
-.delivery-links{
-
-
-display:flex;
-
-
-justify-content:center;
-
-
-gap:15px;
-
-
-flex-wrap:wrap;
-
-
-margin-top:25px;
-
-
-}
-
-
-
-
-
-.hours{
-
-
-margin-top:45px;
-
-
-background:#101010;
-
-
-border:1px solid #333;
-
-
-border-radius:25px;
-
-
-padding:35px;
-
-
-}
-
-
-
-
-
-.hours h3{
-
-
-text-align:center;
-
-
-color:var(--yellow);
-
-
-font-size:28px;
-
-
-margin-bottom:25px;
-
-
-}
-
-
-
-
-
-.hours-line{
-
-
-display:flex;
-
-
-justify-content:space-between;
-
-
-padding:13px 0;
-
-
-border-bottom:
-
-1px solid rgba(255,255,255,.08);
-
-
-color:#ddd;
-
-
-}
-
-
-
-
-
-
-
-.map{
-
-
-margin-top:40px;
-
-
-overflow:hidden;
-
-
-border-radius:25px;
-
-
-border:1px solid #333;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* AVIS */
-
-
-.review-box{
-
-
-margin-top:60px;
-
-
-background:#101010;
-
-
-border:1px solid #333;
-
-
-border-radius:25px;
-
-
-padding:45px;
-
-
-text-align:center;
-
-
-}
-
-
-
-
-
-.stars{
-
-
-color:var(--yellow);
-
-
-font-size:38px;
-
-
-letter-spacing:6px;
-
-
-}
-
-
-
-
-
-.review-box p{
-
-
-font-size:20px;
-
-
-color:#ddd;
-
-
-margin:25px 0;
-
-
-}
-
-
-
-
-
-
-
-
-@media(max-width:900px){
-
-
-.contact-grid{
-
-
-grid-template-columns:1fr;
-
-
-}
-
-
-
-
-
-.hours-line{
-
-
-flex-direction:column;
-
-
-text-align:center;
-
-
-gap:5px;
-
-
-}
-
-
-
-}
-
-
-
-</style>
-
-
-
-
-
-
-
+<!-- =========================================================
+     CONTACT
+========================================================= -->
 
 <section id="contact">
 
+    <div class="container">
 
-<div class="container">
+        <div class="section-header">
 
+            <div class="section-label">
+                Contact
+            </div>
 
+            <h2 class="section-title">
+                Où nous trouver ?
+            </h2>
 
+            <p class="section-description">
+                Votre restaurant BURGER M à Bourges.
+            </p>
 
+        </div>
 
 
+        <div class="contact-grid">
 
-<div class="section-head">
 
+            <!-- ADRESSE -->
 
-<div class="kicker">
+            <div class="contact-box">
 
-Contact
+                <h3>
+                    📍 Adresse
+                </h3>
 
-</div>
+                <div class="address">
 
+                    <p>
+                        <strong>BURGER M</strong>
+                    </p>
 
+                    <p>
+                        1 T Avenue Marx Dormoy
+                    </p>
 
-<h2>
+                    <p>
+                        18000 Bourges
+                    </p>
 
-Où nous trouver ?
+                </div>
 
-</h2>
 
+                <h3>
+                    🍔 Commander
+                </h3>
 
+                <p>
+                    Commandez directement en livraison.
+                </p>
 
-<p>
+                <div class="buttons" style="margin-top:20px;">
 
-Votre restaurant BURGER M à Bourges.
+                    <!-- REMPLACER PAR VOTRE LIEN UBER EATS -->
 
-</p>
+                    <a
+                        href="VOTRE_LIEN_UBER_EATS"
+                        target="_blank"
+                        rel="noopener"
+                        class="btn primary">
+                        Uber Eats
+                    </a>
 
+                    <!-- REMPLACER PAR VOTRE LIEN DELIVEROO -->
 
-</div>
+                    <a
+                        href="VOTRE_LIEN_DELIVEROO"
+                        target="_blank"
+                        rel="noopener"
+                        class="btn">
+                        Deliveroo
+                    </a>
 
+                </div>
 
+            </div>
 
 
+            <!-- HORAIRES -->
 
+            <div class="contact-box">
 
+                <h3>
+                    ⭐ BURGER M
+                </h3>
 
+                <p>
+                    Des burgers généreux.
+                </p>
 
+                <p>
+                    Une cuisine préparée avec passion.
+                </p>
 
-<div class="contact-grid">
+                <p class="footer-city">
+                    Bourges
+                </p>
 
 
+                <h3 style="margin-top:25px;">
+                    🕒 Horaires
+                </h3>
 
 
+                <div class="opening-hours">
 
+                    <div class="opening-row">
+                        <span>Lundi</span>
+                        <span>11h30 - 14h00 / 18h00 - 23h00</span>
+                    </div>
 
+                    <div class="opening-row">
+                        <span>Mardi</span>
+                        <span>11h30 - 14h00 / 18h00 - 23h00</span>
+                    </div>
 
-<div class="contact-card">
+                    <div class="opening-row">
+                        <span>Mercredi</span>
+                        <span>11h30 - 14h00 / 18h00 - 23h00</span>
+                    </div>
 
+                    <div class="opening-row">
+                        <span>Jeudi</span>
+                        <span>11h30 - 14h00 / 19h00 - 00h00</span>
+                    </div>
 
-<h3>
+                    <div class="opening-row">
+                        <span>Vendredi</span>
+                        <span>18h00 - 23h00</span>
+                    </div>
 
-📍 Adresse
+                    <div class="opening-row">
+                        <span>Samedi</span>
+                        <span>18h00 - 23h00</span>
+                    </div>
 
-</h3>
+                    <div class="opening-row">
+                        <span>Dimanche</span>
+                        <span>18h00 - 23h00</span>
+                    </div>
 
+                </div>
 
-<p>
+            </div>
 
-BURGER M
+        </div>
 
-<br><br>
 
-1 T Avenue Marx Dormoy
+        <!-- GOOGLE MAPS -->
 
-<br>
+        <div class="map-container">
 
-18000 Bourges
+            <iframe
+                src="https://www.google.com/maps?q=1%20T%20Avenue%20Marx%20Dormoy%2018000%20Bourges&output=embed"
+                width="100%"
+                height="400"
+                style="border:0;display:block"
+                loading="lazy"
+                title="Localisation BURGER M Bourges">
+            </iframe>
 
-</p>
+        </div>
 
+    </div>
 
-</div>
+</section>
 
 
+<!-- =========================================================
+     AVIS
+========================================================= -->
 
+<section id="avis">
 
+    <div class="container">
 
+        <div class="stars">
+            ★★★★★
+        </div>
 
+        <p class="review-text">
+            Merci à nos clients pour leur confiance.
+        </p>
 
+        <!-- REMPLACER PAR VOTRE VRAI LIEN GOOGLE AVIS -->
 
-<div class="contact-card">
+        <a
+            href="VOTRE_LIEN_GOOGLE_AVIS"
+            target="_blank"
+            rel="noopener"
+            class="btn primary">
+            Voir nos avis Google
+        </a>
 
+    </div>
 
-<h3>
+</section>
 
-🍔 Commander
 
-</h3>
+</main>
 
 
-<p>
-
-Commandez directement en livraison.
-
-</p>
-
-
-
-
-
-<div class="delivery-links">
-
-
-
-<a href="VOTRE_LIEN_UBER_EATS"
-
-target="_blank"
-
-class="btn primary">
-
-Uber Eats
-
-</a>
-
-
-
-
-<a href="VOTRE_LIEN_DELIVEROO"
-
-target="_blank"
-
-class="btn">
-
-Deliveroo
-
-</a>
-
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="contact-card">
-
-
-<h3>
-
-⭐ BURGER M
-
-</h3>
-
-
-<p>
-
-Des burgers généreux.
-
-<br><br>
-
-Une cuisine préparée avec passion.
-
-<br><br>
-
-Bourges
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="hours">
-
-
-
-<h3>
-
-🕒 Horaires
-
-</h3>
-
-
-
-
-
-<div class="hours-line">
-
-<span>Lundi</span>
-
-<span>11h30 - 14h00 / 18h00 - 23h00</span>
-
-</div>
-
-
-
-
-
-<div class="hours-line">
-
-<span>Mardi</span>
-
-<span>11h30 - 14h00 / 18h00 - 23h00</span>
-
-</div>
-
-
-
-
-
-<div class="hours-line">
-
-<span>Mercredi</span>
-
-<span>11h30 - 14h00 / 18h00 - 23h00</span>
-
-</div>
-
-
-
-
-
-<div class="hours-line">
-
-<span>Jeudi</span>
-
-<span>11h30 - 14h00 / 19h00 - 00h00</span>
-
-</div>
-
-
-
-
-
-<div class="hours-line">
-
-<span>Vendredi</span>
-
-<span>18h00 - 23h00</span>
-
-</div>
-
-
-
-
-
-<div class="hours-line">
-
-<span>Samedi</span>
-
-<span>18h00 - 23h00</span>
-
-</div>
-
-
-
-
-
-<div class="hours-line">
-
-<span>Dimanche</span>
-
-<span>18h00 - 23h00</span>
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="map">
-
-
-
-<iframe
-
-src="https://www.google.com/maps?q=1%20T%20Avenue%20Marx%20Dormoy%2018000%20Bourges&output=embed"
-
-width="100%"
-
-height="400"
-
-style="border:0;display:block"
-
-loading="lazy">
-
-</iframe>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="review-box">
-
-
-
-<div class="stars">
-
-★★★★★
-
-</div>
-
-
-
-<p>
-
-Merci à nos clients pour leur confiance.
-
-</p>
-
-
-
-<a href="VOTRE_LIEN_GOOGLE_AVIS"
-
-target="_blank"
-
-class="btn primary">
-
-Voir nos avis Google
-
-</a>
-
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-</section><!-- ================= FOOTER ================= -->
-
-
-<style>
-
-
-footer{
-
-
-background:#020202;
-
-
-border-top:
-
-1px solid rgba(255,208,0,.25);
-
-
-padding:45px 0;
-
-
-}
-
-
-
-
-
-.footer-content{
-
-
-display:flex;
-
-
-align-items:center;
-
-
-justify-content:space-between;
-
-
-gap:25px;
-
-
-}
-
-
-
-
-
-.footer-logo{
-
-
-font-size:35px;
-
-
-font-weight:1000;
-
-
-}
-
-
-
-.footer-logo span{
-
-
-color:var(--yellow);
-
-
-}
-
-
-
-
-
-.social{
-
-
-display:flex;
-
-
-gap:15px;
-
-
-}
-
-
-
-
-
-.social a{
-
-
-width:45px;
-
-
-height:45px;
-
-
-border-radius:50%;
-
-
-display:grid;
-
-
-place-items:center;
-
-
-border:1px solid var(--yellow);
-
-
-color:var(--yellow);
-
-
-font-weight:900;
-
-
-}
-
-
-
-
-
-.mobile-order{
-
-
-display:none;
-
-
-position:fixed;
-
-
-bottom:20px;
-
-
-left:50%;
-
-
-transform:translateX(-50%);
-
-
-z-index:9999;
-
-
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#ffd000,
-
-#ffae00
-
-);
-
-
-
-color:#111;
-
-
-padding:16px 45px;
-
-
-border-radius:50px;
-
-
-font-weight:1000;
-
-
-box-shadow:
-
-
-0 0 35px rgba(255,208,0,.45);
-
-
-}
-
-
-
-
-
-@media(max-width:800px){
-
-
-
-nav{
-
-
-display:none;
-
-
-position:absolute;
-
-
-top:85px;
-
-
-left:0;
-
-
-right:0;
-
-transform:none;
-
-
-background:#050505;
-
-
-padding:30px;
-
-
-flex-direction:column;
-
-
-text-align:center;
-
-
-}
-
-
-
-
-
-nav.open{
-
-
-display:flex;
-
-
-}
-
-
-
-
-
-.menu-btn{
-
-
-display:block;
-
-
-}
-
-
-
-
-
-.footer-content{
-
-
-flex-direction:column;
-
-
-text-align:center;
-
-
-}
-
-
-
-
-.mobile-order{
-
-
-display:block;
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-/* Animation apparition */
-
-
-.card{
-
-
-animation:fadeUp .7s ease both;
-
-
-}
-
-
-
-@keyframes fadeUp{
-
-
-from{
-
-
-opacity:0;
-
-
-transform:translateY(30px);
-
-
-}
-
-
-
-to{
-
-
-opacity:1;
-
-
-transform:translateY(0);
-
-
-}
-
-
-
-}
-
-
-
-</style>
-
-
-
-
-
-
-
-
-<!-- ================= BOUTON MOBILE ================= -->
-
-
-<a href="VOTRE_LIEN_UBER_EATS"
-
-target="_blank"
-
-class="mobile-order">
-
-
-🍔 Commander
-
-
-</a>
-
-
-
-
-
-
-
-
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
+    <div class="footer-logo">
+        BURGER <span>M</span>
+    </div>
 
-<div class="container footer-content">
+    <p>
+        Des burgers généreux.
+    </p>
 
+    <p>
+        Une cuisine préparée avec passion.
+    </p>
 
+    <p class="footer-city">
+        Bourges
+    </p>
 
-
-
-<div class="footer-logo">
-
-
-BURGER <span>M</span>
-
-
-</div>
-
-
-
-
-
-
-<div class="social">
-
-
-<a href="#">
-
-IG
-
-</a>
-
-
-<a href="#">
-
-F
-
-</a>
-
-
-</div>
-
-
-
-
-
-
-<div>
-
-
-© 2026 BURGER M
-
-<br>
-
-Tous droits réservés
-
-</div>
-
-
-
-
-
-
-</div>
-
+    <div class="copyright">
+        © 2026 BURGER M — Tous droits réservés
+    </div>
 
 </footer>
 
 
+<!-- =========================================================
+     BOUTON MOBILE
+========================================================= -->
+
+<a
+    href="VOTRE_LIEN_UBER_EATS"
+    target="_blank"
+    rel="noopener"
+    class="mobile-order">
+    🍔 Commander
+</a>
 
 
+<!-- =========================================================
+     MODAL IMAGE
+========================================================= -->
+
+<div
+    class="image-modal"
+    id="imageModal">
+
+    <span
+        class="close-modal"
+        id="closeModal"
+        aria-label="Fermer">
+        ×
+    </span>
+
+    <img
+        src="menus duo.jpeg"
+        alt="Carte complète des menus doubles BURGER M">
+
+</div>
 
 
-
-
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
 
+    /* =========================================================
+       MENU MOBILE
+    ========================================================= */
 
-// ================= MENU MOBILE =================
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
 
+    menuToggle.addEventListener("click", function () {
 
+        mainNav.classList.toggle("active");
 
-const menuBtn = document.querySelector(".menu-btn");
-
-const nav = document.querySelector("nav");
-
-
-
-if(menuBtn){
-
-
-menuBtn.addEventListener("click",()=>{
+    });
 
 
-nav.classList.toggle("open");
+    /* Fermer le menu mobile après avoir cliqué sur un lien */
+
+    const navLinks = document.querySelectorAll("#mainNav a");
+
+    navLinks.forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            mainNav.classList.remove("active");
+
+        });
+
+    });
 
 
-});
+    /* =========================================================
+       AGRANDISSEMENT DE LA CARTE MENUS DOUBLES
+    ========================================================= */
+
+    const menuCardImage =
+        document.getElementById("menuCardImage");
+
+    const imageModal =
+        document.getElementById("imageModal");
+
+    const closeModal =
+        document.getElementById("closeModal");
 
 
-}
+    menuCardImage.addEventListener("click", function() {
+
+        imageModal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
 
 
+    closeModal.addEventListener("click", function() {
+
+        imageModal.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    });
 
 
+    /* Fermer en cliquant à côté de l'image */
+
+    imageModal.addEventListener("click", function(event) {
+
+        if (event.target === imageModal) {
+
+            imageModal.classList.remove("active");
+
+            document.body.style.overflow = "";
+
+        }
+
+    });
 
 
+    /* Fermer avec la touche Échap */
 
-document.querySelectorAll("nav a").forEach(link=>{
+    document.addEventListener("keydown", function(event) {
 
+        if (event.key === "Escape") {
 
-link.addEventListener("click",()=>{
+            imageModal.classList.remove("active");
 
+            document.body.style.overflow = "";
 
-nav.classList.remove("open");
+        }
 
-
-});
-
-
-});
-
-
+    });
 
 </script>
 
-
-
-
-
-
-
-
-
-<script>
-/* =========================================================
-   HALO D'ÉTINCELLES STATIQUE — rendu fixe, sans animation
-   ========================================================= */
-(() => {
-  const canvas = document.querySelector(".logo-particles");
-  if (!canvas) return;
-
-  const ctx = canvas.getContext("2d");
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-  const GOLD = [
-    [255, 208, 0],
-    [255, 224, 120],
-    [255, 185, 25],
-    [255, 240, 175],
-    [255, 165, 0]
-  ];
-
-  // Graine fixe : le nuage reste exactement identique à chaque chargement.
-  let seed = 738291;
-  function random(){
-    seed = (seed * 1664525 + 1013904223) >>> 0;
-    return seed / 4294967296;
-  }
-
-  function draw(){
-    const rect = canvas.getBoundingClientRect();
-    const w = rect.width;
-    const h = rect.height;
-
-    canvas.width = Math.round(w * dpr);
-    canvas.height = Math.round(h * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, w, h);
-
-    const cx = w / 2;
-    const cy = h / 2;
-    const R = Math.min(w, h) / 2;
-
-    // Halo très dense près du logo, plus léger en s'éloignant.
-    const count = window.innerWidth < 600 ? 420 : 700;
-
-    for(let i = 0; i < count; i++){
-      const t = random();
-
-      // Concentration forte autour du logo.
-      const r = R * (0.56 + Math.pow(t, 1.9) * 0.36);
-      const a = random() * Math.PI * 2;
-
-      // Légère irrégularité naturelle du nuage.
-      const ellipse = 0.90 + random() * 0.20;
-      const x = cx + Math.cos(a) * r * ellipse;
-      const y = cy + Math.sin(a) * r;
-
-      // Les particules proches sont plus petites/denses.
-      const near = 1 - Math.min(r / R, 1);
-      const size = 0.22 + random() * (0.42 + near * 0.55);
-
-      // Plus lumineux vers le centre.
-      const alpha = 0.12 + near * 0.42 + random() * 0.14;
-      const [rr, gg, bb] = GOLD[Math.floor(random() * GOLD.length)];
-
-      ctx.beginPath();
-      ctx.fillStyle = `rgba(${rr},${gg},${bb},${Math.min(alpha, 0.98)})`;
-      ctx.arc(x, y, size, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Petits éclats lumineux, toujours statiques.
-      if(random() < 0.028 && near > 0.30){
-        ctx.beginPath();
-        ctx.fillStyle = `rgba(255,245,190,${0.30 + near * 0.45})`;
-        ctx.arc(x, y, size * 2.3, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-  }
-
-  draw();
-  window.addEventListener("resize", draw, { passive:true });
-})();
-</script>
 
 </body>
-
 </html>
