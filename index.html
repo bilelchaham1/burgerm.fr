@@ -102,7 +102,7 @@
             height: auto;
         }
 
-        /* Navigation parfaitement centrée */
+        /* Navigation centrée */
 
         nav {
             display: flex;
@@ -114,7 +114,7 @@
         nav a {
             color: #ffffff;
 
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 700;
 
             transition: 0.25s;
@@ -124,7 +124,92 @@
             color: var(--yellow);
         }
 
-        /* Bouton mobile */
+
+        /* =========================================================
+           BOUTON COMMANDER EN LIGNE
+        ========================================================= */
+
+        .order-menu {
+            position: absolute;
+
+            right: 25px;
+            top: 50%;
+
+            transform: translateY(-50%);
+        }
+
+        .order-button {
+            border: none;
+            border-radius: 6px;
+
+            background: var(--yellow);
+            color: #000000;
+
+            padding: 13px 20px;
+
+            font-size: 14px;
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+        .order-button:hover {
+            background: #ffffff;
+
+            transform: translateY(-1px);
+        }
+
+        .order-dropdown {
+            position: absolute;
+
+            top: calc(100% + 10px);
+            right: 0;
+
+            min-width: 190px;
+
+            padding: 7px;
+
+            background: #111111;
+
+            border: 1px solid rgba(255, 189, 0, 0.45);
+            border-radius: 8px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.5);
+
+            display: none;
+        }
+
+        .order-dropdown.active {
+            display: block;
+        }
+
+        .order-dropdown a {
+            display: block;
+
+            padding: 12px 14px;
+
+            border-radius: 5px;
+
+            color: #ffffff;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .order-dropdown a:hover {
+            background: var(--yellow);
+            color: #000000;
+        }
+
+
+        /* =========================================================
+           MENU MOBILE
+        ========================================================= */
 
         .menu-toggle {
             display: none;
@@ -808,7 +893,28 @@
            TABLETTE
         ========================================================= */
 
-        @media (max-width: 950px) {
+        @media (max-width: 1100px) {
+
+            .nav-container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .logo-link {
+                left: 20px;
+            }
+
+            .order-menu {
+                right: 20px;
+            }
+
+            nav {
+                gap: 18px;
+            }
+
+            nav a {
+                font-size: 15px;
+            }
 
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -820,10 +926,6 @@
 
             .contact-grid {
                 grid-template-columns: 1fr;
-            }
-
-            nav {
-                gap: 18px;
             }
 
         }
@@ -847,6 +949,10 @@
 
             .logo {
                 width: 120px;
+            }
+
+            .order-menu {
+                display: none;
             }
 
             .menu-toggle {
@@ -884,6 +990,8 @@
                 border-bottom: 1px solid #1e1e1e;
 
                 text-align: center;
+
+                font-size: 16px;
             }
 
             .hero {
@@ -1023,6 +1131,46 @@
             </a>
 
         </nav>
+
+
+        <!-- COMMANDER EN LIGNE -->
+
+        <div class="order-menu">
+
+            <button
+                class="order-button"
+                id="orderButton">
+
+                🍔 Commander en ligne
+
+            </button>
+
+
+            <div
+                class="order-dropdown"
+                id="orderDropdown">
+
+                <a
+                    href="VOTRE_LIEN_UBER_EATS"
+                    target="_blank"
+                    rel="noopener">
+
+                    🍔 Uber Eats
+
+                </a>
+
+                <a
+                    href="VOTRE_LIEN_DELIVEROO"
+                    target="_blank"
+                    rel="noopener">
+
+                    🚴 Deliveroo
+
+                </a>
+
+            </div>
+
+        </div>
 
 
         <!-- MENU MOBILE -->
@@ -1343,8 +1491,6 @@
         <div class="double-menu-grid">
 
 
-            <!-- M1 -->
-
             <article class="double-menu">
 
                 <div class="menu-number">
@@ -1352,15 +1498,9 @@
                 </div>
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     BIG M + CHEESEBURGER
-
                 </h3>
 
                 <div class="menu-composition">
@@ -1386,8 +1526,6 @@
             </article>
 
 
-            <!-- M2 -->
-
             <article class="double-menu">
 
                 <div class="menu-number">
@@ -1395,15 +1533,9 @@
                 </div>
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     BIG M + NUGGETS
-
                 </h3>
 
                 <div class="menu-composition">
@@ -1429,8 +1561,6 @@
             </article>
 
 
-            <!-- M3 -->
-
             <article class="double-menu">
 
                 <div class="menu-number">
@@ -1438,15 +1568,9 @@
                 </div>
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     CHEESEBURGER + CROQ M
-
                 </h3>
 
                 <div class="menu-composition">
@@ -1472,8 +1596,6 @@
             </article>
 
 
-            <!-- M4 -->
-
             <article class="double-menu">
 
                 <div class="menu-number">
@@ -1481,15 +1603,9 @@
                 </div>
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     SUPRÊME + CHEESEBURGER
-
                 </h3>
 
                 <div class="menu-composition">
@@ -1515,8 +1631,6 @@
             </article>
 
 
-            <!-- M5 -->
-
             <article class="double-menu">
 
                 <div class="menu-number">
@@ -1524,15 +1638,9 @@
                 </div>
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     SUPRÊME + SUPRÊME
-
                 </h3>
 
                 <div class="menu-composition">
@@ -1558,8 +1666,6 @@
             </article>
 
 
-            <!-- M6 -->
-
             <article class="double-menu">
 
                 <div class="menu-number">
@@ -1567,15 +1673,9 @@
                 </div>
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     BIG M + SUPRÊME
-
                 </h3>
 
                 <div class="menu-composition">
@@ -1601,8 +1701,6 @@
             </article>
 
 
-            <!-- M7 -->
-
             <article class="double-menu">
 
                 <div class="menu-number">
@@ -1610,15 +1708,9 @@
                 </div>
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     SUPRÊME + CHICKEN
-
                 </h3>
 
                 <div class="menu-composition">
@@ -1689,8 +1781,6 @@
         </div>
 
 
-        <!-- WRAPS -->
-
         <div class="category">
 
             <h3 class="category-title">
@@ -1700,51 +1790,29 @@
             <div class="menu-list">
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Chicken
-                    </span>
-
-                    <span class="menu-item-price">
-                        6,90 €
-                    </span>
+                    <span class="menu-item-name">Chicken</span>
+                    <span class="menu-item-price">6,90 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        BBQ
-                    </span>
-
-                    <span class="menu-item-price">
-                        6,90 €
-                    </span>
+                    <span class="menu-item-name">BBQ</span>
+                    <span class="menu-item-price">6,90 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        César
-                    </span>
-
-                    <span class="menu-item-price">
-                        6,90 €
-                    </span>
+                    <span class="menu-item-name">César</span>
+                    <span class="menu-item-price">6,90 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Veggie
-                    </span>
-
-                    <span class="menu-item-price">
-                        6,50 €
-                    </span>
+                    <span class="menu-item-name">Veggie</span>
+                    <span class="menu-item-price">6,50 €</span>
                 </div>
 
             </div>
 
         </div>
 
-
-        <!-- SALADES -->
 
         <div class="category">
 
@@ -1755,51 +1823,29 @@
             <div class="menu-list">
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        César
-                    </span>
-
-                    <span class="menu-item-price">
-                        7,50 €
-                    </span>
+                    <span class="menu-item-name">César</span>
+                    <span class="menu-item-price">7,50 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Chicken Crispy
-                    </span>
-
-                    <span class="menu-item-price">
-                        7,50 €
-                    </span>
+                    <span class="menu-item-name">Chicken Crispy</span>
+                    <span class="menu-item-price">7,50 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Chèvre chaud
-                    </span>
-
-                    <span class="menu-item-price">
-                        7,50 €
-                    </span>
+                    <span class="menu-item-name">Chèvre chaud</span>
+                    <span class="menu-item-price">7,50 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Veggie
-                    </span>
-
-                    <span class="menu-item-price">
-                        7,20 €
-                    </span>
+                    <span class="menu-item-name">Veggie</span>
+                    <span class="menu-item-price">7,20 €</span>
                 </div>
 
             </div>
 
         </div>
 
-
-        <!-- FRITES -->
 
         <div class="category">
 
@@ -1810,81 +1856,44 @@
             <div class="menu-list">
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Petite
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,50 €
-                    </span>
+                    <span class="menu-item-name">Petite</span>
+                    <span class="menu-item-price">2,50 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Moyenne
-                    </span>
-
-                    <span class="menu-item-price">
-                        3,20 €
-                    </span>
+                    <span class="menu-item-name">Moyenne</span>
+                    <span class="menu-item-price">3,20 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Grande
-                    </span>
-
-                    <span class="menu-item-price">
-                        3,90 €
-                    </span>
+                    <span class="menu-item-name">Grande</span>
+                    <span class="menu-item-price">3,90 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Cheddar
-                    </span>
-
-                    <span class="menu-item-price">
-                        4,50 €
-                    </span>
+                    <span class="menu-item-name">Cheddar</span>
+                    <span class="menu-item-price">4,50 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Cheddar Bacon
-                    </span>
-
-                    <span class="menu-item-price">
-                        4,90 €
-                    </span>
+                    <span class="menu-item-name">Cheddar Bacon</span>
+                    <span class="menu-item-price">4,90 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Chicken Cheddar
-                    </span>
-
-                    <span class="menu-item-price">
-                        5,20 €
-                    </span>
+                    <span class="menu-item-name">Chicken Cheddar</span>
+                    <span class="menu-item-price">5,20 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Sauce supplémentaire
-                    </span>
-
-                    <span class="menu-item-price">
-                        0,50 €
-                    </span>
+                    <span class="menu-item-name">Sauce supplémentaire</span>
+                    <span class="menu-item-price">0,50 €</span>
                 </div>
 
             </div>
 
         </div>
 
-
-        <!-- APPETIZERS -->
 
         <div class="category">
 
@@ -1895,71 +1904,39 @@
             <div class="menu-list">
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Nuggets x6
-                    </span>
-
-                    <span class="menu-item-price">
-                        4,50 €
-                    </span>
+                    <span class="menu-item-name">Nuggets x6</span>
+                    <span class="menu-item-price">4,50 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Tenders x3
-                    </span>
-
-                    <span class="menu-item-price">
-                        4,90 €
-                    </span>
+                    <span class="menu-item-name">Tenders x3</span>
+                    <span class="menu-item-price">4,90 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Mozzarella sticks
-                    </span>
-
-                    <span class="menu-item-price">
-                        4,90 €
-                    </span>
+                    <span class="menu-item-name">Mozzarella sticks</span>
+                    <span class="menu-item-price">4,90 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Onion rings
-                    </span>
-
-                    <span class="menu-item-price">
-                        3,90 €
-                    </span>
+                    <span class="menu-item-name">Onion rings</span>
+                    <span class="menu-item-price">3,90 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Jalapeños
-                    </span>
-
-                    <span class="menu-item-price">
-                        3,90 €
-                    </span>
+                    <span class="menu-item-name">Jalapeños</span>
+                    <span class="menu-item-price">3,90 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Chili cheese
-                    </span>
-
-                    <span class="menu-item-price">
-                        4,90 €
-                    </span>
+                    <span class="menu-item-name">Chili cheese</span>
+                    <span class="menu-item-price">4,90 €</span>
                 </div>
 
             </div>
 
         </div>
 
-
-        <!-- DESSERTS -->
 
         <div class="category">
 
@@ -1970,61 +1947,34 @@
             <div class="menu-list">
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Tiramisu maison
-                    </span>
-
-                    <span class="menu-item-price">
-                        3,90 €
-                    </span>
+                    <span class="menu-item-name">Tiramisu maison</span>
+                    <span class="menu-item-price">3,90 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Muffin
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,90 €
-                    </span>
+                    <span class="menu-item-name">Muffin</span>
+                    <span class="menu-item-price">2,90 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Cookies
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,50 €
-                    </span>
+                    <span class="menu-item-name">Cookies</span>
+                    <span class="menu-item-price">2,50 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Donuts
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,50 €
-                    </span>
+                    <span class="menu-item-name">Donuts</span>
+                    <span class="menu-item-price">2,50 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Glaces
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,50 €
-                    </span>
+                    <span class="menu-item-name">Glaces</span>
+                    <span class="menu-item-price">2,50 €</span>
                 </div>
 
             </div>
 
         </div>
 
-
-        <!-- BOISSONS -->
 
         <div class="category">
 
@@ -2035,81 +1985,44 @@
             <div class="menu-list">
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Coca-Cola
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,20 €
-                    </span>
+                    <span class="menu-item-name">Coca-Cola</span>
+                    <span class="menu-item-price">2,20 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Coca-Cola Zero
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,20 €
-                    </span>
+                    <span class="menu-item-name">Coca-Cola Zero</span>
+                    <span class="menu-item-price">2,20 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Fanta
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,20 €
-                    </span>
+                    <span class="menu-item-name">Fanta</span>
+                    <span class="menu-item-price">2,20 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Sprite
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,20 €
-                    </span>
+                    <span class="menu-item-name">Sprite</span>
+                    <span class="menu-item-price">2,20 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Oasis
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,20 €
-                    </span>
+                    <span class="menu-item-name">Oasis</span>
+                    <span class="menu-item-price">2,20 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Ice Tea
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,20 €
-                    </span>
+                    <span class="menu-item-name">Ice Tea</span>
+                    <span class="menu-item-price">2,20 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Eau
-                    </span>
-
-                    <span class="menu-item-price">
-                        2,20 €
-                    </span>
+                    <span class="menu-item-name">Eau</span>
+                    <span class="menu-item-price">2,20 €</span>
                 </div>
 
             </div>
 
         </div>
 
-
-        <!-- SUPPLÉMENTS -->
 
         <div class="category">
 
@@ -2120,63 +2033,33 @@
             <div class="menu-list">
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Steak
-                    </span>
-
-                    <span class="menu-item-price">
-                        1,50 €
-                    </span>
+                    <span class="menu-item-name">Steak</span>
+                    <span class="menu-item-price">1,50 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Bacon
-                    </span>
-
-                    <span class="menu-item-price">
-                        1,00 €
-                    </span>
+                    <span class="menu-item-name">Bacon</span>
+                    <span class="menu-item-price">1,00 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Cheddar
-                    </span>
-
-                    <span class="menu-item-price">
-                        0,70 €
-                    </span>
+                    <span class="menu-item-name">Cheddar</span>
+                    <span class="menu-item-price">0,70 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Œuf
-                    </span>
-
-                    <span class="menu-item-price">
-                        0,70 €
-                    </span>
+                    <span class="menu-item-name">Œuf</span>
+                    <span class="menu-item-price">0,70 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Oignons frits
-                    </span>
-
-                    <span class="menu-item-price">
-                        0,70 €
-                    </span>
+                    <span class="menu-item-name">Oignons frits</span>
+                    <span class="menu-item-price">0,70 €</span>
                 </div>
 
                 <div class="menu-item">
-                    <span class="menu-item-name">
-                        Jalapeños
-                    </span>
-
-                    <span class="menu-item-price">
-                        0,70 €
-                    </span>
+                    <span class="menu-item-name">Jalapeños</span>
+                    <span class="menu-item-price">0,70 €</span>
                 </div>
 
             </div>
@@ -2215,8 +2098,6 @@
 
         <div class="contact-grid">
 
-
-            <!-- ADRESSE -->
 
             <div class="contact-box">
 
@@ -2282,8 +2163,6 @@
             </div>
 
 
-            <!-- HORAIRES -->
-
             <div class="contact-box">
 
                 <h3>
@@ -2311,93 +2190,38 @@
                 <div class="opening-hours">
 
                     <div class="opening-row">
-
-                        <span>
-                            Lundi
-                        </span>
-
-                        <span>
-                            11h30 - 14h00 / 18h00 - 23h00
-                        </span>
-
+                        <span>Lundi</span>
+                        <span>11h30 - 14h00 / 18h00 - 23h00</span>
                     </div>
 
-
                     <div class="opening-row">
-
-                        <span>
-                            Mardi
-                        </span>
-
-                        <span>
-                            11h30 - 14h00 / 18h00 - 23h00
-                        </span>
-
+                        <span>Mardi</span>
+                        <span>11h30 - 14h00 / 18h00 - 23h00</span>
                     </div>
 
-
                     <div class="opening-row">
-
-                        <span>
-                            Mercredi
-                        </span>
-
-                        <span>
-                            11h30 - 14h00 / 18h00 - 23h00
-                        </span>
-
+                        <span>Mercredi</span>
+                        <span>11h30 - 14h00 / 18h00 - 23h00</span>
                     </div>
 
-
                     <div class="opening-row">
-
-                        <span>
-                            Jeudi
-                        </span>
-
-                        <span>
-                            11h30 - 14h00 / 19h00 - 00h00
-                        </span>
-
+                        <span>Jeudi</span>
+                        <span>11h30 - 14h00 / 19h00 - 00h00</span>
                     </div>
 
-
                     <div class="opening-row">
-
-                        <span>
-                            Vendredi
-                        </span>
-
-                        <span>
-                            18h00 - 23h00
-                        </span>
-
+                        <span>Vendredi</span>
+                        <span>18h00 - 23h00</span>
                     </div>
 
-
                     <div class="opening-row">
-
-                        <span>
-                            Samedi
-                        </span>
-
-                        <span>
-                            18h00 - 23h00
-                        </span>
-
+                        <span>Samedi</span>
+                        <span>18h00 - 23h00</span>
                     </div>
 
-
                     <div class="opening-row">
-
-                        <span>
-                            Dimanche
-                        </span>
-
-                        <span>
-                            18h00 - 23h00
-                        </span>
-
+                        <span>Dimanche</span>
+                        <span>18h00 - 23h00</span>
                     </div>
 
                 </div>
@@ -2406,8 +2230,6 @@
 
         </div>
 
-
-        <!-- GOOGLE MAPS -->
 
         <div class="map-container">
 
@@ -2531,7 +2353,7 @@
     });
 
 
-    /* Fermer le menu après sélection */
+    /* Fermer le menu mobile après sélection */
 
     const navLinks =
         document.querySelectorAll("#mainNav a");
@@ -2544,6 +2366,35 @@
             mainNav.classList.remove("active");
 
         });
+
+    });
+
+
+    /* =========================================================
+       MENU COMMANDER EN LIGNE
+    ========================================================= */
+
+    const orderButton =
+        document.getElementById("orderButton");
+
+    const orderDropdown =
+        document.getElementById("orderDropdown");
+
+
+    orderButton.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
+        orderDropdown.classList.toggle("active");
+
+    });
+
+
+    /* Fermer le menu si on clique ailleurs */
+
+    document.addEventListener("click", function () {
+
+        orderDropdown.classList.remove("active");
 
     });
 
