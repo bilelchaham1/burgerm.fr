@@ -433,7 +433,7 @@
 
             border-radius: 12px;
 
-            padding: 28px 20px;
+            padding: 20px;
 
             text-align: center;
 
@@ -449,10 +449,20 @@
                 0 10px 30px rgba(255, 189, 0, 0.10);
         }
 
-        .product-icon {
-            font-size: 40px;
+        /* IMAGE DES BURGERS
+           object-fit: contain permet de voir le burger entier
+           sans couper le haut ni le bas.
+        */
 
-            margin-bottom: 10px;
+        .product-image {
+            width: 100%;
+            height: 190px;
+
+            object-fit: contain;
+
+            margin: 0 auto 15px;
+
+            border-radius: 8px;
         }
 
         .product-card h3 {
@@ -513,28 +523,26 @@
 
             border-radius: 12px;
 
-            padding: 25px 18px;
+            padding: 20px 18px;
 
             text-align: center;
 
             transition: 0.25s;
         }
 
-        /* =========================================================
-           IMAGES DES MENUS DOUBLES
-           ========================================================= */
+        /* IMAGE DES MENUS DOUBLES */
 
         .double-menu-image {
             display: block;
 
             width: 100%;
-            height: 180px;
+            height: 170px;
 
             object-fit: contain;
 
-            border-radius: 8px;
+            margin: 0 auto 14px;
 
-            margin: 8px auto 14px;
+            border-radius: 8px;
         }
 
         .double-menu:hover {
@@ -1055,10 +1063,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .double-menu-image {
-                height: 180px;
-            }
-
             .menu-list {
                 grid-template-columns: 1fr;
             }
@@ -1089,6 +1093,16 @@
 
             body {
                 padding-bottom: 65px;
+            }
+
+            /* Taille mobile des images */
+
+            .product-image {
+                height: 180px;
+            }
+
+            .double-menu-image {
+                height: 180px;
             }
 
         }
@@ -1299,9 +1313,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🍔
-                </div>
+                <img
+                    src="images/big-m.jpg"
+                    class="product-image"
+                    alt="Burger BIG M">
 
                 <h3>
                     BIG M
@@ -1320,9 +1335,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🍔
-                </div>
+                <img
+                    src="images/big-max.jpg"
+                    class="product-image"
+                    alt="Burger BIG MAX">
 
                 <h3>
                     BIG MAX
@@ -1341,9 +1357,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🍔
-                </div>
+                <img
+                    src="images/supreme.jpg"
+                    class="product-image"
+                    alt="Burger SUPREME">
 
                 <h3>
                     SUPREME
@@ -1362,9 +1379,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🧀
-                </div>
+                <img
+                    src="images/cheeseburger.jpg"
+                    class="product-image"
+                    alt="Cheeseburger">
 
                 <h3>
                     CHEESEBURGER
@@ -1383,9 +1401,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🍔
-                </div>
+                <img
+                    src="images/double.jpg"
+                    class="product-image"
+                    alt="Burger DOUBLE">
 
                 <h3>
                     DOUBLE
@@ -1404,9 +1423,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🍔
-                </div>
+                <img
+                    src="images/triple.jpg"
+                    class="product-image"
+                    alt="Burger TRIPLE">
 
                 <h3>
                     TRIPLE
@@ -1425,9 +1445,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🍗
-                </div>
+                <img
+                    src="images/chicken.jpg"
+                    class="product-image"
+                    alt="Burger CHICKEN">
 
                 <h3>
                     CHICKEN
@@ -1446,9 +1467,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🍗
-                </div>
+                <img
+                    src="images/crispy.jpg"
+                    class="product-image"
+                    alt="Burger CRISPY">
 
                 <h3>
                     CRISPY
@@ -1467,9 +1489,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🐟
-                </div>
+                <img
+                    src="images/fish.jpg"
+                    class="product-image"
+                    alt="Burger FISH">
 
                 <h3>
                     FISH
@@ -1488,9 +1511,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🥪
-                </div>
+                <img
+                    src="images/croq-m.jpg"
+                    class="product-image"
+                    alt="CROQ M">
 
                 <h3>
                     CROQ M
@@ -1509,9 +1533,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🫓
-                </div>
+                <img
+                    src="images/naan-big-m.jpg"
+                    class="product-image"
+                    alt="NAAN BIG M">
 
                 <h3>
                     NAAN BIG M
@@ -1530,9 +1555,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🫓
-                </div>
+                <img
+                    src="images/naan-chicken.jpg"
+                    class="product-image"
+                    alt="NAAN CHICKEN">
 
                 <h3>
                     NAAN CHICKEN
@@ -1551,9 +1577,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🍔
-                </div>
+                <img
+                    src="images/le-m.jpg"
+                    class="product-image"
+                    alt="Burger LE M">
 
                 <h3>
                     LE M
@@ -1572,9 +1599,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🍯
-                </div>
+                <img
+                    src="images/chevre-miel.jpg"
+                    class="product-image"
+                    alt="Burger CHEVRE MIEL">
 
                 <h3>
                     CHEVRE MIEL
@@ -1593,9 +1621,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🌶️
-                </div>
+                <img
+                    src="images/pepper.jpg"
+                    class="product-image"
+                    alt="Burger PEPPER">
 
                 <h3>
                     PEPPER
@@ -1614,9 +1643,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🧀
-                </div>
+                <img
+                    src="images/montagnard.jpg"
+                    class="product-image"
+                    alt="Burger MONTAGNARD">
 
                 <h3>
                     MONTAGNARD
@@ -1635,9 +1665,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🥓
-                </div>
+                <img
+                    src="images/fume.jpg"
+                    class="product-image"
+                    alt="Burger FUME">
 
                 <h3>
                     FUME
@@ -1656,9 +1687,10 @@
 
             <article class="product-card">
 
-                <div class="product-icon">
-                    🌱
-                </div>
+                <img
+                    src="images/veggie.jpg"
+                    class="product-image"
+                    alt="Burger VEGGIE">
 
                 <h3>
                     VEGGIE
@@ -1710,20 +1742,16 @@
         <div class="double-menu-grid">
 
 
-            <!-- =================================================
-                 MENU M1
-            ================================================== -->
-
             <article class="double-menu">
+
+                <img
+                    src="images/menu1.jpg"
+                    class="double-menu-image"
+                    alt="Menu double M1">
 
                 <div class="menu-number">
                     M1
                 </div>
-
-                <img
-                    src="images/menu-m1.jpg"
-                    class="double-menu-image"
-                    alt="Menu double M1 Big M et Cheeseburger">
 
                 <h3>
                     <span>MENU DOUBLE</span>
@@ -1748,20 +1776,16 @@
             </article>
 
 
-            <!-- =================================================
-                 MENU M2
-            ================================================== -->
-
             <article class="double-menu">
+
+                <img
+                    src="images/menu2.jpg"
+                    class="double-menu-image"
+                    alt="Menu double M2">
 
                 <div class="menu-number">
                     M2
                 </div>
-
-                <img
-                    src="images/menu-m2.jpg"
-                    class="double-menu-image"
-                    alt="Menu double M2 Big M et Nuggets">
 
                 <h3>
                     <span>MENU DOUBLE</span>
@@ -1786,20 +1810,16 @@
             </article>
 
 
-            <!-- =================================================
-                 MENU M3
-            ================================================== -->
-
             <article class="double-menu">
+
+                <img
+                    src="images/menu3.jpg"
+                    class="double-menu-image"
+                    alt="Menu double M3">
 
                 <div class="menu-number">
                     M3
                 </div>
-
-                <img
-                    src="images/menu-m3.jpg"
-                    class="double-menu-image"
-                    alt="Menu double M3 Cheeseburger et Croq M">
 
                 <h3>
                     <span>MENU DOUBLE</span>
@@ -1824,20 +1844,16 @@
             </article>
 
 
-            <!-- =================================================
-                 MENU M4
-            ================================================== -->
-
             <article class="double-menu">
+
+                <img
+                    src="images/menu4.jpg"
+                    class="double-menu-image"
+                    alt="Menu double M4">
 
                 <div class="menu-number">
                     M4
                 </div>
-
-                <img
-                    src="images/menu-m4.jpg"
-                    class="double-menu-image"
-                    alt="Menu double M4 Suprême et Cheeseburger">
 
                 <h3>
                     <span>MENU DOUBLE</span>
@@ -1862,20 +1878,16 @@
             </article>
 
 
-            <!-- =================================================
-                 MENU M5
-            ================================================== -->
-
             <article class="double-menu">
+
+                <img
+                    src="images/menu5.jpg"
+                    class="double-menu-image"
+                    alt="Menu double M5">
 
                 <div class="menu-number">
                     M5
                 </div>
-
-                <img
-                    src="images/menu-m5.jpg"
-                    class="double-menu-image"
-                    alt="Menu double M5 Suprême et Suprême">
 
                 <h3>
                     <span>MENU DOUBLE</span>
@@ -1900,20 +1912,16 @@
             </article>
 
 
-            <!-- =================================================
-                 MENU M6
-            ================================================== -->
-
             <article class="double-menu">
+
+                <img
+                    src="images/menu6.jpg"
+                    class="double-menu-image"
+                    alt="Menu double M6">
 
                 <div class="menu-number">
                     M6
                 </div>
-
-                <img
-                    src="images/menu-m6.jpg"
-                    class="double-menu-image"
-                    alt="Menu double M6 Big M et Suprême">
 
                 <h3>
                     <span>MENU DOUBLE</span>
@@ -1938,20 +1946,16 @@
             </article>
 
 
-            <!-- =================================================
-                 MENU M7
-            ================================================== -->
-
             <article class="double-menu">
+
+                <img
+                    src="images/menu7.jpg"
+                    class="double-menu-image"
+                    alt="Menu double M7">
 
                 <div class="menu-number">
                     M7
                 </div>
-
-                <img
-                    src="images/menu-m7.jpg"
-                    class="double-menu-image"
-                    alt="Menu double M7 Suprême et Chicken">
 
                 <h3>
                     <span>MENU DOUBLE</span>
@@ -2555,7 +2559,7 @@
 
 
 <!-- =========================================================
-     BOUTON MOBILE COMMANDER
+     BOUTON MOBILE
 ========================================================= -->
 
 <a
