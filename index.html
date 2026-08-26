@@ -433,13 +433,11 @@
 
             border-radius: 12px;
 
-            padding: 28px 20px;
+            padding: 20px;
 
             text-align: center;
 
             transition: 0.25s;
-
-            overflow: hidden;
         }
 
         .product-card:hover {
@@ -451,28 +449,37 @@
                 0 10px 30px rgba(255, 189, 0, 0.10);
         }
 
+
         /* =========================================================
            IMAGES DES BURGERS
         ========================================================= */
 
-        .product-image {
-            display: block;
-
+        .product-icon {
             width: 100%;
-            height: 200px;
+            height: 180px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 15px;
+
+            overflow: hidden;
+
+            border-radius: 8px;
+
+            background: #111111;
+        }
+
+        .product-icon img {
+            width: 100%;
+            height: 100%;
 
             object-fit: cover;
 
             border-radius: 8px;
-
-            margin: 0 auto 18px;
         }
 
-        .product-icon {
-            font-size: 40px;
-
-            margin-bottom: 10px;
-        }
 
         .product-card h3 {
             color: var(--yellow);
@@ -1063,6 +1070,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .product-icon {
+                height: 180px;
+            }
+
             .double-menu-grid {
                 grid-template-columns: 1fr;
             }
@@ -1097,10 +1108,6 @@
 
             body {
                 padding-bottom: 65px;
-            }
-
-            .product-image {
-                height: 200px;
             }
 
         }
@@ -1309,15 +1316,11 @@
         <div class="products-grid">
 
 
-            <!-- BIG M -->
-
             <article class="product-card">
 
-                <img
-                    src="images/big-m.jpg"
-                    class="product-image"
-                    alt="Burger BIG M"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/big-m.jpg" alt="Burger Big M">
+                </div>
 
                 <h3>
                     BIG M
@@ -1334,15 +1337,11 @@
             </article>
 
 
-            <!-- BIG MAX -->
-
             <article class="product-card">
 
-                <img
-                    src="images/big-max.jpg"
-                    class="product-image"
-                    alt="Burger BIG MAX"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/big-max.jpg" alt="Burger Big Max">
+                </div>
 
                 <h3>
                     BIG MAX
@@ -1359,15 +1358,11 @@
             </article>
 
 
-            <!-- SUPREME -->
-
             <article class="product-card">
 
-                <img
-                    src="images/supreme.jpg"
-                    class="product-image"
-                    alt="Burger SUPREME"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/supreme.jpg" alt="Burger Suprême">
+                </div>
 
                 <h3>
                     SUPREME
@@ -1384,15 +1379,11 @@
             </article>
 
 
-            <!-- CHEESEBURGER -->
-
             <article class="product-card">
 
-                <img
-                    src="images/cheeseburger.jpg"
-                    class="product-image"
-                    alt="Cheeseburger"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/cheeseburger.jpg" alt="Cheeseburger">
+                </div>
 
                 <h3>
                     CHEESEBURGER
@@ -1409,15 +1400,11 @@
             </article>
 
 
-            <!-- DOUBLE -->
-
             <article class="product-card">
 
-                <img
-                    src="images/double.jpg"
-                    class="product-image"
-                    alt="Burger DOUBLE"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/double.jpg" alt="Burger Double">
+                </div>
 
                 <h3>
                     DOUBLE
@@ -1434,15 +1421,11 @@
             </article>
 
 
-            <!-- TRIPLE -->
-
             <article class="product-card">
 
-                <img
-                    src="images/triple.jpg"
-                    class="product-image"
-                    alt="Burger TRIPLE"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/triple.jpg" alt="Burger Triple">
+                </div>
 
                 <h3>
                     TRIPLE
@@ -1459,15 +1442,11 @@
             </article>
 
 
-            <!-- CHICKEN -->
-
             <article class="product-card">
 
-                <img
-                    src="images/chicken.jpg"
-                    class="product-image"
-                    alt="Burger CHICKEN"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/chicken.jpg" alt="Burger Chicken">
+                </div>
 
                 <h3>
                     CHICKEN
@@ -1484,15 +1463,11 @@
             </article>
 
 
-            <!-- CRISPY -->
-
             <article class="product-card">
 
-                <img
-                    src="images/crispy.jpg"
-                    class="product-image"
-                    alt="Burger CRISPY"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/crispy.jpg" alt="Burger Crispy">
+                </div>
 
                 <h3>
                     CRISPY
@@ -1509,15 +1484,11 @@
             </article>
 
 
-            <!-- FISH -->
-
             <article class="product-card">
 
-                <img
-                    src="images/fish.jpg"
-                    class="product-image"
-                    alt="Burger FISH"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/fish.jpg" alt="Burger Fish">
+                </div>
 
                 <h3>
                     FISH
@@ -1534,15 +1505,11 @@
             </article>
 
 
-            <!-- CROQ M -->
-
             <article class="product-card">
 
-                <img
-                    src="images/croq-m.jpg"
-                    class="product-image"
-                    alt="CROQ M"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/croq-m.jpg" alt="Croq M">
+                </div>
 
                 <h3>
                     CROQ M
@@ -1559,15 +1526,11 @@
             </article>
 
 
-            <!-- NAAN BIG M -->
-
             <article class="product-card">
 
-                <img
-                    src="images/naan-big-m.jpg"
-                    class="product-image"
-                    alt="NAAN BIG M"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/naan-big-m.jpg" alt="Naan Big M">
+                </div>
 
                 <h3>
                     NAAN BIG M
@@ -1584,15 +1547,11 @@
             </article>
 
 
-            <!-- NAAN CHICKEN -->
-
             <article class="product-card">
 
-                <img
-                    src="images/naan-chicken.jpg"
-                    class="product-image"
-                    alt="NAAN CHICKEN"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/naan-chicken.jpg" alt="Naan Chicken">
+                </div>
 
                 <h3>
                     NAAN CHICKEN
@@ -1609,15 +1568,11 @@
             </article>
 
 
-            <!-- LE M -->
-
             <article class="product-card">
 
-                <img
-                    src="images/le-m.jpg"
-                    class="product-image"
-                    alt="Burger LE M"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/le-m.jpg" alt="Burger Le M">
+                </div>
 
                 <h3>
                     LE M
@@ -1634,15 +1589,11 @@
             </article>
 
 
-            <!-- CHEVRE MIEL -->
-
             <article class="product-card">
 
-                <img
-                    src="images/chevre-miel.jpg"
-                    class="product-image"
-                    alt="Burger CHEVRE MIEL"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/chevre-miel.jpg" alt="Burger Chèvre Miel">
+                </div>
 
                 <h3>
                     CHEVRE MIEL
@@ -1659,15 +1610,11 @@
             </article>
 
 
-            <!-- PEPPER -->
-
             <article class="product-card">
 
-                <img
-                    src="images/pepper.jpg"
-                    class="product-image"
-                    alt="Burger PEPPER"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/pepper.jpg" alt="Burger Pepper">
+                </div>
 
                 <h3>
                     PEPPER
@@ -1684,15 +1631,11 @@
             </article>
 
 
-            <!-- MONTAGNARD -->
-
             <article class="product-card">
 
-                <img
-                    src="images/montagnard.jpg"
-                    class="product-image"
-                    alt="Burger MONTAGNARD"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/montagnard.jpg" alt="Burger Montagnard">
+                </div>
 
                 <h3>
                     MONTAGNARD
@@ -1709,15 +1652,11 @@
             </article>
 
 
-            <!-- FUME -->
-
             <article class="product-card">
 
-                <img
-                    src="images/fume.jpg"
-                    class="product-image"
-                    alt="Burger FUME"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/fume.jpg" alt="Burger Fumé">
+                </div>
 
                 <h3>
                     FUME
@@ -1734,15 +1673,11 @@
             </article>
 
 
-            <!-- VEGGIE -->
-
             <article class="product-card">
 
-                <img
-                    src="images/veggie.jpg"
-                    class="product-image"
-                    alt="Burger VEGGIE"
-                    loading="lazy">
+                <div class="product-icon">
+                    <img src="images/veggie.jpg" alt="Burger Veggie">
+                </div>
 
                 <h3>
                     VEGGIE
