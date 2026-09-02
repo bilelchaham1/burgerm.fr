@@ -656,6 +656,71 @@
 
 
         /* =========================================================
+           MENUS FAMILY + ENFANT
+        ========================================================= */
+
+        .special-menus-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .special-menu {
+            position: relative;
+            background: #050505;
+            border: 1px solid rgba(255, 189, 0, 0.45);
+            border-radius: 12px;
+            padding: 20px 18px;
+            text-align: center;
+            transition: 0.25s;
+        }
+
+        .special-menu:hover {
+            transform: translateY(-5px);
+            border-color: var(--yellow);
+            box-shadow: 0 12px 30px rgba(255, 189, 0, 0.10);
+        }
+
+        .special-menu-image {
+            display: block;
+            width: 100%;
+            height: 260px;
+            object-fit: contain;
+            object-position: center;
+            margin: 0 auto 14px;
+            border-radius: 8px;
+        }
+
+        .special-menu h3 {
+            color: #ffffff;
+            font-size: 22px;
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+
+        .special-menu h3 span {
+            color: var(--yellow);
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .special-menu .menu-composition {
+            color: #c8c8c8;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .special-price {
+            display: block;
+            margin-top: 15px;
+            color: var(--yellow);
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+
+        /* =========================================================
            CARTE
         ========================================================= */
 
@@ -1129,6 +1194,14 @@
                 height: 150px;
             }
 
+            .special-menus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .special-menu-image {
+                height: 210px;
+            }
+
             .menu-list {
                 grid-template-columns: 1fr;
             }
@@ -1161,6 +1234,20 @@
                 padding-bottom: 65px;
             }
 
+        }
+
+    
+        .other-menus-separator {
+            text-align: center;
+            margin: 45px 0 30px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .other-menus-separator h2 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 800;
         }
 
     </style>
@@ -2142,6 +2229,84 @@
 
             </article>
 
+        </div>
+
+
+        <div class="other-menus-separator">
+            <h2>Autres Menus</h2>
+        </div>
+
+
+        <!-- MENUS FAMILY + ENFANT -->
+
+        <div class="special-menus-grid">
+
+            <!-- MENU FAMILY -->
+
+            <article class="special-menu">
+
+                <img
+                    src="images/menu-family.jpg"
+                    class="special-menu-image"
+                    alt="Menu Family">
+
+                <h3>
+
+                    <span>
+                        MENU FAMILY
+                    </span>
+
+                    <br>
+
+                    Menu Family
+
+                </h3>
+
+                <div class="menu-composition">
+
+                    Un menu généreux à partager en famille.
+
+                </div>
+
+                <span class="special-price">
+                    25,90 €
+                </span>
+
+            </article>
+
+
+            <!-- MENU ENFANT -->
+
+            <article class="special-menu">
+
+                <img
+                    src="images/menu-enfant.jpg"
+                    class="special-menu-image"
+                    alt="Menu enfant">
+
+                <h3>
+
+                    <span>
+                        MENU ENFANT
+                    </span>
+
+                    <br>
+
+                    Menu Enfant
+
+                </h3>
+
+                <div class="menu-composition">
+
+                    Composition du menu enfant à préciser.
+
+                </div>
+
+                <span class="special-price">
+                    Prix à définir
+                </span>
+
+            </article>
 
         </div>
 
