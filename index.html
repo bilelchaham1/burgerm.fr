@@ -129,16 +129,68 @@
 
 
         /* =========================================================
-           BOUTON COMMANDER
+           BOUTONS HEADER : TELEPHONE + COMMANDER
         ========================================================= */
 
-        .order-menu {
+        .header-actions {
             position: absolute;
 
             right: 25px;
             top: 50%;
 
             transform: translateY(-50%);
+
+            display: flex;
+            align-items: center;
+
+            gap: 8px;
+        }
+
+
+        /* =========================================================
+           BOUTON TELEPHONE
+        ========================================================= */
+
+        .phone-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 44px;
+
+            padding: 13px 16px;
+
+            border: 2px solid #ffffff;
+            border-radius: 6px;
+
+            background: #ffffff;
+            color: #000000;
+
+            font-size: 14px;
+            font-weight: 900;
+
+            white-space: nowrap;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+        .phone-button:hover {
+            background: var(--yellow);
+            border-color: var(--yellow);
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================================================
+           BOUTON COMMANDER
+        ========================================================= */
+
+        .order-menu {
+            position: relative;
         }
 
         .order-button {
@@ -533,9 +585,6 @@
         .double-menu {
             position: relative;
 
-            /*
-             * Même noir que le fond du site
-             */
             background: #050505;
 
             border:
@@ -1041,7 +1090,7 @@
                 left: 20px;
             }
 
-            .order-menu {
+            .header-actions {
                 right: 20px;
             }
 
@@ -1088,7 +1137,8 @@
                 width: 120px;
             }
 
-            .order-menu {
+            /* Masque les boutons du header sur mobile */
+            .header-actions {
                 display: none;
             }
 
@@ -1180,16 +1230,10 @@
                 grid-template-columns: 1fr;
             }
 
-            /*
-             * Images burgers sur mobile
-             */
             .product-image {
                 height: 160px;
             }
 
-            /*
-             * Images menus doubles sur mobile
-             */
             .double-menu-image {
                 height: 150px;
             }
@@ -1240,6 +1284,10 @@
                 height: 350px;
             }
 
+            /*
+             * IMPORTANT :
+             * Le bouton flottant mobile reste affiché.
+             */
             .mobile-order {
                 display: block;
             }
@@ -1250,7 +1298,7 @@
 
         }
 
-    
+
         /* =========================================================
            GROSSE FAIM
         ========================================================= */
@@ -1360,40 +1408,63 @@
         </nav>
 
 
-        <div class="order-menu">
+        <!-- =====================================================
+             TELEPHONE + COMMANDER
+        ====================================================== -->
 
-            <button
-                class="order-button"
-                id="orderButton">
-
-                🍔 Commander en ligne
-
-            </button>
+        <div class="header-actions">
 
 
-            <div
-                class="order-dropdown"
-                id="orderDropdown">
+            <!-- BOUTON TELEPHONE -->
+
+            <a
+                href="tel:0259166943"
+                class="phone-button"
+                aria-label="Appeler BURGER M au 02 59 16 69 43">
+
+                📞 02.59.16.69.43
+
+            </a>
 
 
-                <a
-                    href="https://www.ubereats.com/fr/store/burger-m/EpXKvIK6WmGDuGTnM-wDZA"
-                    target="_blank"
-                    rel="noopener">
+            <!-- BOUTON COMMANDER -->
 
-                    🍔 Uber Eats
+            <div class="order-menu">
 
-                </a>
+                <button
+                    class="order-button"
+                    id="orderButton">
+
+                    🍔 Commander en ligne
+
+                </button>
 
 
-                <a
-                    href="https://deliveroo.fr/fr/menu/bourges/jardin-des-pres-fichaux/burger-m-1-avenue-marx-dormoy"
-                    target="_blank"
-                    rel="noopener">
+                <div
+                    class="order-dropdown"
+                    id="orderDropdown">
 
-                    🚴 Deliveroo
 
-                </a>
+                    <a
+                        href="https://www.ubereats.com/fr/store/burger-m/EpXKvIK6WmGDuGTnM-wDZA"
+                        target="_blank"
+                        rel="noopener">
+
+                        🍔 Uber Eats
+
+                    </a>
+
+
+                    <a
+                        href="https://deliveroo.fr/fr/menu/bourges/jardin-des-pres-fichaux/burger-m-1-avenue-marx-dormoy"
+                        target="_blank"
+                        rel="noopener">
+
+                        🚴 Deliveroo
+
+                    </a>
+
+                </div>
 
             </div>
 
@@ -1938,7 +2009,7 @@
                 </h3>
 
                 <p>
-                   Pain sésame, galette veggie façon poulet, tomates, salade, oignons, sauce Tartare. 
+                    Pain sésame, galette veggie façon poulet, tomates, salade, oignons, sauce Tartare.
                 </p>
 
                 <span class="price">
@@ -2284,25 +2355,36 @@
         <!-- GROSSE FAIM -->
 
         <div class="grosse-faim-section">
+
             <div class="grosse-faim-title">
-                <span>Grosse faim ?</span>
+
+                <span>
+                    Grosse faim ?
+                </span>
+
             </div>
 
             <img
                 src="images/grosse-faim.png"
                 class="grosse-faim-image"
                 alt="Menus Grosse Faim : King 180 et King 360">
+
         </div>
 
 
         <div class="other-menus-separator">
-            <h2>Autres Menus</h2>
+
+            <h2>
+                Autres Menus
+            </h2>
+
         </div>
 
 
         <!-- MENUS FAMILY + ENFANT -->
 
         <div class="special-menus-grid">
+
 
             <!-- MENU FAMILY -->
 
@@ -2318,7 +2400,6 @@
                     <span>
                         MENU FAMILY
                     </span>
-
 
                 </h3>
 
@@ -2350,7 +2431,6 @@
                         MENU ENFANT
                     </span>
 
-
                 </h3>
 
                 <div class="menu-composition">
@@ -2375,7 +2455,6 @@
             <strong>
                 Fait à la commande
             </strong>
-
 
         </p>
 
@@ -2422,6 +2501,7 @@
             <div class="menu-list">
 
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Wrap BEEF
                     </span>
@@ -2429,9 +2509,12 @@
                     <span class="menu-item-price">
                         6,50 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Wrap TENDERS
                     </span>
@@ -2439,13 +2522,12 @@
                     <span class="menu-item-price">
                         5,50 €
                     </span>
-                
+
                 </div>
 
             </div>
 
         </div>
-
 
 
         <!-- SALADES -->
@@ -2459,6 +2541,7 @@
             <div class="menu-list">
 
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Poulet - Option Veggie
                     </span>
@@ -2466,9 +2549,12 @@
                     <span class="menu-item-price">
                         5,80 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Chèvre Miel - Option Camembert
                     </span>
@@ -2476,7 +2562,7 @@
                     <span class="menu-item-price">
                         5,80 €
                     </span>
-                
+
                 </div>
 
             </div>
@@ -2495,6 +2581,7 @@
             <div class="menu-list">
 
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Frite
                     </span>
@@ -2502,9 +2589,12 @@
                     <span class="menu-item-price">
                         2,00 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Frite Cheddar
                     </span>
@@ -2512,9 +2602,12 @@
                     <span class="menu-item-price">
                         2,50 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Frite Cheddar Bacon
                     </span>
@@ -2522,16 +2615,20 @@
                     <span class="menu-item-price">
                         3,50 €
                     </span>
+
                 </div>
 
-                 <div class="menu-item">
+
+                <div class="menu-item">
+
                     <span class="menu-item-name">
                         Frite Cheddar Bacon Crispy
                     </span>
 
                     <span class="menu-item-price">
                         4,00 €
-                    
+                    </span>
+
                 </div>
 
             </div>
@@ -2550,6 +2647,7 @@
             <div class="menu-list">
 
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Nuggets x5
                     </span>
@@ -2557,9 +2655,12 @@
                     <span class="menu-item-price">
                         3,50 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Bouchées de Camembert x5
                     </span>
@@ -2567,9 +2668,12 @@
                     <span class="menu-item-price">
                         3,50 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Mozzarella sticks x5
                     </span>
@@ -2577,9 +2681,12 @@
                     <span class="menu-item-price">
                         3,00 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Onion rings x5
                     </span>
@@ -2587,7 +2694,7 @@
                     <span class="menu-item-price">
                         3,00 €
                     </span>
- 
+
                 </div>
 
             </div>
@@ -2606,16 +2713,20 @@
             <div class="menu-list">
 
                 <div class="menu-item">
+
                     <span class="menu-item-name">
-                        Tiramisu 
+                        Tiramisu
                     </span>
 
                     <span class="menu-item-price">
                         3,50 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Tarte au daim
                     </span>
@@ -2642,6 +2753,7 @@
             <div class="menu-list">
 
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         33 cl
                     </span>
@@ -2649,9 +2761,12 @@
                     <span class="menu-item-price">
                         1,50 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Eau
                     </span>
@@ -2659,9 +2774,12 @@
                     <span class="menu-item-price">
                         1,00 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Café
                     </span>
@@ -2669,7 +2787,7 @@
                     <span class="menu-item-price">
                         1,20 €
                     </span>
-               
+
                 </div>
 
             </div>
@@ -2688,6 +2806,7 @@
             <div class="menu-list">
 
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Steak
                     </span>
@@ -2695,9 +2814,12 @@
                     <span class="menu-item-price">
                         1,00 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Bacon
                     </span>
@@ -2705,9 +2827,12 @@
                     <span class="menu-item-price">
                         1,00 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Cheddar
                     </span>
@@ -2715,9 +2840,12 @@
                     <span class="menu-item-price">
                         0,80 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Galette Rôsti
                     </span>
@@ -2725,9 +2853,12 @@
                     <span class="menu-item-price">
                         1,00 €
                     </span>
+
                 </div>
 
+
                 <div class="menu-item">
+
                     <span class="menu-item-name">
                         Oignons frits
                     </span>
@@ -2735,6 +2866,8 @@
                     <span class="menu-item-price">
                         0,50 €
                     </span>
+
+                </div>
 
             </div>
 
@@ -2811,7 +2944,7 @@
                             Téléphone :
                         </strong>
 
-                        <a href="tel:0200000000">
+                        <a href="tel:0259166943">
                             02.59.16.69.43
                         </a>
 
@@ -2882,7 +3015,6 @@
                 <h3>
                     ⭐ BURGER M
                 </h3>
-
 
 
                 <p class="footer-city">
@@ -3037,7 +3169,7 @@
 
 
         <a
-            href="https://www.google.com/search?sca_esv=128224f859463acd&hl=fr-FR&sxsrf=APpeQnvJ_M1hi7A-DiG3nXrVcgrL5D9TPQ:1786229809226&q=BURGER+M&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_-oiuiBjy4fcIjoCD_2rvqmsmsZBdZKRO57uk4FupS04qBiiQKfbEbT71f1VjVtCQhyD-uY%3D&uds=AJ5uw1-CsN_VmOWvV4nQCD6b3IOKjDSPZbAjMhK0H3dqH2-Nd4RB8InhegbQ0BJhzXBD0zDD808mw8CWuVTn6Eth075DJbxP21qRcQ2aU4qknh2xx4WuFx8&sa=X&ved=2ahUKEwjdlpDKkJKWAxVKVKQEHdh3KIwQ3PALegQIGRAE&biw=1528&bih=740&dpr=1.25"
+            href="https://www.google.com/search?sca_esv=128224f859463acd&hl=fr-FR&sxsrf=APpeQnvJ_M1hi7A-DiG3nXrVcgrL5D9TPQ:1786229809226&q=BURGER+M&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_-oiuiBjy4fcIjoCD_2rvqmsmsZBdZKRO57uk4FupS04qBiiQKfbEbT71f1VjVtCQhyD-uY%3D&uds=AJ5uw1-CsN_VmOWvV4nQCD6b3IOKjDSPZbAjMhK0H3dqH2-Nd4RB8InhegbQ0BJhzXBD0zDD808mw8CWuVTn6Eth075DJbxP21qRcQ2aU4qknh2xx4WuFx08&sa=X&ved=2ahUKEwjdlpDKkJKWAxVKVKQEHdh3KIwQ3PALegQIGRAE&biw=1528&bih=740&dpr=1.25"
             target="_blank"
             rel="noopener"
             class="btn primary">
@@ -3063,6 +3195,7 @@
     <div class="footer-logo">
 
         BURGER
+
         <span>
             M
         </span>
@@ -3089,7 +3222,7 @@
 
 
 <!-- =========================================================
-     BOUTON MOBILE
+     BOUTON MOBILE FLOTTANT
 ========================================================= -->
 
 <a
