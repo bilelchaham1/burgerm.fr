@@ -83,20 +83,19 @@
         .nav-container {
             position: relative;
 
-            max-width: 1200px;
+            max-width: 1400px;
             height: 75px;
 
             margin: 0 auto;
-            padding: 0 25px;
+            padding: 0 20px;
 
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
         .logo-link {
             position: absolute;
-            left: 25px;
+            left: 20px;
             top: 50%;
 
             transform: translateY(-50%);
@@ -107,11 +106,26 @@
             height: auto;
         }
 
+
+        /* =========================================================
+           MENU PRINCIPAL
+        ========================================================= */
+
         nav {
+            width: 100%;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 30px;
+
+            gap: 28px;
+
+            /*
+             * On réserve de la place à gauche pour le logo
+             * et à droite pour téléphone + commande.
+             */
+            padding-left: 170px;
+            padding-right: 390px;
         }
 
         nav a {
@@ -119,6 +133,8 @@
 
             font-size: 16px;
             font-weight: 700;
+
+            white-space: nowrap;
 
             transition: 0.25s;
         }
@@ -129,13 +145,13 @@
 
 
         /* =========================================================
-           BOUTONS HEADER : TELEPHONE + COMMANDER
+           ZONE TELEPHONE + COMMANDER
         ========================================================= */
 
         .header-actions {
             position: absolute;
 
-            right: 25px;
+            right: 20px;
             top: 50%;
 
             transform: translateY(-50%);
@@ -144,6 +160,8 @@
             align-items: center;
 
             gap: 8px;
+
+            z-index: 10;
         }
 
 
@@ -157,9 +175,9 @@
             align-items: center;
             justify-content: center;
 
-            min-height: 44px;
+            min-height: 46px;
 
-            padding: 13px 16px;
+            padding: 0 15px;
 
             border: 2px solid #ffffff;
             border-radius: 6px;
@@ -167,12 +185,10 @@
             background: #ffffff;
             color: #000000;
 
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 900;
 
             white-space: nowrap;
-
-            cursor: pointer;
 
             transition: 0.25s;
         }
@@ -200,18 +216,23 @@
             background: var(--yellow);
             color: #000000;
 
-            padding: 13px 20px;
+            min-height: 46px;
 
-            font-size: 14px;
+            padding: 0 17px;
+
+            font-size: 13px;
             font-weight: 900;
 
             cursor: pointer;
+
+            white-space: nowrap;
 
             transition: 0.25s;
         }
 
         .order-button:hover {
             background: #ffffff;
+
             transform: translateY(-1px);
         }
 
@@ -514,17 +535,11 @@
                 0 10px 30px rgba(255, 189, 0, 0.10);
         }
 
-
-        /* =========================================================
-           IMAGES DES BURGERS
-        ========================================================= */
-
         .product-image {
             width: 100%;
             height: 170px;
 
             object-fit: contain;
-
             object-position: center;
 
             margin: 0 auto 12px;
@@ -608,11 +623,6 @@
                 0 12px 30px rgba(255, 189, 0, 0.10);
         }
 
-
-        /* =========================================================
-           IMAGES DES MENUS DOUBLES
-        ========================================================= */
-
         .double-menu-image {
             display: block;
 
@@ -620,7 +630,6 @@
             height: 150px;
 
             object-fit: contain;
-
             object-position: center;
 
             margin: 8px auto 14px;
@@ -710,60 +719,87 @@
 
         .special-menus-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
+
             gap: 20px;
+
             margin-top: 35px;
         }
 
         .special-menu {
             position: relative;
+
             background: #050505;
-            border: 1px solid rgba(255, 189, 0, 0.45);
+
+            border:
+                1px solid rgba(255, 189, 0, 0.45);
+
             border-radius: 12px;
+
             padding: 20px 18px;
+
             text-align: center;
+
             transition: 0.25s;
         }
 
         .special-menu:hover {
             transform: translateY(-5px);
+
             border-color: var(--yellow);
-            box-shadow: 0 12px 30px rgba(255, 189, 0, 0.10);
+
+            box-shadow:
+                0 12px 30px rgba(255, 189, 0, 0.10);
         }
 
         .special-menu-image {
             display: block;
+
             width: 100%;
             height: 260px;
+
             object-fit: contain;
             object-position: center;
+
             margin: 0 auto 14px;
+
             border-radius: 8px;
         }
 
         .special-menu h3 {
             color: #ffffff;
+
             font-size: 22px;
+
             line-height: 1.35;
+
             margin-bottom: 10px;
         }
 
         .special-menu h3 span {
             color: var(--yellow);
+
             font-size: 13px;
+
             letter-spacing: 1px;
         }
 
         .special-menu .menu-composition {
             color: #c8c8c8;
+
             font-size: 14px;
+
             line-height: 1.7;
         }
 
         .special-price {
             display: block;
+
             margin-top: 15px;
+
             color: var(--yellow);
+
             font-size: 28px;
             font-weight: 900;
         }
@@ -783,6 +819,7 @@
 
         .category-title {
             display: flex;
+
             align-items: center;
 
             gap: 10px;
@@ -1079,27 +1116,47 @@
            TABLETTE
         ========================================================= */
 
-        @media (max-width: 1100px) {
+        @media (max-width: 1200px) {
 
             .nav-container {
-                padding-left: 20px;
-                padding-right: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
             }
 
             .logo-link {
-                left: 20px;
+                left: 15px;
             }
 
-            .header-actions {
-                right: 20px;
-            }
-
+            /*
+             * On réduit la zone réservée au téléphone + commande.
+             */
             nav {
-                gap: 18px;
+                gap: 16px;
+
+                padding-left: 150px;
+                padding-right: 350px;
             }
 
             nav a {
-                font-size: 15px;
+                font-size: 14px;
+            }
+
+            .header-actions {
+                right: 15px;
+
+                gap: 6px;
+            }
+
+            .phone-button {
+                padding: 0 10px;
+
+                font-size: 12px;
+            }
+
+            .order-button {
+                padding: 0 12px;
+
+                font-size: 12px;
             }
 
             .products-grid {
@@ -1112,6 +1169,51 @@
 
             .contact-grid {
                 grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* =========================================================
+           TABLETTE PETITE
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            /*
+             * À cette largeur, on évite tout risque de chevauchement.
+             * Le téléphone reste visible mais le menu est légèrement réduit.
+             */
+
+            nav {
+                gap: 12px;
+
+                padding-left: 135px;
+                padding-right: 315px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .logo {
+                width: 125px;
+            }
+
+            .phone-button {
+                min-height: 42px;
+
+                padding: 0 9px;
+
+                font-size: 11px;
+            }
+
+            .order-button {
+                min-height: 42px;
+
+                padding: 0 10px;
+
+                font-size: 11px;
             }
 
         }
@@ -1137,13 +1239,13 @@
                 width: 120px;
             }
 
-            /* Masque les boutons du header sur mobile */
+            /*
+             * Téléphone + Commander du header masqués sur mobile.
+             * Le bouton flottant du bas reste affiché.
+             */
+
             .header-actions {
                 display: none;
-            }
-
-            .menu-toggle {
-                display: block;
             }
 
             nav {
@@ -1154,6 +1256,10 @@
                 top: 65px;
                 left: 0;
                 right: 0;
+
+                width: auto;
+
+                padding: 0;
 
                 background: #050505;
 
@@ -1179,6 +1285,10 @@
                 text-align: center;
 
                 font-size: 16px;
+            }
+
+            .menu-toggle {
+                display: block;
             }
 
             .hero {
@@ -1244,11 +1354,13 @@
 
             .grosse-faim-title span {
                 font-size: 24px;
+
                 padding: 9px 18px;
             }
 
             .grosse-faim-image {
                 border-radius: 7px;
+
                 border-width: 1px;
             }
 
@@ -1286,8 +1398,9 @@
 
             /*
              * IMPORTANT :
-             * Le bouton flottant mobile reste affiché.
+             * Le bouton flottant mobile est conservé.
              */
+
             .mobile-order {
                 display: block;
             }
@@ -1305,34 +1418,49 @@
 
         .grosse-faim-section {
             margin: 45px 0 40px;
+
             text-align: center;
         }
 
         .grosse-faim-title {
             margin-bottom: 22px;
+
             text-align: center;
         }
 
         .grosse-faim-title span {
             display: inline-block;
+
             padding: 10px 24px;
+
             border-radius: 8px;
+
             background: var(--yellow);
             color: #000000;
+
             font-size: 30px;
             font-weight: 900;
+
             text-transform: uppercase;
+
             letter-spacing: 1px;
-            box-shadow: 0 8px 25px rgba(255, 189, 0, 0.12);
+
+            box-shadow:
+                0 8px 25px rgba(255, 189, 0, 0.12);
         }
 
         .grosse-faim-image {
             display: block;
+
             width: 100%;
             max-width: 1113px;
+
             height: auto;
+
             margin: 0 auto;
+
             border-radius: 10px;
+
             border: 2px solid var(--yellow);
         }
 
@@ -1343,14 +1471,20 @@
 
         .other-menus-separator {
             text-align: center;
+
             margin: 45px 0 30px;
+
             padding-top: 30px;
-            border-top: 2px solid rgba(0, 0, 0, 0.12);
+
+            border-top:
+                2px solid rgba(0, 0, 0, 0.12);
         }
 
         .other-menus-separator h2 {
             margin: 0;
+
             font-size: 2rem;
+
             font-weight: 800;
         }
 
@@ -1371,6 +1505,8 @@
     <div class="nav-container">
 
 
+        <!-- LOGO -->
+
         <a
             href="#accueil"
             class="logo-link">
@@ -1382,6 +1518,8 @@
 
         </a>
 
+
+        <!-- MENU -->
 
         <nav id="mainNav">
 
@@ -1408,26 +1546,23 @@
         </nav>
 
 
-        <!-- =====================================================
-             TELEPHONE + COMMANDER
-        ====================================================== -->
+        <!-- TELEPHONE + COMMANDER -->
 
         <div class="header-actions">
 
 
-            <!-- BOUTON TELEPHONE -->
+            <!-- TELEPHONE -->
 
             <a
                 href="tel:0259166943"
-                class="phone-button"
-                aria-label="Appeler BURGER M au 02 59 16 69 43">
+                class="phone-button">
 
                 📞 02.59.16.69.43
 
             </a>
 
 
-            <!-- BOUTON COMMANDER -->
+            <!-- COMMANDER -->
 
             <div class="order-menu">
 
@@ -1470,6 +1605,8 @@
 
         </div>
 
+
+        <!-- MENU MOBILE -->
 
         <button
             class="menu-toggle"
@@ -1514,7 +1651,6 @@
         <p>
             Tout plein de burgers généreux et savoureux !
         </p>
-
 
 
         <div class="buttons">
@@ -1563,31 +1699,23 @@
 
 <section id="burgers">
 
-
     <div class="container">
 
-
         <div class="section-header">
-
 
             <div class="section-label">
                 Notre spécialité
             </div>
 
-
             <h2 class="section-title">
                 Nos Burgers
             </h2>
-
-
 
         </div>
 
 
         <div class="products-grid">
 
-
-            <!-- BIG M -->
 
             <article class="product-card">
 
@@ -1596,9 +1724,7 @@
                     class="product-image"
                     alt="Burger BIG M">
 
-                <h3>
-                    BIG M
-                </h3>
+                <h3>BIG M</h3>
 
                 <p>
                     Pain double cut, double steak, cheddar, salade, oignons, cornichons, sauce Biggy.
@@ -1611,8 +1737,6 @@
             </article>
 
 
-            <!-- BIG MAX -->
-
             <article class="product-card">
 
                 <img
@@ -1620,9 +1744,7 @@
                     class="product-image"
                     alt="Burger BIG MAX">
 
-                <h3>
-                    BIG MAX
-                </h3>
+                <h3>BIG MAX</h3>
 
                 <p>
                     Pain double cut, quatre steaks, double cheddar, salade, oignons, cornichons, sauce Biggy.
@@ -1635,8 +1757,6 @@
             </article>
 
 
-            <!-- SUPREME -->
-
             <article class="product-card">
 
                 <img
@@ -1644,9 +1764,7 @@
                     class="product-image"
                     alt="Burger SUPREME">
 
-                <h3>
-                    SUPREME
-                </h3>
+                <h3>SUPREME</h3>
 
                 <p>
                     Double Steak, cheddar, salade, tomates, oignons, sauce Giant.
@@ -1659,8 +1777,6 @@
             </article>
 
 
-            <!-- CHEESEBURGER -->
-
             <article class="product-card">
 
                 <img
@@ -1668,9 +1784,7 @@
                     class="product-image"
                     alt="Cheeseburger">
 
-                <h3>
-                    CHEESEBURGER
-                </h3>
+                <h3>CHEESEBURGER</h3>
 
                 <p>
                     Steak, cheddar, oignons, cornichons, sauce ketchup et moutarde.
@@ -1683,8 +1797,6 @@
             </article>
 
 
-            <!-- DOUBLE -->
-
             <article class="product-card">
 
                 <img
@@ -1692,9 +1804,7 @@
                     class="product-image"
                     alt="Burger DOUBLE">
 
-                <h3>
-                    DOUBLE
-                </h3>
+                <h3>DOUBLE</h3>
 
                 <p>
                     Double steak, double cheddar, oignons, cornichons, sauce ketchup et moutarde.
@@ -1707,8 +1817,6 @@
             </article>
 
 
-            <!-- TRIPLE -->
-
             <article class="product-card">
 
                 <img
@@ -1716,9 +1824,7 @@
                     class="product-image"
                     alt="Burger TRIPLE">
 
-                <h3>
-                    TRIPLE
-                </h3>
+                <h3>TRIPLE</h3>
 
                 <p>
                     Triple steak, triple cheddar, oignons, cornichons, sauce ketchup et moutarde.
@@ -1731,8 +1837,6 @@
             </article>
 
 
-            <!-- CHICKEN -->
-
             <article class="product-card">
 
                 <img
@@ -1740,9 +1844,7 @@
                     class="product-image"
                     alt="Burger CHICKEN">
 
-                <h3>
-                    CHICKEN
-                </h3>
+                <h3>CHICKEN</h3>
 
                 <p>
                     Pain sésame, galette de poulet pané, cheddar, salade, tomates, oignons, sauce Chicken.
@@ -1755,8 +1857,6 @@
             </article>
 
 
-            <!-- CRISPY -->
-
             <article class="product-card">
 
                 <img
@@ -1764,9 +1864,7 @@
                     class="product-image"
                     alt="Burger CRISPY">
 
-                <h3>
-                    CRISPY
-                </h3>
+                <h3>CRISPY</h3>
 
                 <p>
                     Pain sésame, filet de poulet croustillant, cheddar, salade, sauce Dynamite.
@@ -1779,8 +1877,6 @@
             </article>
 
 
-            <!-- FISH -->
-
             <article class="product-card">
 
                 <img
@@ -1788,9 +1884,7 @@
                     class="product-image"
                     alt="Burger FISH">
 
-                <h3>
-                    FISH
-                </h3>
+                <h3>FISH</h3>
 
                 <p>
                     Filet de poisson pané, cheddar, salade, sauce Fish
@@ -1803,8 +1897,6 @@
             </article>
 
 
-            <!-- CROQ M -->
-
             <article class="product-card">
 
                 <img
@@ -1812,9 +1904,7 @@
                     class="product-image"
                     alt="CROQ M">
 
-                <h3>
-                    CROQ M
-                </h3>
+                <h3>CROQ M</h3>
 
                 <p>
                     Pain toasté, jambon de dinde, emmental fondant.
@@ -1827,8 +1917,6 @@
             </article>
 
 
-            <!-- NAAN BIG M -->
-
             <article class="product-card">
 
                 <img
@@ -1836,9 +1924,7 @@
                     class="product-image"
                     alt="NAAN BIG M">
 
-                <h3>
-                    NAAN BIG M
-                </h3>
+                <h3>NAAN BIG M</h3>
 
                 <p>
                     Steak, cheddar, salade, tomates, oignons, sauce Biggy.
@@ -1851,8 +1937,6 @@
             </article>
 
 
-            <!-- NAAN CHICKEN -->
-
             <article class="product-card">
 
                 <img
@@ -1860,9 +1944,7 @@
                     class="product-image"
                     alt="NAAN CHICKEN">
 
-                <h3>
-                    NAAN CHICKEN
-                </h3>
+                <h3>NAAN CHICKEN</h3>
 
                 <p>
                     Poulet croustillant, salade, tomates, sauce Chicken.
@@ -1875,8 +1957,6 @@
             </article>
 
 
-            <!-- LE M -->
-
             <article class="product-card">
 
                 <img
@@ -1884,9 +1964,7 @@
                     class="product-image"
                     alt="Burger LE M">
 
-                <h3>
-                    LE M
-                </h3>
+                <h3>LE M</h3>
 
                 <p>
                     Pain fariné, Steak 90gr, galette de poulet pané, cheddar, salade, tomates, oignons, sauce M.
@@ -1899,8 +1977,6 @@
             </article>
 
 
-            <!-- CHEVRE MIEL -->
-
             <article class="product-card">
 
                 <img
@@ -1908,9 +1984,7 @@
                     class="product-image"
                     alt="Burger CHEVRE MIEL">
 
-                <h3>
-                    CHEVRE MIEL
-                </h3>
+                <h3>CHEVRE MIEL</h3>
 
                 <p>
                     Pain sésame, Steak 90gr, fromage de chèvre, salade, oignons, miel, sauce Mustard Honey.
@@ -1923,8 +1997,6 @@
             </article>
 
 
-            <!-- PEPPER -->
-
             <article class="product-card">
 
                 <img
@@ -1932,12 +2004,10 @@
                     class="product-image"
                     alt="Burger PEPPER">
 
-                <h3>
-                    PEPPER
-                </h3>
+                <h3>PEPPER</h3>
 
                 <p>
-                    Pain fariné, Steak 90gr, emmental fondu, salade, tomates, oignons , sauce Pepper poivrée.
+                    Pain fariné, Steak 90gr, emmental fondu, salade, tomates, oignons, sauce Pepper poivrée.
                 </p>
 
                 <span class="price">
@@ -1947,8 +2017,6 @@
             </article>
 
 
-            <!-- MONTAGNARD -->
-
             <article class="product-card">
 
                 <img
@@ -1956,9 +2024,7 @@
                     class="product-image"
                     alt="Burger MONTAGNARD">
 
-                <h3>
-                    MONTAGNARD
-                </h3>
+                <h3>MONTAGNARD</h3>
 
                 <p>
                     Pain fariné, Steak 90gr, galette pommes de terre, emmental, comté fondu, salade, oignons, cornichons, sauce Montagnarde.
@@ -1971,8 +2037,6 @@
             </article>
 
 
-            <!-- FUME -->
-
             <article class="product-card">
 
                 <img
@@ -1980,9 +2044,7 @@
                     class="product-image"
                     alt="Burger FUME">
 
-                <h3>
-                    FUME
-                </h3>
+                <h3>FUME</h3>
 
                 <p>
                     Pain fariné, Steak 90gr, cheddar, salade, oignons crispy, bacon de boeuf à l'américaine, sauce Smoky.
@@ -1995,8 +2057,6 @@
             </article>
 
 
-            <!-- VEGGIE -->
-
             <article class="product-card">
 
                 <img
@@ -2004,9 +2064,7 @@
                     class="product-image"
                     alt="Burger VEGGIE">
 
-                <h3>
-                    VEGGIE
-                </h3>
+                <h3>VEGGIE</h3>
 
                 <p>
                     Pain sésame, galette veggie façon poulet, tomates, salade, oignons, sauce Tartare.
@@ -2017,7 +2075,6 @@
                 </span>
 
             </article>
-
 
         </div>
 
@@ -2032,9 +2089,7 @@
 
 <section id="menus">
 
-
     <div class="container">
-
 
         <div class="section-header">
 
@@ -2056,8 +2111,6 @@
         <div class="double-menu-grid">
 
 
-            <!-- MENU M1 -->
-
             <article class="double-menu">
 
                 <div class="menu-number">
@@ -2070,25 +2123,15 @@
                     alt="Menu double M1">
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     BIG M + CHEESEBURGER
-
                 </h3>
 
                 <div class="menu-composition">
-
                     1 frite
-
                     <br>
-
                     1 boisson 33cl
-
                 </div>
 
                 <span class="double-price">
@@ -2097,8 +2140,6 @@
 
             </article>
 
-
-            <!-- MENU M2 -->
 
             <article class="double-menu">
 
@@ -2112,25 +2153,15 @@
                     alt="Menu double M2">
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     BIG M + NUGGETS
-
                 </h3>
 
                 <div class="menu-composition">
-
                     1 frite
-
                     <br>
-
                     1 boisson 33cl
-
                 </div>
 
                 <span class="double-price">
@@ -2139,8 +2170,6 @@
 
             </article>
 
-
-            <!-- MENU M3 -->
 
             <article class="double-menu">
 
@@ -2154,25 +2183,15 @@
                     alt="Menu double M3">
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     CHEESEBURGER + CROQ M
-
                 </h3>
 
                 <div class="menu-composition">
-
                     1 frite
-
                     <br>
-
                     1 boisson 33cl
-
                 </div>
 
                 <span class="double-price">
@@ -2181,8 +2200,6 @@
 
             </article>
 
-
-            <!-- MENU M4 -->
 
             <article class="double-menu">
 
@@ -2196,25 +2213,15 @@
                     alt="Menu double M4">
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     SUPRÊME + CHEESEBURGER
-
                 </h3>
 
                 <div class="menu-composition">
-
                     1 frite
-
                     <br>
-
                     1 boisson 33cl
-
                 </div>
 
                 <span class="double-price">
@@ -2223,8 +2230,6 @@
 
             </article>
 
-
-            <!-- MENU M5 -->
 
             <article class="double-menu">
 
@@ -2238,25 +2243,15 @@
                     alt="Menu double M5">
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     SUPRÊME + SUPRÊME
-
                 </h3>
 
                 <div class="menu-composition">
-
                     1 frite
-
                     <br>
-
                     1 boisson 33cl
-
                 </div>
 
                 <span class="double-price">
@@ -2265,8 +2260,6 @@
 
             </article>
 
-
-            <!-- MENU M6 -->
 
             <article class="double-menu">
 
@@ -2280,25 +2273,15 @@
                     alt="Menu double M6">
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     BIG M + SUPRÊME
-
                 </h3>
 
                 <div class="menu-composition">
-
                     1 frite
-
                     <br>
-
                     1 boisson 33cl
-
                 </div>
 
                 <span class="double-price">
@@ -2307,8 +2290,6 @@
 
             </article>
 
-
-            <!-- MENU M7 -->
 
             <article class="double-menu">
 
@@ -2322,25 +2303,15 @@
                     alt="Menu double M7">
 
                 <h3>
-
-                    <span>
-                        MENU DOUBLE
-                    </span>
-
+                    <span>MENU DOUBLE</span>
                     <br>
-
                     SUPRÊME + CHICKEN
-
                 </h3>
 
                 <div class="menu-composition">
-
                     1 frite
-
                     <br>
-
                     1 boisson 33cl
-
                 </div>
 
                 <span class="double-price">
@@ -2357,11 +2328,7 @@
         <div class="grosse-faim-section">
 
             <div class="grosse-faim-title">
-
-                <span>
-                    Grosse faim ?
-                </span>
-
+                <span>Grosse faim ?</span>
             </div>
 
             <img
@@ -2381,12 +2348,8 @@
         </div>
 
 
-        <!-- MENUS FAMILY + ENFANT -->
-
         <div class="special-menus-grid">
 
-
-            <!-- MENU FAMILY -->
 
             <article class="special-menu">
 
@@ -2396,17 +2359,11 @@
                     alt="Menu Family">
 
                 <h3>
-
-                    <span>
-                        MENU FAMILY
-                    </span>
-
+                    <span>MENU FAMILY</span>
                 </h3>
 
                 <div class="menu-composition">
-
                     Un menu généreux à partager en famille !
-
                 </div>
 
                 <span class="special-price">
@@ -2416,8 +2373,6 @@
             </article>
 
 
-            <!-- MENU ENFANT -->
-
             <article class="special-menu">
 
                 <img
@@ -2426,17 +2381,11 @@
                     alt="Menu enfant">
 
                 <h3>
-
-                    <span>
-                        MENU ENFANT
-                    </span>
-
+                    <span>MENU ENFANT</span>
                 </h3>
 
                 <div class="menu-composition">
-
                     Un Cheeseburger ou un Croq ou 5 Nuggets + frites et un Caprisun !
-
                 </div>
 
                 <span class="special-price">
@@ -2469,9 +2418,7 @@
 
 <section id="carte">
 
-
     <div class="container">
-
 
         <div class="section-header">
 
@@ -2512,7 +2459,6 @@
 
                 </div>
 
-
                 <div class="menu-item">
 
                     <span class="menu-item-name">
@@ -2551,7 +2497,6 @@
                     </span>
 
                 </div>
-
 
                 <div class="menu-item">
 
@@ -2592,7 +2537,6 @@
 
                 </div>
 
-
                 <div class="menu-item">
 
                     <span class="menu-item-name">
@@ -2605,7 +2549,6 @@
 
                 </div>
 
-
                 <div class="menu-item">
 
                     <span class="menu-item-name">
@@ -2617,7 +2560,6 @@
                     </span>
 
                 </div>
-
 
                 <div class="menu-item">
 
@@ -2658,7 +2600,6 @@
 
                 </div>
 
-
                 <div class="menu-item">
 
                     <span class="menu-item-name">
@@ -2671,7 +2612,6 @@
 
                 </div>
 
-
                 <div class="menu-item">
 
                     <span class="menu-item-name">
@@ -2683,7 +2623,6 @@
                     </span>
 
                 </div>
-
 
                 <div class="menu-item">
 
@@ -2724,7 +2663,6 @@
 
                 </div>
 
-
                 <div class="menu-item">
 
                     <span class="menu-item-name">
@@ -2764,7 +2702,6 @@
 
                 </div>
 
-
                 <div class="menu-item">
 
                     <span class="menu-item-name">
@@ -2776,7 +2713,6 @@
                     </span>
 
                 </div>
-
 
                 <div class="menu-item">
 
@@ -2817,7 +2753,6 @@
 
                 </div>
 
-
                 <div class="menu-item">
 
                     <span class="menu-item-name">
@@ -2829,7 +2764,6 @@
                     </span>
 
                 </div>
-
 
                 <div class="menu-item">
 
@@ -2843,7 +2777,6 @@
 
                 </div>
 
-
                 <div class="menu-item">
 
                     <span class="menu-item-name">
@@ -2855,7 +2788,6 @@
                     </span>
 
                 </div>
-
 
                 <div class="menu-item">
 
@@ -2884,9 +2816,7 @@
 
 <section id="contact">
 
-
     <div class="container">
-
 
         <div class="section-header">
 
@@ -2912,14 +2842,11 @@
 
             <div class="contact-box">
 
-
                 <h3>
                     📍 Adresse
                 </h3>
 
-
                 <div class="address">
-
 
                     <p>
                         <strong>
@@ -2927,19 +2854,18 @@
                         </strong>
                     </p>
 
-
                     <p>
                         1 Avenue Marx Dormoy
                     </p>
-
 
                     <p>
                         18000 Bourges
                     </p>
 
-
                     <p>
+
                         📞
+
                         <strong>
                             Téléphone :
                         </strong>
@@ -2950,9 +2876,10 @@
 
                     </p>
 
-
                     <p>
+
                         📧
+
                         <strong>
                             Email :
                         </strong>
@@ -2969,7 +2896,6 @@
                 <h3>
                     🍔 Commander
                 </h3>
-
 
                 <p>
                     Commandez directement en livraison.
@@ -3011,21 +2937,17 @@
 
             <div class="contact-box">
 
-
                 <h3>
                     ⭐ BURGER M
                 </h3>
-
 
                 <p class="footer-city">
                     Retrouvez nous tous les jours de la semaine !
                 </p>
 
-
                 <h3 style="margin-top:25px;">
                     🕒 Horaires
                 </h3>
-
 
                 <div class="opening-hours">
 
@@ -3154,22 +3076,18 @@
 
 <section id="avis">
 
-
     <div class="container">
-
 
         <div class="stars">
             ★★★★★
         </div>
 
-
         <p class="review-text">
             Merci à nos clients pour leur confiance.
         </p>
 
-
         <a
-            href="https://www.google.com/search?sca_esv=128224f859463acd&hl=fr-FR&sxsrf=APpeQnvJ_M1hi7A-DiG3nXrVcgrL5D9TPQ:1786229809226&q=BURGER+M&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_-oiuiBjy4fcIjoCD_2rvqmsmsZBdZKRO57uk4FupS04qBiiQKfbEbT71f1VjVtCQhyD-uY%3D&uds=AJ5uw1-CsN_VmOWvV4nQCD6b3IOKjDSPZbAjMhK0H3dqH2-Nd4RB8InhegbQ0BJhzXBD0zDD808mw8CWuVTn6Eth075DJbxP21qRcQ2aU4qknh2xx4WuFx08&sa=X&ved=2ahUKEwjdlpDKkJKWAxVKVKQEHdh3KIwQ3PALegQIGRAE&biw=1528&bih=740&dpr=1.25"
+            href="https://www.google.com/search?sca_esv=128224f859463acd&hl=fr-FR&sxsrf=APpeQnvJ_M1hi7A-DiG3nXrVcgrL5D9TPQ:1786229809226&q=BURGER+M&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_-oiuiBjy4fcIjoCD_2rvqmsmsZBdZKRO57uk4FupS04qBiiQKfbEbT71f1VjVtCQhyD-uY%3D&uds=AJ5uw1-CsN_VmOWvV4nQCD6b3IOKjDSPZbAjMhK0H3dqH2-Nd4RB8InhegbQ0BJhzXBD0zDD808mw8CWuVTn6Eth075DJbxP21qRcQ2aU4qknh2xx4WuFx8&sa=X&ved=2ahUKEwjdlpDKkJKWAxVKVKQEHdh3KIwQ3PALegQIGRAE&biw=1528&bih=740&dpr=1.25"
             target="_blank"
             rel="noopener"
             class="btn primary">
@@ -3191,7 +3109,6 @@
 
 <footer>
 
-
     <div class="footer-logo">
 
         BURGER
@@ -3202,11 +3119,9 @@
 
     </div>
 
-
     <p class="footer-city">
         Bourges
     </p>
-
 
     <div class="copyright">
 
